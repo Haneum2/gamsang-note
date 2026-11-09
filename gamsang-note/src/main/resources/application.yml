@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  error:
+      include-message: always
+spring:
+  datasource:
+    # XEPDB1 은 Oracle XE 의 기본 서비스명이다. 서비스명 앞에는 '/' 를 붙인다.
+    url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+    username: ${DB_USERNAME:SYSTEM}
+    # 비밀번호는 파일에 적지 않고 환경 변수 DB_PASSWORD 로 읽는다 (GitHub 유출 방지).
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      # none: 테이블은 우리가 만든 SQL 스크립트가 관리한다. Hibernate 가 테이블을 바꾸지 못하게 한다.
+      ddl-auto: none
+    # 화면 요청이 끝난 뒤에도 DB 연결을 붙잡고 있지 않도록 끈다.
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true   # 개발 중에는 실행되는 SQL 을 콘솔에 보여 준다 (JPA 이해용)
