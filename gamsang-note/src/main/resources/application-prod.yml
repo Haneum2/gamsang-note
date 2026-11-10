@@ -1,0 +1,29 @@
+# 배포용(prod) 설정: Turso(libSQL) + Render.
+# 실행: SPRING_PROFILES_ACTIVE=prod  (Render 에서는 render.yaml 이 지정한다)
+# 접속 정보는 파일에 적지 않고 환경 변수로만 받는다.
+#   TURSO_JDBC_URL   예) jdbc:dbeaver:libsql:https://<db이름>-<계정>.turso.io
+#   TURSO_AUTH_TOKEN  Turso 에서 발급한 토큰 (비밀번호 칸으로 전달된다)
+server:
+  port: ${PORT:8080}          # Render 가 PORT 를 넣어 준다
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    url: ${TURSO_JDBC_URL}
+    username: ""
+    password: ${TURSO_AUTH_TOKEN}
+    driver-class-name: com.dbeaver.jdbc.driver.libsql.LibSqlDriver
+    hikari:
+      maximum-pool-size: 3
+      # 이 드라이버는 연결 검사(isValid)가 불안정하다는 보고가 있어 쿼리로 검사한다.
+      connection-test-query: SELECT 1
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        # 시작할 때 DB 메타데이터를 조회하지 않게 한다(libSQL 드라이버가 일부 메타데이터를 지원하지 않을 수 있음).
+        boot:
+          allow_jdbc_metadata_access: false

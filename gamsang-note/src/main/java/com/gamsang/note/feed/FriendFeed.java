@@ -13,7 +13,6 @@ import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 /**
@@ -52,7 +51,6 @@ public class FriendFeed {
     @Column(name = "rating")
     private BigDecimal rating;
 
-    @Lob
     @Column(name = "content")
     private String content;
 

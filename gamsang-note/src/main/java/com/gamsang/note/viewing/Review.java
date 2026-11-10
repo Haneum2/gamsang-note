@@ -13,7 +13,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -28,7 +27,6 @@ public class Review {
     @Column(name = "record_id", nullable = false)
     private Long recordId;
 
-    @Lob
     @Column(name = "content", nullable = false)
     private String content;
 

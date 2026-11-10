@@ -9,7 +9,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 /** comments 테이블. (COMMENT 는 Oracle 예약어라 테이블 이름이 comments 이다) */
@@ -28,7 +27,6 @@ public class Comment {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Lob
     @Column(name = "content", nullable = false)
     private String content;
 

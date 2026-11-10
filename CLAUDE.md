@@ -7,6 +7,8 @@
 - 영화·책·공연을 기록(보고 싶어요/보는 중/봤어요, 별점, 감상일)하고, 후기를 공개 범위(전체/친구/나만 보기)로 공유하고, 친구·좋아요·댓글·통계·연말 결산을 제공하는 앱.
 - **마감 2026-11-19, 내부 목표는 11-18.** 앱 개발 + DB 구축 + 보고서(13개 장)가 모두 끝나 있어야 한다.
 - 스택: **Spring Boot 3.3.5 + JPA(Hibernate 6) + Oracle XE 21c + React 18(Vite)**. Java 17, Maven, Node 22.
+- **팀 결정(2026-11-10 회의)**: ① 필수 기능까지만 구현하고 시간이 남으면 부가 기능 ② 회원은 **자체 가입**(비밀번호 해시 저장) ③ 작품 데이터는 **외부 API**(영화 TMDB, 책 카카오 도서, 공연은 조사 후 결정)에서 가져온다 ④ 배포는 **Render**, 클라우드 DB는 **Turso**.
+- **DB는 2벌**: 기본 프로필=Oracle(로컬 개발·보고서 기준), `prod` 프로필=Turso(libSQL/SQLite, 배포용 이식본). 스키마를 바꾸면 `db/`(Oracle)와 `db/turso/`를 **항상 같이** 고친다. 엔티티에서 `@Lob`은 쓰지 않는다(SQLite 호환). 배포 절차는 `docs/DEPLOY.md`.
 - 보고서 초안은 claude.ai의 Claude Docs 문서 "감상노트 프로젝트 보고서 (초안)"에 있다(https://claude.ai/artifact/XUJUDzVMCwh3qudfUNpSVF). 이 폴더에서는 읽을 수 없으니, 보고서에 영향을 주는 변경(테이블·컬럼·API 변경)은 사용자에게 알려 반영하게 한다.
 
 ## 2. 작업 원칙 (중요)
@@ -21,6 +23,9 @@
 (이 폴더)
 ├─ CLAUDE.md
 ├─ db/                  Oracle 스크립트 (00_drop, 01_schema, 02_seed, 03_views_triggers, 04_queries, 05_constraint_tests, README)
+│   └─ turso/           Turso(SQLite) 이식본 (01_schema, 02_seed, 03_views_triggers, gamsang.db, gamsang_dump.sql)
+├─ docs/DEPLOY.md       Turso·Render 배포 가이드
+├─ Dockerfile, render.yaml   Render 배포(서비스 1개, 프론트는 Spring Boot가 함께 서빙: SpaController)
 ├─ gamsang-note/        백엔드 (Spring Boot, Maven)
 │   └─ src/main/java/com/gamsang/note/{genre,work,user,viewing,social,feed,stats}
 └─ gamsang-note-web/    프론트엔드 (React + Vite)
@@ -32,9 +37,10 @@
 2. 터미널에 `set DB_PASSWORD=...` (PowerShell은 `$env:DB_PASSWORD="..."`) 후 백엔드 실행: `cd gamsang-note` → `mvn spring-boot:run` (또는 IntelliJ에서 `NoteApplication` 실행, 환경 변수 `DB_PASSWORD` 설정). 포트 8080.
 3. 프론트: `cd gamsang-note-web` → `npm install`(처음 한 번) → `npm run dev`. 포트 5173. `/api`는 vite 프록시로 8080에 전달되므로 CORS 설정이 필요 없다.
 4. DB를 처음부터 만들 때: SQL Developer로 `db/01_schema.sql` → `02_seed.sql` → `03_views_triggers.sql` 순서로 실행. 재실행은 `00_drop.sql` 먼저. 검증 건수: 회원 12, 작품 105, 감상 기록 244, 후기 107, 좋아요 154, 댓글 85, 친구 19, 컬렉션 9.
+5. prod 프로필(Turso) 로컬 시험·배포: `docs/DEPLOY.md` 참고. 환경 변수 `SPRING_PROFILES_ACTIVE=prod`, `TURSO_JDBC_URL`, `TURSO_AUTH_TOKEN`(`application-prod.yml`). 접속 주소·토큰은 파일·채팅·커밋에 쓰지 않는다.
 
 ## 5. DB 요약 (Oracle, 16개 테이블)
-- 회원 `users`(user_id, nickname, email, created_at) — **로그인/비밀번호 컬럼이 없다**(인증 방식 미정).
+- 회원 `users`(user_id, nickname, email, created_at) — 현재 **비밀번호 컬럼이 없다**. 자체 가입으로 결정되어 비밀번호 해시 컬럼을 추가할 예정이다(Oracle·Turso 스크립트 동시 수정).
 - 작품: 슈퍼타입 `work`(type: MOVIE/BOOK/PERFORMANCE) → 서브타입 `movie`(runtime), `book`(isbn,pages), `performance`(venue,period). PK=FK(work_id). 장르 `genre`, 연결 `work_genre`. 인물 `person`, 연결 `work_person`(role 포함).
 - `record`(감상 기록; user당 작품 1건, UNIQUE(user_id, work_id); status WANT/WATCHING/DONE; rating 0.5~5.0, 0.5 단위 CHECK; watched_date).
 - `review`(record_id, content CLOB, spoiler_yn Y/N, visibility ALL/FRIEND/PRIVATE, created_at), `review_like`(review_id,user_id), `comments`(review 댓글).
@@ -50,7 +56,7 @@
 - `application.yml`: `ddl-auto: none`(테이블은 SQL 스크립트가 관리), `open-in-view: false`(지연 로딩은 `@Transactional` 서비스 안에서만), `show-sql: true`, 비밀번호는 `${DB_PASSWORD}`. 오류 메시지를 화면에 보이려면 `server.error.include-message: always`가 필요하다(**적용 여부 확인**).
 - 오류는 `ResponseStatusException`(400/403/404/409). 입력 검증은 서비스에서 직접 한다(`@Valid` 미도입).
 - 뷰(`v_visible_review`, `v_friend_feed`)는 `@Immutable` 읽기 전용 엔티티로 매핑(`@IdClass(VisibleReviewId)`).
-- **로그인이 없어서 `userId`를 요청 파라미터/본문으로 받는 임시 방식**이다. 인증을 도입하면 한꺼번에 교체해야 한다.
+- **로그인이 없어서 `userId`를 요청 파라미터/본문으로 받는 임시 방식**이다(자체 가입 도입 예정, 도입하면 로그인 사용자 기준으로 한꺼번에 교체).
 - 이미 쓴 JPA 개념(설명에 활용): `@Entity/@Id/IDENTITY`, `@ManyToOne(LAZY)`, `@ManyToMany`+`@JoinTable`+`@BatchSize`, `@EmbeddedId` 복합키, `@Convert(YesNoConverter)`, `@CreationTimestamp`, `@EntityGraph`, `@Query`+`@Param`(JPQL, `nulls last`, countQuery), JPQL 집계(`Object[]`), `Pageable`, 변경 감지(`save()` 없이 UPDATE).
 
 ## 7. API 목록 (백엔드 검증 완료)
@@ -103,18 +109,24 @@
 - Git Bash에서 curl로 한글 JSON을 보내면 인코딩이 깨져 400이 난다. 본문은 UTF-8 파일로 만들어 `--data-binary @파일`로 보낸다.
 - Maven은 PATH에 없다. IntelliJ에 포함된 것을 쓴다: `"C:\Program Files\JetBrains\IntelliJ IDEA 2026.3\plugins\maven-plugin\lib\maven3\bin\mvn.cmd"`.
 
-## 10. 남은 작업 (우선순위 순)
-1. ~~프론트 2단계 실행 확인과 오류 수정~~ (완료).
-2. ~~`application.yml`에 `server.error.include-message: always` 적용 확인~~ (적용되어 있음).
-3. ~~내 기록 정렬~~ (완료). `Sort.nullsLast()`는 메서드 이름 쿼리에서 SQL에 반영되지 않아서, `ViewingRecordRepository.findMine`의 `@Query`(JPQL `order by ... nulls last`)로 바꿨다. status는 `(:status is null or ...)`로 선택 조건.
-4. ~~프론트 친구 화면과 통계·연말 결산 화면~~ (완료, 2026-11-09). 남은 것: 보낸 요청 목록·취소 API(`GET /api/friends/requests/sent`)가 생기면 화면에 추가.
-5. 작품 상세에 **인물(감독·배우)** 표시(work_person → API 추가).
-6. **로그인/인증 방식 결정**(자체 가입이면 `users`에 비밀번호 해시 컬럼 추가, 또는 임시 선택 방식 유지) — 팀 결정 필요, 보고서 영향 있음.
-7. 부가 기능: 컬렉션 API·화면, **같이 볼 작품 추천**(쿼리는 `db/04_queries.sql`의 Q12·Q13).
-8. 품질: 목록 후기에 좋아요·댓글 수를 함께 내려 N+1 호출 줄이기, `@Valid` 입력 검증, 기록 별점 지우기(PATCH가 null을 무시함), 에러 응답 형식 통일, 간단한 테스트.
-9. 발표·보고서용: 화면 캡처, `db/05_constraint_tests.sql`·`04_queries.sql` 실행 결과 캡처, README(실행 방법), 시연 시나리오.
+## 10. 남은 작업 (우선순위 순, 2026-11-10 회의 반영)
+완료: 프론트 2단계, `include-message` 적용, 내 기록 정렬(`findMine` JPQL `nulls last`), 친구·통계 화면(2026-11-09).
+**필수**
+1. Oracle 회귀: `@Lob` 제거 후 후기·댓글·작품 요약 저장·조회(4000바이트 넘는 긴 후기 포함).
+2. Turso 접속 시험(`docs/DEPLOY.md` 5번): 드라이버, 날짜 형식·정렬, `findMine`의 null 바인딩·`nulls last`, 트리거, 외래 키, Oracle과 응답 비교.
+3. Render 배포(`render.yaml`), 무료 플랜 절전 대비 절차를 README에.
+4. 자체 가입/로그인(비밀번호 해시, 세션 또는 토큰) 후 모든 API의 userId 파라미터를 로그인 사용자로 교체, 가입·로그인 화면, 샘플 회원 로그인 방법.
+5. 외부 작품 API 연동(TMDB·카카오 도서, 공연은 조사 후), 출처 표시, 키는 환경 변수로만.
+6. 보낸 친구 요청 목록·취소 API(`GET /api/friends/requests/sent`)와 화면, 작품 상세의 인물(감독·배우; work_person → API).
+**시간이 남으면**
+7. 컬렉션 API·화면, 같이 볼 작품 추천(`db/04_queries.sql` Q12·Q13), 목록 후기 N+1 줄이기, `@Valid`, 별점 지우기, 에러 응답 통일, 간단한 테스트.
+**마무리**
+8. README(실행·배포), 시연 시나리오, 화면 캡처, `05_constraint_tests`·`04_queries` 결과 캡처, 360px 점검.
 
 ## 11. 알려진 주의점
 - 샘플 데이터(작품·회원·후기)는 시연용 임의 값이다. 작품 정보는 TMDB·도서 API와 대조가 필요하다.
 - Oracle은 내림차순 정렬에서 `NULL`을 앞에 둔다(위 10-3).
 - 후기를 쓰면 DB 트리거가 기록 상태를 바꾸므로, 같은 트랜잭션 안에서 이미 읽어 둔 `record` 엔티티는 오래된 값일 수 있다(별도 요청으로 다시 읽으면 최신).
+- 후기 건수 불일치: 1번 회원 후기가 Turso(원본 샘플)에서는 66건, 위 7번 기록에는 67건. Oracle에서 테스트 데이터(후기 108 등)를 빼고 다시 세어 확인할 것.
+- Turso는 원본 샘플 데이터라 Oracle(테스트 데이터 남음)과 건수가 다르다. 비교는 원본 기준값(7번)으로 한다.
+- Turso/SQLite: 날짜는 문자열로 저장되어 `@CreationTimestamp` 형식과 시드 형식이 섞이면 정렬이 틀어질 수 있다(2단계에서 확인). 외래 키는 연결마다 켜야 한다.

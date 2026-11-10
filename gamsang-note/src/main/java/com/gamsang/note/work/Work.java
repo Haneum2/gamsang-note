@@ -17,7 +17,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -42,7 +41,6 @@ public class Work {
     @Column(name = "release_date")
     private LocalDate releaseDate;
 
-    @Lob
     @Column(name = "summary")
     private String summary;
 

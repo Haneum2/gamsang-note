@@ -39,6 +39,19 @@
       <artifactId>ojdbc11</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <!-- ===== 배포(prod 프로필, Turso) 용 ===== -->
+    <!-- Turso(libSQL) JDBC 드라이버: 접속 주소가 jdbc:dbeaver:libsql:https://... 형태 -->
+    <dependency>
+      <groupId>com.dbeaver.jdbc</groupId>
+      <artifactId>com.dbeaver.jdbc.driver.libsql</artifactId>
+      <version>1.0.4</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- Hibernate 의 SQLite 방언(SQLiteDialect) -->
+    <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-community-dialects</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
