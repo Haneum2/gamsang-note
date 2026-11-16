@@ -19,6 +19,12 @@ public final class WorkDtos {
                              String summary, String posterUrl, List<String> genres,
                              Integer runtime,          // 영화
                              String isbn, Integer pages, // 책
-                             String venue, String period) { // 공연
+                             String venue, String period, // 공연
+                             String source) {             // 외부 출처(TMDB/YES24/KOPIS), 샘플 작품은 null
+    }
+
+    /** KOPIS 공연 검색 결과 한 건. workId 는 이미 가져온 공연이면 우리 DB의 작품 번호, 아니면 null */
+    public record KopisItem(String externalId, String title, String period, String venue,
+                            String genre, String posterUrl, Long workId) {
     }
 }

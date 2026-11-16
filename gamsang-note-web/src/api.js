@@ -52,6 +52,8 @@ export const api = {
   users: () => request('/api/users'),
   works: ({ type, q, page = 0, size = 12 }) => request(`/api/works${qs({ type, q, page, size })}`),
   work: (id) => request(`/api/works/${id}`),
+  kopis: ({ q, page = 0 }) => request(`/api/works/kopis${qs({ q, page })}`),
+  importKopis: (externalId) => request(`/api/works/kopis/${externalId}`, { method: 'POST' }),
   createRecord: (body) => request('/api/records', { method: 'POST', body }),
   records: ({ userId, status, page = 0, size = 20 }) => request(`/api/records${qs({ userId, status, page, size })}`),
   updateRecord: (id, body) => request(`/api/records/${id}`, { method: 'PATCH', body }),

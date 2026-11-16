@@ -1,6 +1,8 @@
 package com.gamsang.note.work;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,4 +24,9 @@ public interface WorkRepository extends JpaRepository<Work, Long> {
     Page<Work> search(@Param("types") Collection<WorkType> types,
                       @Param("q") String q,
                       Pageable pageable);
+
+    // 메서드 이름으로 쿼리를 만든다: where source = ? and external_id = ? / in (?, ?, ...)
+    Optional<Work> findBySourceAndExternalId(String source, String externalId);
+
+    List<Work> findBySourceAndExternalIdIn(String source, Collection<String> externalIds);
 }

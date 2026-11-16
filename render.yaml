@@ -13,3 +13,5 @@ services:
         sync: false        # 값은 Render 화면에서 직접 입력 (파일에 쓰지 않는다)
       - key: TURSO_AUTH_TOKEN
         sync: false
+      - key: KOPIS_KEY     # KOPIS 공연 검색·가져오기용 서비스키
+        sync: false

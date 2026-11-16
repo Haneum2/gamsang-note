@@ -70,6 +70,18 @@ public class Work {
     protected Work() {
     }
 
+    /** 외부 API에서 가져온 작품을 새로 만들 때 쓴다. 장르는 getGenres().add(...)로 붙인다. */
+    public Work(WorkType type, String title, LocalDate releaseDate, String summary, String posterUrl,
+                String source, String externalId) {
+        this.type = type;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.summary = summary;
+        this.posterUrl = posterUrl;
+        this.source = source;
+        this.externalId = externalId;
+    }
+
     public Long getId() { return id; }
     public WorkType getType() { return type; }
     public String getTitle() { return title; }

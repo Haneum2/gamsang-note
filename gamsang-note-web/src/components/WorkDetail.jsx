@@ -113,6 +113,9 @@ export default function WorkDetail({ workId, onClose }) {
               )}
             </dl>
             {work.summary && <p className="summary">{work.summary}</p>}
+            {work.source === 'KOPIS' && (
+              <p className="note small-text">공연 정보 출처: (재)예술경영지원센터 공연예술통합전산망(www.kopis.or.kr)</p>
+            )}
 
             <form className="form" onSubmit={save}>
               <h3>기록 추가</h3>

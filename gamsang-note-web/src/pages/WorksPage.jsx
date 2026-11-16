@@ -17,6 +17,7 @@ export default function WorksPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [selectedId, setSelectedId] = useState(null)
+  const [reload, setReload] = useState(0) // KOPIS 에서 가져오면 목록을 다시 읽는다
 
   // type, q, page 가 바뀔 때마다 서버에서 다시 가져온다.
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function WorksPage() {
     return () => {
       cancelled = true
     }
-  }, [type, q, page])
+  }, [type, q, page, reload])
 
   const changeType = (v) => {
     setType(v)
@@ -94,7 +95,86 @@ export default function WorksPage() {
 
       <Pager page={page} totalPages={data?.totalPages ?? 0} onChange={setPage} />
 
+      {type === 'PERFORMANCE' && (
+        <KopisSearch
+          key={q}
+          q={q}
+          onOpen={(workId) => {
+            setSelectedId(workId)
+            setReload((n) => n + 1)
+          }}
+        />
+      )}
+
       {selectedId && <WorkDetail workId={selectedId} onClose={() => setSelectedId(null)} />}
     </section>
+  )
+}
+
+// 공연 탭에서만 보이는 KOPIS(공연예술통합전산망) 검색. 가져오면 우리 DB에 저장하고 상세를 연다.
+function KopisSearch({ q, onOpen }) {
+  const [items, setItems] = useState(null)
+  const [error, setError] = useState('')
+  const [busyId, setBusyId] = useState(null)
+
+  useEffect(() => {
+    if (!q) return
+    let cancelled = false
+    api
+      .kopis({ q })
+      .then((res) => !cancelled && setItems(res))
+      .catch((e) => !cancelled && setError(e.message))
+    return () => {
+      cancelled = true
+    }
+  }, [q])
+
+  const open = async (item) => {
+    if (item.workId) return onOpen(item.workId)
+    setBusyId(item.externalId)
+    setError('')
+    try {
+      const work = await api.importKopis(item.externalId)
+      setItems((list) => list.map((x) => (x.externalId === item.externalId ? { ...x, workId: work.id } : x)))
+      onOpen(work.id)
+    } catch (e) {
+      setError(`'${item.title}'을(를) 가져오지 못했어요. ${e.message}`)
+    } finally {
+      setBusyId(null)
+    }
+  }
+
+  return (
+    <div className="section">
+      <h2 className="section-title">KOPIS에서 찾기</h2>
+      {!q && <p className="empty small">제목으로 찾으면 요즘(오늘 앞뒤 15일) 공연 중인 작품을 KOPIS에서 함께 찾아요.</p>}
+      {error && <p className="notice error">{error}</p>}
+      {q && items && items.length === 0 && (
+        <p className="empty small">KOPIS에도 '{q}' 공연이 없어요. 요즘 공연 중인 작품만 찾을 수 있어요.</p>
+      )}
+      {items && items.length > 0 && (
+        <ul className="tickets">
+          {items.map((it) => (
+            <li key={it.externalId} className="ticket performance">
+              <div className="ticket-main">
+                <div className="ticket-info">
+                  <p className="ticket-title">{it.title}</p>
+                  <p className="ticket-meta">
+                    <span className="type-name">공연</span>
+                    {it.genre && <span>{it.genre}</span>}
+                    {it.period && <span>{it.period}</span>}
+                    {it.venue && <span>{it.venue}</span>}
+                  </p>
+                </div>
+                <button className={`btn ${it.workId ? '' : 'primary'}`} disabled={busyId === it.externalId} onClick={() => open(it)}>
+                  {it.workId ? '열기' : busyId === it.externalId ? '가져오는 중' : '가져오기'}
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className="note small-text">공연 정보 출처: (재)예술경영지원센터 공연예술통합전산망(www.kopis.or.kr)</p>
+    </div>
   )
 }

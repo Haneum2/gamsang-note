@@ -1,5 +1,7 @@
 package com.gamsang.note.genre;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -7,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * findAll(), findById(), save(), delete() 등이 기본으로 들어 있다.
  */
 public interface GenreRepository extends JpaRepository<Genre, Long> {
+
+    Optional<Genre> findByName(String name);
 }

@@ -64,7 +64,9 @@
 | --- | --- | --- |
 | GET | /api/genres | 장르 21건 |
 | GET | /api/works?type=&q=&page=&size= | 작품 검색(제목순, 페이징) |
-| GET | /api/works/{id} | 작품 상세(종류별 필드 포함) |
+| GET | /api/works/{id} | 작품 상세(종류별 필드 + source 포함) |
+| GET | /api/works/kopis?q=&page= | KOPIS 공연 검색(오늘 ±15일, 20건, 가져온 공연은 workId 포함) |
+| POST | /api/works/kopis/{mt20id} | KOPIS 공연을 work+performance+work_genre로 저장(이미 있으면 기존 것), 작품 상세 반환 |
 | GET | /api/users | 회원 목록(임시 '나' 선택용) |
 | POST | /api/records | 감상 기록 등록 (이미 있으면 409) |
 | PATCH | /api/records/{id} | 상태·별점·감상일 수정(null은 변경 안 함) |
@@ -116,7 +118,7 @@
 2. ~~Turso 접속 시험~~ (완료 2026-11-16, 로컬 prod. 드라이버 결함 4가지를 `TursoConfig`·`TursoDialect`·gson 버전으로 우회, prod는 트랜잭션 없이 자동 커밋. `docs/DEPLOY.md` 5-1). Turso 접속 정보는 사용자 환경 변수 `TURSO_JDBC_URL`·`TURSO_AUTH_TOKEN`.
 3. Render 배포(`render.yaml`), 무료 플랜 절전 대비 절차를 README에.
 4. 자체 가입/로그인(비밀번호 해시, 세션 또는 토큰) 후 모든 API의 userId 파라미터를 로그인 사용자로 교체, 가입·로그인 화면, 샘플 회원 로그인 방법.
-5. 외부 작품 API 연동: 영화 TMDB, 도서 YES24(공개 API 존재·키 확인 필요), 공연 KOPIS(키 `KOPIS_KEY` 사용자 환경 변수, 2026-11-16 호출 확인).
+5. 외부 작품 API 연동: 영화 TMDB, 도서 YES24(공개 API 존재·키 확인 필요), 공연 KOPIS(**완료 2026-11-16**: `KopisService`, 작품 화면 공연 탭의 'KOPIS에서 찾기', 상세에 출처 표시. 키 `KOPIS_KEY`는 사용자 환경 변수·Render 환경 변수. 출연진→person은 6번에서).
    - KOPIS: 응답 XML. 목록 `/openApi/restful/pblprfr?service=&stdate=&eddate=(31일 이내 필수)&cpage=&rows=&shprfnm=`, 상세 `/pblprfr/{mt20id}`. 기간 `2026.11.28` 형식, 출연 `prfcast`는 "A, B 등" 문자열, 러닝타임 "1시간 30분" 글자, 줄거리 `sty`는 비는 경우가 많음(소개 이미지 `styurls`), 포스터는 http로 오지만 https로 바꿔도 열림, 장르는 `genrenm` 이름으로 매칭. 출처 문구 표시 필요.
    출처 표시, 키는 환경 변수로만. (2026-11-11 확정: KOBIS·국립중앙도서관은 포스터·줄거리·표지가 약하고 TMDB와 중복되어 제외)
 6. 보낸 친구 요청 목록·취소 API(`GET /api/friends/requests/sent`)와 화면, 작품 상세의 인물(감독·배우; work_person → API).

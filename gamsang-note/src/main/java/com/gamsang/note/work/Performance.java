@@ -22,6 +22,13 @@ public class Performance {
     protected Performance() {
     }
 
+    // 기본키를 직접 넣는다(슈퍼타입 work 의 work_id 를 그대로 쓰는 PK=FK 구조).
+    public Performance(Long workId, String venue, String period) {
+        this.workId = workId;
+        this.venue = venue;
+        this.period = period;
+    }
+
     public Long getWorkId() { return workId; }
     public String getVenue() { return venue; }
     public String getPeriod() { return period; }

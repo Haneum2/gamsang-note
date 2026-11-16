@@ -73,7 +73,7 @@ public class WorkService {
 
         return new WorkDetail(w.getId(), w.getType(), w.getTitle(), w.getReleaseDate(),
                 w.getSummary(), w.getPosterUrl(), genreNames(w),
-                runtime, isbn, pages, venue, period);
+                runtime, isbn, pages, venue, period, w.getSource());
     }
 
     private WorkSummary toSummary(Work w) {
