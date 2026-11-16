@@ -12,6 +12,7 @@
 | 3 | `03_views_triggers.sql` | 뷰 2개, 트리거 1개 |
 | 4 | `04_queries.sql` | 핵심 쿼리 13개 (보고서 캡처용) |
 | 5 | `05_constraint_tests.sql` | 제약조건·트리거 동작 확인 (오류가 나는 것이 정상인 문장 포함) |
+| (6) | `06_add_work_source.sql` | 2026-11-16 이전에 만든 DB에만: `work`에 외부 출처 컬럼(`source`, `external_id`) 추가. 새로 만들면 01에 포함되어 있다. |
 
 SQL Developer에서는 스크립트 실행(F5)으로 한 파일씩 돌리고, SQL*Plus에서는 `@01_schema.sql`처럼 실행한다. 한글이 깨지면 SQL*Plus 실행 전에 `chcp 65001`과 `SET NLS_LANG=KOREAN_KOREA.AL32UTF8`을 설정한다.
 

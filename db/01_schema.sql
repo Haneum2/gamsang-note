@@ -38,8 +38,14 @@ CREATE TABLE work (
   release_date  DATE NULL,
   summary       CLOB NULL,
   poster_url    VARCHAR2(500) NULL,
+  source        VARCHAR2(10) NULL,            -- 외부 API 출처 (샘플 작품은 NULL)
+  external_id   VARCHAR2(40) NULL,            -- 출처 쪽 ID (TMDB id, ISBN, KOPIS 공연ID)
   CONSTRAINT pk_work PRIMARY KEY (work_id),
-  CONSTRAINT ck_work_type CHECK (type IN ('MOVIE', 'BOOK', 'PERFORMANCE'))
+  CONSTRAINT ck_work_type CHECK (type IN ('MOVIE', 'BOOK', 'PERFORMANCE')),
+  CONSTRAINT ck_work_source CHECK (source IN ('TMDB', 'YES24', 'KOPIS')),
+  CONSTRAINT ck_work_source_pair CHECK ((source IS NULL AND external_id IS NULL)
+                                     OR (source IS NOT NULL AND external_id IS NOT NULL)),
+  CONSTRAINT uq_work_source_ext UNIQUE (source, external_id)
 );
 
 -- 4. 작품 서브타입 (기본키 = 슈퍼타입 WORK의 외래키)

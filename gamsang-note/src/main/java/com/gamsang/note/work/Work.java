@@ -47,6 +47,14 @@ public class Work {
     @Column(name = "poster_url", length = 500)
     private String posterUrl;
 
+    // 외부 API에서 가져온 작품의 출처(TMDB/YES24/KOPIS)와 그쪽 ID. 샘플 작품은 둘 다 null.
+    // (source, external_id) UNIQUE 라서 같은 작품을 두 번 가져오면 DB가 막는다.
+    @Column(name = "source", length = 10)
+    private String source;
+
+    @Column(name = "external_id", length = 40)
+    private String externalId;
+
     /**
      * N:M 관계를 연결 테이블 work_genre 로 풀어서 매핑한다.
      * LAZY(기본): 장르는 실제로 꺼내 쓸 때 조회한다.
@@ -68,5 +76,7 @@ public class Work {
     public LocalDate getReleaseDate() { return releaseDate; }
     public String getSummary() { return summary; }
     public String getPosterUrl() { return posterUrl; }
+    public String getSource() { return source; }
+    public String getExternalId() { return externalId; }
     public Set<Genre> getGenres() { return genres; }
 }

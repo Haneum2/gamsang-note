@@ -17,7 +17,10 @@ CREATE TABLE friendship (
   CHECK (requester_id <> receiver_id));
 CREATE UNIQUE INDEX uq_friendship_pair ON friendship (min(requester_id, receiver_id), max(requester_id, receiver_id));
 CREATE TABLE work (work_id INTEGER PRIMARY KEY, type TEXT NOT NULL CHECK (type IN ('MOVIE','BOOK','PERFORMANCE')),
-  title TEXT NOT NULL, release_date TEXT, summary TEXT, poster_url TEXT);
+  title TEXT NOT NULL, release_date TEXT, summary TEXT, poster_url TEXT,
+  source TEXT CHECK (source IN ('TMDB','YES24','KOPIS')), external_id TEXT,
+  CHECK ((source IS NULL AND external_id IS NULL) OR (source IS NOT NULL AND external_id IS NOT NULL)),
+  UNIQUE (source, external_id));
 CREATE TABLE movie (work_id INTEGER PRIMARY KEY REFERENCES work(work_id) ON DELETE CASCADE, runtime INTEGER CHECK (runtime IS NULL OR runtime > 0));
 CREATE TABLE book (work_id INTEGER PRIMARY KEY REFERENCES work(work_id) ON DELETE CASCADE, isbn TEXT UNIQUE, pages INTEGER CHECK (pages IS NULL OR pages > 0));
 CREATE TABLE performance (work_id INTEGER PRIMARY KEY REFERENCES work(work_id) ON DELETE CASCADE, venue TEXT, period TEXT);
