@@ -14,7 +14,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:dbeaver:libsql:https://gamsang-note-haneum2.aws-ap-northeast-1.turso.io
+    url: ${TURSO_JDBC_URL}
     username: ""
     password: ${TURSO_AUTH_TOKEN}
     driver-class-name: com.dbeaver.jdbc.driver.libsql.LibSqlDriver
