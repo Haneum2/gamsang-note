@@ -16,7 +16,7 @@ export default function ReviewCard({ review }) {
 
   // ponytail: 카드마다 social 을 따로 불러 N+1 호출 — 목록 API 에 수를 함께 내리면 제거 (CLAUDE.md 10-8)
   useEffect(() => {
-    api.social(review.reviewId, userId).then(setSocial).catch((e) => setError(e.message))
+    api.social(review.reviewId).then(setSocial).catch((e) => setError(e.message))
   }, [review.reviewId, userId])
 
   const run = async (fn, what) => {
@@ -31,18 +31,18 @@ export default function ReviewCard({ review }) {
   const toggleLike = () =>
     run(async () => {
       const res = social.likedByMe
-        ? await api.unlike(review.reviewId, userId)
-        : await api.like(review.reviewId, userId)
+        ? await api.unlike(review.reviewId)
+        : await api.like(review.reviewId)
       setSocial({ ...social, likeCount: res.likeCount, likedByMe: res.liked })
     }, '좋아요를 반영하지 못했어요.')
 
   const toggleComments = () =>
-    run(async () => setComments(comments ? null : await api.comments(review.reviewId, userId)), '댓글을 불러오지 못했어요.')
+    run(async () => setComments(comments ? null : await api.comments(review.reviewId)), '댓글을 불러오지 못했어요.')
 
   const addComment = (e) => {
     e.preventDefault()
     run(async () => {
-      const c = await api.addComment(review.reviewId, userId, text)
+      const c = await api.addComment(review.reviewId, text)
       setComments([...comments, c])
       setSocial({ ...social, commentCount: social.commentCount + 1 })
       setText('')

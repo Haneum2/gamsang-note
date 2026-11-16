@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gamsang.note.stats.StatsDtos.GenreStat;
 import com.gamsang.note.stats.StatsDtos.MonthlyCount;
 import com.gamsang.note.stats.StatsDtos.YearEnd;
+import com.gamsang.note.user.LoginUser;
 
 @RestController
 @RequestMapping("/api/stats")
@@ -22,23 +23,23 @@ public class StatsController {
         this.statsService = statsService;
     }
 
-    // GET /api/stats/monthly?userId=1&year=2026  : 월별 감상 수 (12개월)
+    // GET /api/stats/monthly?year=2026  : 내 월별 감상 수 (12개월)
     @GetMapping("/monthly")
-    public List<MonthlyCount> monthly(@RequestParam Long userId,
+    public List<MonthlyCount> monthly(@LoginUser Long me,
                                       @RequestParam(required = false) Integer year) {
-        return statsService.monthly(userId, year != null ? year : LocalDate.now().getYear());
+        return statsService.monthly(me, year != null ? year : LocalDate.now().getYear());
     }
 
-    // GET /api/stats/genres?userId=1  : 장르별 감상 수·비율·평균 별점
+    // GET /api/stats/genres  : 내 장르별 감상 수·비율·평균 별점
     @GetMapping("/genres")
-    public List<GenreStat> genres(@RequestParam Long userId) {
-        return statsService.genres(userId);
+    public List<GenreStat> genres(@LoginUser Long me) {
+        return statsService.genres(me);
     }
 
-    // GET /api/stats/year-end?userId=1&year=2026  : 연말 결산
+    // GET /api/stats/year-end?year=2026  : 내 연말 결산
     @GetMapping("/year-end")
-    public YearEnd yearEnd(@RequestParam Long userId,
+    public YearEnd yearEnd(@LoginUser Long me,
                            @RequestParam(required = false) Integer year) {
-        return statsService.yearEnd(userId, year != null ? year : LocalDate.now().getYear());
+        return statsService.yearEnd(me, year != null ? year : LocalDate.now().getYear());
     }
 }

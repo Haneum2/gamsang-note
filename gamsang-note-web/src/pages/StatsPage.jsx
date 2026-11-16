@@ -21,7 +21,7 @@ export default function StatsPage() {
     if (!userId) return
     let cancelled = false
     setYearly(null)
-    Promise.all([api.statsMonthly(userId, year), api.statsYearEnd(userId, year)])
+    Promise.all([api.statsMonthly(year), api.statsYearEnd(year)])
       .then(([monthly, yearEnd]) => !cancelled && setYearly({ monthly, yearEnd }))
       .catch((e) => !cancelled && setError(e.message))
     return () => {
@@ -31,7 +31,7 @@ export default function StatsPage() {
 
   useEffect(() => {
     if (!userId) return
-    api.statsGenres(userId).then(setGenres).catch((e) => setError(e.message))
+    api.statsGenres().then(setGenres).catch((e) => setError(e.message))
   }, [userId])
 
   return (

@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { api } from '../api.js'
-import { useUser } from '../UserContext.jsx'
 import { VISIBILITY_LABEL } from '../labels.js'
 
 export default function ReviewForm({ recordId, onSaved }) {
-  const { userId } = useUser()
   const [content, setContent] = useState('')
   const [visibility, setVisibility] = useState('ALL')
   const [spoiler, setSpoiler] = useState(false)
@@ -16,7 +14,7 @@ export default function ReviewForm({ recordId, onSaved }) {
     setSaving(true)
     setError('')
     try {
-      await api.createReview(recordId, { userId, content, spoiler, visibility })
+      await api.createReview(recordId, { content, spoiler, visibility })
       onSaved()
     } catch (err) {
       setError(`후기를 저장하지 못했어요. ${err.message}`)

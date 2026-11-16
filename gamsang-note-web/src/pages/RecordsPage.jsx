@@ -20,7 +20,7 @@ export default function RecordsPage() {
     if (!userId) return
     setError('')
     api
-      .records({ userId, status, page })
+      .records({ status, page })
       .then(setData)
       .catch((e) => setError(e.message))
   }, [userId, status, page])
@@ -48,7 +48,7 @@ export default function RecordsPage() {
       {records.length > 0 && (
         <ul className="tickets">
           {records.map((r) => (
-            <RecordRow key={r.id} record={r} userId={userId} onChanged={load} />
+            <RecordRow key={r.id} record={r} onChanged={load} />
           ))}
         </ul>
       )}
@@ -65,7 +65,7 @@ export default function RecordsPage() {
   )
 }
 
-function RecordRow({ record, userId, onChanged }) {
+function RecordRow({ record, onChanged }) {
   const [writing, setWriting] = useState(false)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
@@ -74,7 +74,7 @@ function RecordRow({ record, userId, onChanged }) {
   const patch = async (change) => {
     setError('')
     try {
-      await api.updateRecord(record.id, { userId, ...change })
+      await api.updateRecord(record.id, change)
       onChanged()
     } catch (e) {
       setError(`바꾸지 못했어요. ${e.message}`)

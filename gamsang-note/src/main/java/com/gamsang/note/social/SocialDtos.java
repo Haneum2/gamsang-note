@@ -7,12 +7,10 @@ public final class SocialDtos {
     private SocialDtos() {
     }
 
-    public record UserIdRequest(Long userId) {
+    public record CommentRequest(String content) {
     }
 
-    public record CommentRequest(Long userId, String content) {
-    }
-
+    // 친구 요청: 상대(receiverId)만 쓴다. 수락: 요청한 사람(requesterId)만 쓴다. 나머지 한쪽은 로그인한 나.
     public record FriendRequest(Long requesterId, Long receiverId) {
     }
 

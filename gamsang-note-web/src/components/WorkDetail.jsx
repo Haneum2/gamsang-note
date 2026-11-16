@@ -41,7 +41,6 @@ export default function WorkDetail({ workId, onClose }) {
     setMessage(null)
     try {
       await api.createRecord({
-        userId,
         workId,
         status,
         rating: rating === '' ? null : Number(rating),

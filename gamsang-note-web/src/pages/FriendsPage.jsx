@@ -4,6 +4,7 @@ import { useUser } from '../UserContext.jsx'
 
 // 받은 요청 수락·거절, 친구 목록, 친구 요청 보내기.
 // 내가 '보낸' 대기 요청을 보여 주는 API 는 아직 없어서, 보낸 요청 취소는 화면에 없다.
+// 나(로그인한 회원)는 서버가 세션으로 알기 때문에 상대 번호만 보낸다.
 export default function FriendsPage() {
   const { userId, users } = useUser()
   const [friends, setFriends] = useState(null)
@@ -14,7 +15,7 @@ export default function FriendsPage() {
 
   const load = useCallback(() => {
     if (!userId) return
-    Promise.all([api.friends(userId), api.friendRequests(userId)])
+    Promise.all([api.friends(), api.friendRequests()])
       .then(([f, r]) => {
         setFriends(f)
         setRequests(r)
@@ -38,14 +39,14 @@ export default function FriendsPage() {
     }
   }
 
-  const accept = (r) => act(() => api.acceptFriend(r.userId, userId), `${r.nickname}님과 친구가 됐어요.`)
+  const accept = (r) => act(() => api.acceptFriend(r.userId), `${r.nickname}님과 친구가 됐어요.`)
   const reject = (r) => act(() => api.rejectFriend(r.userId, userId), `${r.nickname}님의 요청을 거절했어요.`)
 
   const send = (e) => {
     e.preventDefault()
     const other = users.find((u) => u.id === Number(target))
     act(
-      () => api.sendFriendRequest(userId, other.id),
+      () => api.sendFriendRequest(other.id),
       `${other.nickname}님에게 친구 요청을 보냈어요. 상대가 수락하면 친구 목록에 나와요.`,
       `${other.nickname}님과는 이미 요청이 오가는 중이에요. 상대가 수락할 때까지 기다려 주세요.`,
     ).then((ok) => ok && setTarget(''))

@@ -926,19 +926,20 @@ INSERT INTO "review_like" VALUES(102,11,'2026-05-27 11:35:18');
 INSERT INTO "review_like" VALUES(103,6,'2026-08-18 12:44:07');
 INSERT INTO "review_like" VALUES(104,5,'2025-07-03 14:11:23');
 INSERT INTO "review_like" VALUES(105,8,'2026-08-07 07:10:51');
-CREATE TABLE users (user_id INTEGER PRIMARY KEY, nickname TEXT NOT NULL, email TEXT NOT NULL UNIQUE, created_at TEXT NOT NULL);
-INSERT INTO "users" VALUES(1,'민트초코','user01@example.com','2025-01-05 09:00:00');
-INSERT INTO "users" VALUES(2,'책벌레','user02@example.com','2025-01-16 10:00:00');
-INSERT INTO "users" VALUES(3,'영화광','user03@example.com','2025-01-27 11:00:00');
-INSERT INTO "users" VALUES(4,'무대덕후','user04@example.com','2025-02-07 12:00:00');
-INSERT INTO "users" VALUES(5,'별점요정','user05@example.com','2025-02-18 13:00:00');
-INSERT INTO "users" VALUES(6,'조용한독자','user06@example.com','2025-03-01 14:00:00');
-INSERT INTO "users" VALUES(7,'야간관람','user07@example.com','2025-03-12 15:00:00');
-INSERT INTO "users" VALUES(8,'소설가지망생','user08@example.com','2025-03-23 16:00:00');
-INSERT INTO "users" VALUES(9,'팝콘러','user09@example.com','2025-04-03 17:00:00');
-INSERT INTO "users" VALUES(10,'시네필','user10@example.com','2025-04-14 18:00:00');
-INSERT INTO "users" VALUES(11,'감상러','user11@example.com','2025-04-25 19:00:00');
-INSERT INTO "users" VALUES(12,'뮤덕','user12@example.com','2025-05-06 20:00:00');
+CREATE TABLE users (user_id INTEGER PRIMARY KEY, nickname TEXT NOT NULL, email TEXT NOT NULL UNIQUE, created_at TEXT NOT NULL,
+  password_hash TEXT NOT NULL);
+INSERT INTO "users" VALUES(1,'민트초코','user01@example.com','2025-01-05 09:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(2,'책벌레','user02@example.com','2025-01-16 10:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(3,'영화광','user03@example.com','2025-01-27 11:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(4,'무대덕후','user04@example.com','2025-02-07 12:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(5,'별점요정','user05@example.com','2025-02-18 13:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(6,'조용한독자','user06@example.com','2025-03-01 14:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(7,'야간관람','user07@example.com','2025-03-12 15:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(8,'소설가지망생','user08@example.com','2025-03-23 16:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(9,'팝콘러','user09@example.com','2025-04-03 17:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(10,'시네필','user10@example.com','2025-04-14 18:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(11,'감상러','user11@example.com','2025-04-25 19:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO "users" VALUES(12,'뮤덕','user12@example.com','2025-05-06 20:00:00','$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
 CREATE TABLE work (work_id INTEGER PRIMARY KEY, type TEXT NOT NULL CHECK (type IN ('MOVIE','BOOK','PERFORMANCE')),
   title TEXT NOT NULL, release_date TEXT, summary TEXT, poster_url TEXT,
   source TEXT CHECK (source IN ('TMDB','YES24','KOPIS')), external_id TEXT,

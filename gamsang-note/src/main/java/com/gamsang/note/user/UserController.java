@@ -17,9 +17,9 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    // 로그인 기능이 생기기 전까지 '내가 누구인지' 고르기 위한 회원 목록
+    // 회원 목록(번호·닉네임). 친구 요청 상대를 고르는 데 쓴다. 로그인한 회원만 볼 수 있다.
     @GetMapping
-    public List<UserResponse> list() {
+    public List<UserResponse> list(@LoginUser Long me) {
         return userRepository.findAll(Sort.by("id")).stream()
                 .map(u -> new UserResponse(u.getId(), u.getNickname()))
                 .toList();

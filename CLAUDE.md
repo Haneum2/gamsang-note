@@ -40,7 +40,7 @@
 5. prod 프로필(Turso) 로컬 시험·배포: `docs/DEPLOY.md` 참고. 환경 변수 `SPRING_PROFILES_ACTIVE=prod`, `TURSO_JDBC_URL`, `TURSO_AUTH_TOKEN`(`application-prod.yml`). 접속 주소·토큰은 파일·채팅·커밋에 쓰지 않는다.
 
 ## 5. DB 요약 (Oracle, 16개 테이블)
-- 회원 `users`(user_id, nickname, email, created_at) — 현재 **비밀번호 컬럼이 없다**. 자체 가입으로 결정되어 비밀번호 해시 컬럼을 추가할 예정이다(Oracle·Turso 스크립트 동시 수정).
+- 회원 `users`(user_id, nickname, email, created_at, password_hash) — password_hash 는 BCrypt(2026-11-16 추가, 기존 DB는 `db/07_add_password_hash.sql`·`db/turso/07_add_password_hash.sql`). 샘플 회원 12명 비밀번호는 모두 데모용 `gamsang1234`.
 - 작품: 슈퍼타입 `work`(type: MOVIE/BOOK/PERFORMANCE, 외부 출처 `source` TMDB/YES24/KOPIS + `external_id`, UNIQUE(source, external_id), 둘 다 NULL이거나 둘 다 값 CHECK; 2026-11-16 추가, 기존 DB는 `db/06_add_work_source.sql`·`db/turso/06_add_work_source.sql`) → 서브타입 `movie`(runtime), `book`(isbn,pages), `performance`(venue,period). PK=FK(work_id). 장르 `genre`, 연결 `work_genre`. 인물 `person`, 연결 `work_person`(role 포함).
 - `record`(감상 기록; user당 작품 1건, UNIQUE(user_id, work_id); status WANT/WATCHING/DONE; rating 0.5~5.0, 0.5 단위 CHECK; watched_date).
 - `review`(record_id, content CLOB, spoiler_yn Y/N, visibility ALL/FRIEND/PRIVATE, created_at), `review_like`(review_id,user_id), `comments`(review 댓글).
@@ -56,7 +56,7 @@
 - `application.yml`: `ddl-auto: none`(테이블은 SQL 스크립트가 관리), `open-in-view: false`(지연 로딩은 `@Transactional` 서비스 안에서만), `show-sql: true`, 비밀번호는 `${DB_PASSWORD}`. 오류 메시지를 화면에 보이려면 `server.error.include-message: always`가 필요하다(**적용 여부 확인**).
 - 오류는 `ResponseStatusException`(400/403/404/409). 입력 검증은 서비스에서 직접 한다(`@Valid` 미도입).
 - 뷰(`v_visible_review`, `v_friend_feed`)는 `@Immutable` 읽기 전용 엔티티로 매핑(`@IdClass(VisibleReviewId)`).
-- **로그인이 없어서 `userId`를 요청 파라미터/본문으로 받는 임시 방식**이다(자체 가입 도입 예정, 도입하면 로그인 사용자 기준으로 한꺼번에 교체).
+- **로그인(2026-11-16)**: `/api/auth/signup·login·logout·me`(`AuthController`), 서버 세션(JSESSIONID, HttpOnly·SameSite=Lax, prod는 Secure). 비밀번호는 `spring-security-crypto`의 BCrypt만 쓴다(Spring Security 전체는 미도입). 컨트롤러는 `@LoginUser Long me`(세션의 회원 번호, 없으면 401, `LoginUserResolver`)로 받고, 요청에 userId 를 받지 않는다. 남의 기록 수정·후기는 403. 로그인 시도 횟수 제한은 없다.
 - 이미 쓴 JPA 개념(설명에 활용): `@Entity/@Id/IDENTITY`, `@ManyToOne(LAZY)`, `@ManyToMany`+`@JoinTable`+`@BatchSize`, `@EmbeddedId` 복합키, `@Convert(YesNoConverter)`, `@CreationTimestamp`, `@EntityGraph`, `@Query`+`@Param`(JPQL, `nulls last`, countQuery), JPQL 집계(`Object[]`), `Pageable`, 변경 감지(`save()` 없이 UPDATE).
 
 ## 7. API 목록 (백엔드 검증 완료)
@@ -67,32 +67,36 @@
 | GET | /api/works/{id} | 작품 상세(종류별 필드 + source 포함) |
 | GET | /api/works/kopis?q=&page= | KOPIS 공연 검색(오늘 ±15일, 20건, 가져온 공연은 workId 포함) |
 | POST | /api/works/kopis/{mt20id} | KOPIS 공연을 work+performance+work_genre로 저장(이미 있으면 기존 것), 작품 상세 반환 |
-| GET | /api/users | 회원 목록(임시 '나' 선택용) |
+| POST | /api/auth/signup · login · logout | 가입(바로 로그인)·로그인·로그아웃 |
+| GET | /api/auth/me | 로그인한 회원(아니면 401) |
+| GET | /api/users | 회원 목록(친구 요청 상대 고르기, 로그인 필요) |
 | POST | /api/records | 감상 기록 등록 (이미 있으면 409) |
 | PATCH | /api/records/{id} | 상태·별점·감상일 수정(null은 변경 안 함) |
-| GET | /api/records?userId=&status=&page=&size= | 내 기록 목록 |
+| GET | /api/records?status=&page=&size= | 내 기록 목록 |
 | POST | /api/records/{id}/review | 후기 작성(공개 범위, 스포일러) |
-| GET | /api/reviews?viewerId= | 볼 수 있는 후기(공개 범위 적용) |
-| GET | /api/feed?viewerId= | 친구 피드 |
+| GET | /api/reviews | 볼 수 있는 후기(공개 범위 적용) |
+| GET | /api/feed | 친구 피드 |
 | POST/DELETE | /api/reviews/{id}/likes | 좋아요 / 취소 |
 | GET/POST | /api/reviews/{id}/comments | 댓글 |
-| GET | /api/reviews/{id}/social?viewerId= | 좋아요 수·댓글 수·내가 눌렀는지 |
+| GET | /api/reviews/{id}/social | 좋아요 수·댓글 수·내가 눌렀는지 |
 | POST | /api/friends/requests | 친구 요청 |
 | POST | /api/friends/requests/accept | 수락 |
 | DELETE | /api/friends/requests?requesterId=&receiverId= | 거절/취소(대기 중만) |
-| GET | /api/friends/requests?userId= | 내가 받은 대기 요청 |
-| GET | /api/friends?userId= | 내 친구 목록 |
-| GET | /api/stats/monthly?userId=&year= | 월별 감상 수(12개월) |
-| GET | /api/stats/genres?userId= | 장르별 수·비율·평균 별점 |
-| GET | /api/stats/year-end?userId=&year= | 연말 결산 |
+| GET | /api/friends/requests | 내가 받은 대기 요청 |
+| GET | /api/friends | 내 친구 목록 |
+| GET | /api/stats/monthly?year= | 월별 감상 수(12개월) |
+| GET | /api/stats/genres | 장르별 수·비율·평균 별점 |
+| GET | /api/stats/year-end?year= | 연말 결산 |
+
+작품 목록·상세·장르·KOPIS 검색 외에는 모두 로그인이 필요하다(회원 번호는 세션에서). 친구 요청 본문은 `{receiverId}`, 수락은 `{requesterId}`.
 
 사용자가 직접 확인한 결과(샘플 데이터, 1번 회원): 친구 2·3·5·11번, 보이는 후기 66건(원본 샘플 기준. 테스트 후기 108 포함 시 67, 148까지 68), 2026년 월별 3월 3/6월 2/8월 1/9월 1, 연말 결산 총 7건(영화 4·책 2·공연 1), 선호 장르 SF 3·판타지 2.
 
 ## 8. 프론트엔드 구조
 - `api.js`: 서버 호출을 한곳에 모은 모듈(`ApiError` 포함). 화면은 `fetch`를 직접 쓰지 않는다.
-- `UserContext.jsx`: 임시 '나' 선택(localStorage `gamsang.userId`). 인증 도입 시 교체 지점.
+- `UserContext.jsx`: 로그인 상태(`me`: undefined 확인 중/null 로그아웃/객체). 시작할 때 `/api/auth/me`, 다른 요청이 401이면 `api.js`가 `gamsang:unauthorized` 이벤트를 보내 로그인 화면으로. `AuthPage`(로그인·가입 탭).
 - 페이지: `WorksPage`, `RecordsPage`, `ReviewsPage`(후기·친구 피드), `FriendsPage`(받은 요청 수락·거절, 친구 목록, 요청 보내기), `StatsPage`(연도 탭, 연말 결산, 월별 막대, 장르 표). 컴포넌트: `WorkDetail`(작품 상세+기록 등록), `ReviewForm`, `ReviewCard`(좋아요·댓글), `Pager`, `Cover`(표지), `Stars`(숫자+5칸 막대), `Tabs`(글자 탭). `RecordRow`는 `RecordsPage.jsx` 안에 있다.
-- 회원을 바꾸면 화면 상태를 초기화하려고 `<Route element={<... key={userId} />}>`를 쓴다.
+- 다른 계정으로 로그인하면 화면 상태를 초기화하려고 `<Route element={<... key={userId} />}>`를 쓴다.
 - **디자인 규칙(2026-11-09, 새 화면도 따른다)**: 토큰과 공용 클래스는 `styles.css` 맨 위에 있다.
   - 색: 배경 #ECEEF1, 면 #FFF, 글자 #1B1F2A, 보조 #5E6573, 선 #CFD3DA. 작품 종류 색(영화 #2A3B8F, 책 #17695A, 공연 #A3234F) 외에 강조색은 두지 않는다. 버튼·포커스는 먹색.
   - 글꼴: 본문·로고·제목은 Pretendard(제목 800). Black Han Sans는 **표지 제목에만** 쓴다. 작은 크기에서는 획이 뭉쳐 읽기 어렵다는 사용자 피드백이 있었다.
@@ -117,7 +121,7 @@
 1. ~~Oracle 회귀(`@Lob` 제거)~~ (완료 2026-11-11: 13KB 후기·2KB 댓글 저장·조회 정상).
 2. ~~Turso 접속 시험~~ (완료 2026-11-16, 로컬 prod. 드라이버 결함 4가지를 `TursoConfig`·`TursoDialect`·gson 버전으로 우회, prod는 트랜잭션 없이 자동 커밋. `docs/DEPLOY.md` 5-1). Turso 접속 정보는 사용자 환경 변수 `TURSO_JDBC_URL`·`TURSO_AUTH_TOKEN`.
 3. Render 배포(`render.yaml`), 무료 플랜 절전 대비 절차를 README에.
-4. 자체 가입/로그인(비밀번호 해시, 세션 또는 토큰) 후 모든 API의 userId 파라미터를 로그인 사용자로 교체, 가입·로그인 화면, 샘플 회원 로그인 방법.
+4. ~~자체 가입/로그인~~ (완료 2026-11-16, Oracle·Turso(prod) 모두 API 24개 항목 통과, 브라우저 확인. Oracle·Turso에 07 적용 완료. prod 쿠키는 Secure라 로컬 http 시험 때는 SERVER_SERVLET_SESSION_COOKIE_SECURE=false).
 5. 외부 작품 API 연동: 영화 TMDB, 도서 YES24(공개 API 존재·키 확인 필요), 공연 KOPIS(**완료 2026-11-16**: `KopisService`, 작품 화면 공연 탭의 'KOPIS에서 찾기', 상세에 출처 표시. 키 `KOPIS_KEY`는 사용자 환경 변수·Render 환경 변수. 출연진→person은 6번에서).
    - KOPIS: 응답 XML. 목록 `/openApi/restful/pblprfr?service=&stdate=&eddate=(31일 이내 필수)&cpage=&rows=&shprfnm=`, 상세 `/pblprfr/{mt20id}`. 기간 `2026.11.28` 형식, 출연 `prfcast`는 "A, B 등" 문자열, 러닝타임 "1시간 30분" 글자, 줄거리 `sty`는 비는 경우가 많음(소개 이미지 `styurls`), 포스터는 http로 오지만 https로 바꿔도 열림, 장르는 `genrenm` 이름으로 매칭. 출처 문구 표시 필요.
    출처 표시, 키는 환경 변수로만. (2026-11-11 확정: KOBIS·국립중앙도서관은 포스터·줄거리·표지가 약하고 TMDB와 중복되어 제외)

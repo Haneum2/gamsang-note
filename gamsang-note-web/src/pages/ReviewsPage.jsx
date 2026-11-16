@@ -23,7 +23,7 @@ export default function ReviewsPage() {
     let cancelled = false
     setError('')
     TABS[tab]
-      .load({ viewerId: userId, page })
+      .load({ page })
       .then((res) => !cancelled && setData(res))
       .catch((e) => !cancelled && setError(e.message))
     return () => {

@@ -43,29 +43,29 @@ public class ViewingService {
         this.userRepository = userRepository;
     }
 
-    public RecordResponse createRecord(CreateRecordRequest req) {
-        if (req.userId() == null || req.workId() == null) {
-            throw bad("userId 와 workId 는 필수입니다.");
+    public RecordResponse createRecord(Long userId, CreateRecordRequest req) {
+        if (req.workId() == null) {
+            throw bad("workId 는 필수입니다.");
         }
         validateRating(req.rating());
-        if (!userRepository.existsById(req.userId())) {
+        if (!userRepository.existsById(userId)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "회원을 찾을 수 없습니다.");
         }
         Work work = workRepository.findById(req.workId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "작품을 찾을 수 없습니다."));
         // DB 에도 UNIQUE(user_id, work_id) 가 있지만, 먼저 확인해서 알아보기 쉬운 오류(409)를 돌려준다.
-        if (recordRepository.existsByUserIdAndWorkId(req.userId(), req.workId())) {
+        if (recordRepository.existsByUserIdAndWorkId(userId, req.workId())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "이미 기록한 작품입니다.");
         }
         RecordStatus status = (req.status() == null) ? RecordStatus.WANT : req.status();
         ViewingRecord saved = recordRepository.save(
-                new ViewingRecord(req.userId(), work, status, req.rating(), req.watchedDate()));
+                new ViewingRecord(userId, work, status, req.rating(), req.watchedDate()));
         return RecordResponse.from(saved);
     }
 
-    public RecordResponse updateRecord(Long recordId, UpdateRecordRequest req) {
+    public RecordResponse updateRecord(Long recordId, Long userId, UpdateRecordRequest req) {
         validateRating(req.rating());
-        ViewingRecord record = findOwnedRecord(recordId, req.userId());
+        ViewingRecord record = findOwnedRecord(recordId, userId);
         // save() 를 부르지 않아도 된다. 트랜잭션이 끝날 때 바뀐 필드를 감지해 UPDATE 를 실행한다.
         record.update(req.status(), req.rating(), req.watchedDate());
         return RecordResponse.from(record);
@@ -79,11 +79,11 @@ public class ViewingService {
         return recordRepository.findMine(userId, status, pageable).map(RecordResponse::from);
     }
 
-    public ReviewResponse createReview(Long recordId, CreateReviewRequest req) {
+    public ReviewResponse createReview(Long recordId, Long userId, CreateReviewRequest req) {
         if (req.content() == null || req.content().isBlank()) {
             throw bad("후기 내용을 입력해 주세요.");
         }
-        findOwnedRecord(recordId, req.userId());
+        findOwnedRecord(recordId, userId);
         Visibility visibility = (req.visibility() == null) ? Visibility.PRIVATE : req.visibility();
         boolean spoiler = Boolean.TRUE.equals(req.spoiler());
         // 후기를 저장하면 DB 트리거(trg_review_mark_done)가 해당 기록의 상태를 '봤어요'로 바꾼다.

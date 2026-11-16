@@ -11,6 +11,7 @@ CREATE TABLE users (
   nickname    VARCHAR2(30 CHAR)  NOT NULL,
   email       VARCHAR2(255 CHAR) NOT NULL,
   created_at  TIMESTAMP(0) DEFAULT SYSTIMESTAMP NOT NULL,
+  password_hash VARCHAR2(100) NOT NULL,       -- BCrypt 해시(60자). 비밀번호 원문은 저장하지 않는다
   CONSTRAINT pk_users PRIMARY KEY (user_id),
   CONSTRAINT uq_users_email UNIQUE (email)
 );

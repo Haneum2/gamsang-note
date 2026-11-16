@@ -1,18 +1,18 @@
 -- turso/02_seed.sql : 샘플 데이터 (Oracle 용 db/02_seed.sql 과 같은 내용)
 -- 검증 건수: 회원 12, 작품 105, 감상 기록 244, 후기 107, 좋아요 154, 댓글 85, 친구 19, 컬렉션 9
 
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (1, '민트초코', 'user01@example.com', '2025-01-05 09:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (2, '책벌레', 'user02@example.com', '2025-01-16 10:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (3, '영화광', 'user03@example.com', '2025-01-27 11:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (4, '무대덕후', 'user04@example.com', '2025-02-07 12:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (5, '별점요정', 'user05@example.com', '2025-02-18 13:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (6, '조용한독자', 'user06@example.com', '2025-03-01 14:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (7, '야간관람', 'user07@example.com', '2025-03-12 15:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (8, '소설가지망생', 'user08@example.com', '2025-03-23 16:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (9, '팝콘러', 'user09@example.com', '2025-04-03 17:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (10, '시네필', 'user10@example.com', '2025-04-14 18:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (11, '감상러', 'user11@example.com', '2025-04-25 19:00:00');
-INSERT INTO users (user_id, nickname, email, created_at) VALUES (12, '뮤덕', 'user12@example.com', '2025-05-06 20:00:00');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (1, '민트초코', 'user01@example.com', '2025-01-05 09:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (2, '책벌레', 'user02@example.com', '2025-01-16 10:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (3, '영화광', 'user03@example.com', '2025-01-27 11:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (4, '무대덕후', 'user04@example.com', '2025-02-07 12:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (5, '별점요정', 'user05@example.com', '2025-02-18 13:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (6, '조용한독자', 'user06@example.com', '2025-03-01 14:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (7, '야간관람', 'user07@example.com', '2025-03-12 15:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (8, '소설가지망생', 'user08@example.com', '2025-03-23 16:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (9, '팝콘러', 'user09@example.com', '2025-04-03 17:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (10, '시네필', 'user10@example.com', '2025-04-14 18:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (11, '감상러', 'user11@example.com', '2025-04-25 19:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
+INSERT INTO users (user_id, nickname, email, created_at, password_hash) VALUES (12, '뮤덕', 'user12@example.com', '2025-05-06 20:00:00', '$2a$10$LXrvx3OPZmrSHDnTI.I9DeNzo.jI5Yav86JauzJzdpYdZJFc2O9p.');
 INSERT INTO genre (genre_id, name) VALUES (1, '액션');
 INSERT INTO genre (genre_id, name) VALUES (2, '드라마');
 INSERT INTO genre (genre_id, name) VALUES (3, '코미디');

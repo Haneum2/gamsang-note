@@ -2,6 +2,12 @@ server:
   port: 8080
   error:
       include-message: always
+  servlet:
+    session:
+      cookie:
+        # 로그인 세션 쿠키: 자바스크립트로 읽을 수 없고(http-only), 다른 사이트에서 보낸 POST 에는 실리지 않는다(lax, CSRF 방지)
+        http-only: true
+        same-site: lax
 spring:
   datasource:
     # XEPDB1 은 Oracle XE 의 기본 서비스명이다. 서비스명 앞에는 '/' 를 붙인다.

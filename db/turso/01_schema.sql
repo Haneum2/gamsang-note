@@ -7,7 +7,8 @@
 --   NUMBER(2,1)     -> REAL
 -- 외래 키는 연결마다 PRAGMA foreign_keys = ON 이 켜져 있어야 동작한다(Turso 는 기본 ON).
 -- ============================================================
-CREATE TABLE users (user_id INTEGER PRIMARY KEY, nickname TEXT NOT NULL, email TEXT NOT NULL UNIQUE, created_at TEXT NOT NULL);
+CREATE TABLE users (user_id INTEGER PRIMARY KEY, nickname TEXT NOT NULL, email TEXT NOT NULL UNIQUE, created_at TEXT NOT NULL,
+  password_hash TEXT NOT NULL);
 CREATE TABLE friendship (
   requester_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
   receiver_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,

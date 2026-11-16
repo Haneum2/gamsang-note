@@ -12,16 +12,15 @@ public final class ViewingDtos {
     }
 
     // ---- 요청 ----
-    // userId 는 로그인 기능을 붙이기 전까지 임시로 요청에 담아 보낸다. (나중에 로그인 정보로 대체)
-    public record CreateRecordRequest(Long userId, Long workId, RecordStatus status,
+    // 회원 번호는 요청에 담지 않는다. 컨트롤러가 로그인 세션에서 꺼내 서비스에 넘긴다(@LoginUser).
+    public record CreateRecordRequest(Long workId, RecordStatus status,
                                       BigDecimal rating, LocalDate watchedDate) {
     }
 
-    public record UpdateRecordRequest(Long userId, RecordStatus status,
-                                      BigDecimal rating, LocalDate watchedDate) {
+    public record UpdateRecordRequest(RecordStatus status, BigDecimal rating, LocalDate watchedDate) {
     }
 
-    public record CreateReviewRequest(Long userId, String content, Boolean spoiler, Visibility visibility) {
+    public record CreateReviewRequest(String content, Boolean spoiler, Visibility visibility) {
     }
 
     // ---- 응답 ----

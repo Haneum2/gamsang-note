@@ -30,6 +30,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <!-- 비밀번호 해시(BCrypt)만 쓴다. 로그인 필터 등 Spring Security 전체는 넣지 않는다(버전은 Spring Boot 가 관리). -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-crypto</artifactId>
+    </dependency>
     <!-- JPA (Hibernate): 자바 객체와 테이블을 연결 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

@@ -7,6 +7,10 @@ server:
   port: ${PORT:8080}          # Render 가 PORT 를 넣어 준다
   error:
     include-message: always
+  servlet:
+    session:
+      cookie:
+        secure: true          # http-only·same-site 는 application.yml 값을 그대로 쓰고, 배포(https)에서는 https 로만 보낸다
 
 spring:
   datasource:
