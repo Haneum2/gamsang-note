@@ -151,6 +151,16 @@ public class SocialService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
+    public List<FriendResponse> listPendingSent(Long userId) {
+        List<Friendship> pending = friendshipRepository.findPendingSent(userId);
+        Map<Long, String> nicknames = nicknames(
+                pending.stream().map(f -> f.getId().getReceiverId()).collect(Collectors.toSet()));
+        return pending.stream()
+                .map(f -> new FriendResponse(f.getId().getReceiverId(), nicknames.get(f.getId().getReceiverId())))
+                .toList();
+    }
+
     // ================= 내부 도우미 =================
 
     // 내가 볼 수 있는 후기에만 좋아요·댓글을 달 수 있다. (공개 범위 규칙을 뷰 v_visible_review 로 확인)

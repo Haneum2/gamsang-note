@@ -75,6 +75,7 @@ export const api = {
   addComment: (reviewId, content) => request(`/api/reviews/${reviewId}/comments`, { method: 'POST', body: { content } }),
   friends: () => request('/api/friends'),
   friendRequests: () => request('/api/friends/requests'),
+  sentFriendRequests: () => request('/api/friends/requests/sent'),
   sendFriendRequest: (receiverId) => request('/api/friends/requests', { method: 'POST', body: { receiverId } }),
   acceptFriend: (requesterId) => request('/api/friends/requests/accept', { method: 'POST', body: { requesterId } }),
   rejectFriend: (requesterId, receiverId) =>

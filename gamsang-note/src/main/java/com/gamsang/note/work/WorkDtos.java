@@ -20,7 +20,12 @@ public final class WorkDtos {
                              Integer runtime,          // 영화
                              String isbn, Integer pages, // 책
                              String venue, String period, // 공연
-                             String source) {             // 외부 출처(TMDB/YES24/KOPIS), 샘플 작품은 null
+                             String source,               // 외부 출처(TMDB/YES24/KOPIS), 샘플 작품은 null
+                             List<PersonItem> people) {   // 감독·배우·저자 등 (work_person)
+    }
+
+    /** 작품에 참여한 사람 한 명: 이름과 역할(감독, 배우, 저자, 출연 …) */
+    public record PersonItem(String name, String role) {
     }
 
     /** KOPIS 공연 검색 결과 한 건. workId 는 이미 가져온 공연이면 우리 DB의 작품 번호, 아니면 null */

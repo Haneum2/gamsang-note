@@ -88,6 +88,12 @@ public class SocialController {
         return socialService.listPendingReceived(me);
     }
 
+    // 내가 보낸 대기 중인 요청 (취소는 DELETE /api/friends/requests?requesterId=나&receiverId=상대)
+    @GetMapping("/api/friends/requests/sent")
+    public List<FriendResponse> sent(@LoginUser Long me) {
+        return socialService.listPendingSent(me);
+    }
+
     // 내 친구 목록 (수락된 것만)
     @GetMapping("/api/friends")
     public List<FriendResponse> friends(@LoginUser Long me) {

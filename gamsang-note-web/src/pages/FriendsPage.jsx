@@ -2,23 +2,24 @@ import { useCallback, useEffect, useState } from 'react'
 import { api } from '../api.js'
 import { useUser } from '../UserContext.jsx'
 
-// 받은 요청 수락·거절, 친구 목록, 친구 요청 보내기.
-// 내가 '보낸' 대기 요청을 보여 주는 API 는 아직 없어서, 보낸 요청 취소는 화면에 없다.
+// 받은 요청 수락·거절, 보낸 요청 취소, 친구 목록, 친구 요청 보내기.
 // 나(로그인한 회원)는 서버가 세션으로 알기 때문에 상대 번호만 보낸다.
 export default function FriendsPage() {
   const { userId, users } = useUser()
   const [friends, setFriends] = useState(null)
   const [requests, setRequests] = useState(null)
+  const [sent, setSent] = useState(null)
   const [target, setTarget] = useState('')
   const [message, setMessage] = useState(null) // { kind: 'ok' | 'error', text }
   const [error, setError] = useState('')
 
   const load = useCallback(() => {
     if (!userId) return
-    Promise.all([api.friends(), api.friendRequests()])
-      .then(([f, r]) => {
+    Promise.all([api.friends(), api.friendRequests(), api.sentFriendRequests()])
+      .then(([f, r, s]) => {
         setFriends(f)
         setRequests(r)
+        setSent(s)
       })
       .catch((e) => setError(e.message))
   }, [userId])
@@ -41,6 +42,7 @@ export default function FriendsPage() {
 
   const accept = (r) => act(() => api.acceptFriend(r.userId), `${r.nickname}님과 친구가 됐어요.`)
   const reject = (r) => act(() => api.rejectFriend(r.userId, userId), `${r.nickname}님의 요청을 거절했어요.`)
+  const cancel = (s) => act(() => api.rejectFriend(userId, s.userId), `${s.nickname}님에게 보낸 요청을 취소했어요.`)
 
   const send = (e) => {
     e.preventDefault()
@@ -48,12 +50,13 @@ export default function FriendsPage() {
     act(
       () => api.sendFriendRequest(other.id),
       `${other.nickname}님에게 친구 요청을 보냈어요. 상대가 수락하면 친구 목록에 나와요.`,
-      `${other.nickname}님과는 이미 요청이 오가는 중이에요. 상대가 수락할 때까지 기다려 주세요.`,
+      `${other.nickname}님과는 이미 요청이 오가는 중이에요. 위 '받은 요청'이나 '보낸 요청'을 확인해 주세요.`,
     ).then((ok) => ok && setTarget(''))
   }
 
-  // 요청 보낼 수 있는 사람: 나, 이미 친구, 나에게 요청한 사람을 뺀다.
-  const taken = new Set([userId, ...(friends ?? []).map((f) => f.userId), ...(requests ?? []).map((r) => r.userId)])
+  // 요청 보낼 수 있는 사람: 나, 이미 친구, 요청을 주고받는 중인 사람을 뺀다.
+  const others = [...(friends ?? []), ...(requests ?? []), ...(sent ?? [])]
+  const taken = new Set([userId, ...others.map((x) => x.userId)])
   const candidates = users.filter((u) => !taken.has(u.id))
 
   return (
@@ -86,6 +89,26 @@ export default function FriendsPage() {
           </ul>
         ) : (
           requests && <p className="empty small">받은 친구 요청이 없어요.</p>
+        )}
+      </div>
+
+      <div className="section">
+        <h2 className="section-title">보낸 요청</h2>
+        {sent?.length > 0 ? (
+          <ul className="tickets">
+            {sent.map((s) => (
+              <li key={s.userId} className="ticket person">
+                <strong>{s.nickname}</strong>
+                <span className="person-actions">
+                  <button className="btn" onClick={() => cancel(s)}>
+                    요청 취소
+                  </button>
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          sent && <p className="empty small">수락을 기다리는 요청이 없어요.</p>
         )}
       </div>
 

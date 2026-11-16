@@ -28,13 +28,16 @@ public class WorkService {
     private final MovieRepository movieRepository;
     private final BookRepository bookRepository;
     private final PerformanceRepository performanceRepository;
+    private final WorkPersonRepository workPersonRepository;
 
     public WorkService(WorkRepository workRepository, MovieRepository movieRepository,
-                       BookRepository bookRepository, PerformanceRepository performanceRepository) {
+                       BookRepository bookRepository, PerformanceRepository performanceRepository,
+                       WorkPersonRepository workPersonRepository) {
         this.workRepository = workRepository;
         this.movieRepository = movieRepository;
         this.bookRepository = bookRepository;
         this.performanceRepository = performanceRepository;
+        this.workPersonRepository = workPersonRepository;
     }
 
     public Page<WorkSummary> search(WorkType type, String q, Pageable pageable) {
@@ -73,7 +76,7 @@ public class WorkService {
 
         return new WorkDetail(w.getId(), w.getType(), w.getTitle(), w.getReleaseDate(),
                 w.getSummary(), w.getPosterUrl(), genreNames(w),
-                runtime, isbn, pages, venue, period, w.getSource());
+                runtime, isbn, pages, venue, period, w.getSource(), workPersonRepository.findPeople(id));
     }
 
     private WorkSummary toSummary(Work w) {

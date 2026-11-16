@@ -64,7 +64,7 @@
 | --- | --- | --- |
 | GET | /api/genres | 장르 21건 |
 | GET | /api/works?type=&q=&page=&size= | 작품 검색(제목순, 페이징) |
-| GET | /api/works/{id} | 작품 상세(종류별 필드 + source 포함) |
+| GET | /api/works/{id} | 작품 상세(종류별 필드 + source + people[이름·역할] 포함) |
 | GET | /api/works/kopis?q=&page= | KOPIS 공연 검색(오늘 ±15일, 20건, 가져온 공연은 workId 포함) |
 | POST | /api/works/kopis/{mt20id} | KOPIS 공연을 work+performance+work_genre로 저장(이미 있으면 기존 것), 작품 상세 반환 |
 | POST | /api/auth/signup · login · logout | 가입(바로 로그인)·로그인·로그아웃 |
@@ -83,6 +83,7 @@
 | POST | /api/friends/requests/accept | 수락 |
 | DELETE | /api/friends/requests?requesterId=&receiverId= | 거절/취소(대기 중만) |
 | GET | /api/friends/requests | 내가 받은 대기 요청 |
+| GET | /api/friends/requests/sent | 내가 보낸 대기 요청(취소는 DELETE ?requesterId=나&receiverId=상대) |
 | GET | /api/friends | 내 친구 목록 |
 | GET | /api/stats/monthly?year= | 월별 감상 수(12개월) |
 | GET | /api/stats/genres | 장르별 수·비율·평균 별점 |
@@ -109,7 +110,7 @@
 ## 9. 현재 상태
 - 백엔드 모든 API: 사용자가 브라우저에서 확인 완료(위 7번).
 - 프론트: 작품 목록 화면 확인 완료. RecordsPage·ReviewsPage·ReviewForm·ReviewCard·Pager는 2026-11-09에 다시 작성했다(이전 파일이 폴더에 없었음). 같은 날 API와 브라우저로 확인 완료(기록 수정, 후기 작성→트리거로 DONE, 스포일러 가리기, 볼 수 있는 후기/친구 피드, 좋아요·취소, 댓글). FriendsPage·StatsPage도 같은 날 확인(요청 보내기·중복 409·거절, 통계 수치가 7번 확인값과 일치). 친구 '수락'은 화면에서 누르지 않았다(친구 끊기 API가 없어 데이터가 남음).
-- 내가 **보낸** 대기 요청 목록 API가 없어서, 친구 화면에서 보낸 요청을 보거나 취소할 수 없다. 요청 후보 목록에도 이미 요청을 보낸 회원이 남는다(다시 보내면 409 안내).
+- 친구 화면: 받은 요청(수락·거절), 보낸 요청(취소), 친구 목록, 요청 보내기(이미 친구·요청 중인 회원은 후보에서 뺀다). 2026-11-16.
 - 종류 색 중 책(#17695A)과 공연(#A3234F)은 적록색약에서 거의 구분되지 않는다(dataviz 검사 ΔE 4.0). 그래서 종류는 항상 글자('영화/책/공연')와 함께 표시한다.
 - DB에 이전 테스트 데이터가 남아 있다(사용자가 그대로 두기로 함): 기록 245('지젤')·후기 108·좋아요 2건, 친구 요청 1→12 PENDING. 그래서 검증 건수와 다르다.
 - Git Bash에서 curl로 한글 JSON을 보내면 인코딩이 깨져 400이 난다. 본문은 UTF-8 파일로 만들어 `--data-binary @파일`로 보낸다.
@@ -125,7 +126,7 @@
 5. 외부 작품 API 연동: 영화 TMDB, 도서 YES24(공개 API 존재·키 확인 필요), 공연 KOPIS(**완료 2026-11-16**: `KopisService`, 작품 화면 공연 탭의 'KOPIS에서 찾기', 상세에 출처 표시. 키 `KOPIS_KEY`는 사용자 환경 변수·Render 환경 변수. 출연진→person은 6번에서).
    - KOPIS: 응답 XML. 목록 `/openApi/restful/pblprfr?service=&stdate=&eddate=(31일 이내 필수)&cpage=&rows=&shprfnm=`, 상세 `/pblprfr/{mt20id}`. 기간 `2026.11.28` 형식, 출연 `prfcast`는 "A, B 등" 문자열, 러닝타임 "1시간 30분" 글자, 줄거리 `sty`는 비는 경우가 많음(소개 이미지 `styurls`), 포스터는 http로 오지만 https로 바꿔도 열림, 장르는 `genrenm` 이름으로 매칭. 출처 문구 표시 필요.
    출처 표시, 키는 환경 변수로만. (2026-11-11 확정: KOBIS·국립중앙도서관은 포스터·줄거리·표지가 약하고 TMDB와 중복되어 제외)
-6. 보낸 친구 요청 목록·취소 API(`GET /api/friends/requests/sent`)와 화면, 작품 상세의 인물(감독·배우; work_person → API).
+6. ~~보낸 친구 요청 목록·취소, 작품 상세의 인물~~ (완료 2026-11-16: `Person`·`WorkPerson`(record 복합키) 엔티티, `findPeople` JPQL join on + DTO 생성자 식. KOPIS 가져오기 때 출연(최대 8)·제작진(최대 4)을 person/work_person 에 저장, 동명이인 합치지 않음).
 **시간이 남으면**
 7. 컬렉션 API·화면, 같이 볼 작품 추천(`db/04_queries.sql` Q12·Q13), 목록 후기 N+1 줄이기, `@Valid`, 별점 지우기, 에러 응답 통일, 간단한 테스트.
 **마무리**

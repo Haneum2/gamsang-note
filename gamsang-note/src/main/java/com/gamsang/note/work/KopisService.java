@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -47,13 +48,18 @@ public class KopisService {
     private final WorkRepository workRepository;
     private final PerformanceRepository performanceRepository;
     private final GenreRepository genreRepository;
+    private final PersonRepository personRepository;
+    private final WorkPersonRepository workPersonRepository;
 
     public KopisService(@Value("${KOPIS_KEY:}") String key, WorkRepository workRepository,
-                        PerformanceRepository performanceRepository, GenreRepository genreRepository) {
+                        PerformanceRepository performanceRepository, GenreRepository genreRepository,
+                        PersonRepository personRepository, WorkPersonRepository workPersonRepository) {
         this.key = key;
         this.workRepository = workRepository;
         this.performanceRepository = performanceRepository;
         this.genreRepository = genreRepository;
+        this.personRepository = personRepository;
+        this.workPersonRepository = workPersonRepository;
     }
 
     public List<WorkDtos.KopisItem> search(String q, int page) {
@@ -89,7 +95,24 @@ public class KopisService {
         genre(text(e, "genrenm")).ifPresent(work.getGenres()::add);
         workRepository.save(work); // IDENTITY 라서 save 시점에 INSERT 되고 번호가 정해진다
         performanceRepository.save(new Performance(work.getId(), cut(text(e, "fcltynm"), 100), period(e)));
+        savePeople(work.getId(), text(e, "prfcast"), "출연", 8);
+        savePeople(work.getId(), text(e, "prfcrew"), "제작진", 4);
         return work.getId();
+    }
+
+    // KOPIS 는 "이용우, 유현주, 홍성민 등" 처럼 이름을 쉼표로 이어 준다. 앞에서부터 max 명만 person + work_person 으로 저장한다.
+    // ponytail: 같은 이름이어도 작품마다 새 person 행을 만든다(동명이인을 잘못 합치지 않으려고). 인물별 작품 모아 보기가 필요해지면 다시 본다.
+    private void savePeople(Long workId, String names, String role, int max) {
+        if (names == null) return;
+        Arrays.stream(names.split(","))
+                .map(n -> n.trim().replaceFirst("\\s*등$", "").trim())
+                .filter(n -> !n.isEmpty())
+                .distinct()
+                .limit(max)
+                .forEach(n -> {
+                    Person p = personRepository.save(new Person(cut(n, 100)));
+                    workPersonRepository.save(new WorkPerson(workId, p.getId(), role));
+                });
     }
 
     // KOPIS 장르 이름 → 우리 genre 테이블. "서양음악(클래식)", "무용(서양/한국무용)"처럼 괄호가 붙어 오는 것만 바꿔 준다.

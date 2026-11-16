@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { api } from '../api.js'
 import { useUser } from '../UserContext.jsx'
 import { RATING_OPTIONS, STATUS_LABEL, TYPE_LABEL } from '../labels.js'
@@ -104,6 +104,12 @@ export default function WorkDetail({ workId, onClose }) {
                   <dd>{work.venue}</dd>
                 </>
               )}
+              {groupByRole(work.people).map(([role, names]) => (
+                <Fragment key={role}>
+                  <dt>{role}</dt>
+                  <dd>{names.join(', ')}</dd>
+                </Fragment>
+              ))}
               {work.period && (
                 <>
                   <dt>공연 기간</dt>
@@ -157,4 +163,11 @@ export default function WorkDetail({ workId, onClose }) {
       </aside>
     </div>
   )
+}
+
+// [{name, role}, ...] → [[역할, [이름, ...]], ...] (처음 나온 역할 순서 유지)
+function groupByRole(people = []) {
+  const map = new Map()
+  people.forEach((p) => map.set(p.role, [...(map.get(p.role) ?? []), p.name]))
+  return [...map]
 }

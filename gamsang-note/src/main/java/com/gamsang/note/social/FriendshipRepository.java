@@ -32,4 +32,13 @@ public interface FriendshipRepository extends JpaRepository<Friendship, Friendsh
             order by f.requestedAt desc
             """)
     List<Friendship> findPendingReceived(@Param("userId") Long userId);
+
+    // 내가 보낸 '대기 중' 요청 (상대가 아직 수락하지 않은 것)
+    @Query("""
+            select f from Friendship f
+            where f.status = com.gamsang.note.social.FriendStatus.PENDING
+              and f.id.requesterId = :userId
+            order by f.requestedAt desc
+            """)
+    List<Friendship> findPendingSent(@Param("userId") Long userId);
 }
