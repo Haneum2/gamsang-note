@@ -8,7 +8,7 @@
 | DB | Oracle XE (`db/*.sql`) | Turso(libSQL) (`db/turso/*.sql`) |
 | 실행 | `mvn spring-boot:run` | `SPRING_PROFILES_ACTIVE=prod` |
 
-> **주의**: Turso 쪽은 아직 실제 접속으로 시험하지 못했다. 처음 접속이 되는지부터 확인하는 단계(5번)가 필요하다.
+> **2026-11-16 로컬 prod 시험 완료** (5번 전 항목 통과). 결과와 드라이버 우회는 아래 5-1.
 
 ## 1. Turso 준비
 1. https://turso.tech 가입.
@@ -49,6 +49,20 @@ mvn spring-boot:run
 3. 후기 작성 시 트리거가 동작해 기록 상태가 `DONE`이 되는지.
 4. 같은 요청을 Oracle(로컬)과 Turso(prod)에서 호출해 결과가 같은지.
 5. 외래 키 제약이 켜져 있는지(없는 작품으로 기록 등록 시 오류가 나야 함).
+
+### 5-1. 시험 결과 (2026-11-16)
+- 읽기: 장르 21, 1번 회원 보이는 후기 66·친구 2·3·5·11·월별(3월3/6월2/8월1/9월1)·연말 결산 7건 → 원본 기준값과 일치. `nulls last` 정렬, `LocalDate`/`LocalDateTime` 정상.
+- 쓰기: 기록 등록·중복 409·수정, 후기 작성 → 트리거로 `DONE`, 좋아요·취소, 댓글, 친구 요청·수락·취소 정상. 새 후기 시각은 `2026-11-16 13:03:38.12265`(시드와 같은 공백 형식)로 저장되어 정렬이 섞이지 않는다.
+- 외래 키: 켜져 있음(`PRAGMA foreign_keys=1`, 없는 작품으로 INSERT 하면 `FOREIGN KEY constraint failed`).
+- 시험 데이터는 지워 원본 건수로 되돌렸다.
+
+**libSQL JDBC 드라이버(1.0.4, 최신 1.0.9도 같음)의 결함과 우회** — prod 프로필에서만 적용, Oracle 기본 프로필은 그대로:
+| 결함 | 우회 |
+| --- | --- |
+| Gson 2.11+ 필요(Spring Boot 기본 2.10.1) → `ClassNotFoundException: Strictness` | `pom.xml` `<gson.version>2.11.0</gson.version>` |
+| `setAutoCommit`/`commit`/`rollback` 미지원 → 트랜잭션 시작 불가 | `TursoConfig`가 커넥션을 감싸 무시(**자동 커밋: 서비스 중간 오류 시 앞 문장이 되돌아가지 않음**) |
+| 생성 키 반환(`prepareStatement(sql, ...)` 추가 인자) 미지원 | `TursoDialect`로 `INSERT ... RETURNING` 사용, 추가 인자는 기본 버전으로 |
+| `PreparedStatement.executeUpdate()` 미지원, 행 수로 `rows_written`(인덱스 쓰기 포함)을 돌려줌 | `executeLargeUpdate()`로 돌리고 0/1로 보정(엔티티 단위 쓰기만 있어서 정확. 벌크 `@Modifying` 쿼리를 추가하면 재검토) |
 
 ## 6. 막혔을 때 선택지
 - 드라이버 연결이 안 되면: Hikari 설정(`connection-test-query`)과 `allow_jdbc_metadata_access`를 먼저 점검 → 그래도 안 되면 팀과 상의해 Render PostgreSQL 등 다른 DB로 바꾸거나 Turso의 HTTP API를 직접 호출하는 방식을 검토한다.

@@ -7,7 +7,7 @@
 - 영화·책·공연을 기록(보고 싶어요/보는 중/봤어요, 별점, 감상일)하고, 후기를 공개 범위(전체/친구/나만 보기)로 공유하고, 친구·좋아요·댓글·통계·연말 결산을 제공하는 앱.
 - **마감 2026-11-19, 내부 목표는 11-18.** 앱 개발 + DB 구축 + 보고서(13개 장)가 모두 끝나 있어야 한다.
 - 스택: **Spring Boot 3.3.5 + JPA(Hibernate 6) + Oracle XE 21c + React 18(Vite)**. Java 17, Maven, Node 22.
-- **팀 결정(2026-11-10 회의)**: ① 필수 기능까지만 구현하고 시간이 남으면 부가 기능 ② 회원은 **자체 가입**(비밀번호 해시 저장) ③ 작품 데이터는 **외부 API**(영화 TMDB, 책 알라딘, 공연은 조사 후 결정)에서 가져온다 ④ 배포는 **Render**, 클라우드 DB는 **Turso**.
+- **팀 결정(2026-11-10 회의)**: ① 필수 기능까지만 구현하고 시간이 남으면 부가 기능 ② 회원은 **자체 가입**(비밀번호 해시 저장) ③ 작품 데이터는 **외부 API**(영화 TMDB, 책 YES24(2026-11-16 변경: 알라딘 키 발급 종료), 공연 KOPIS)에서 가져온다 ④ 배포는 **Render**, 클라우드 DB는 **Turso**.
 - **DB는 2벌**: 기본 프로필=Oracle(로컬 개발·보고서 기준), `prod` 프로필=Turso(libSQL/SQLite, 배포용 이식본). 스키마를 바꾸면 `db/`(Oracle)와 `db/turso/`를 **항상 같이** 고친다. 엔티티에서 `@Lob`은 쓰지 않는다(SQLite 호환). 배포 절차는 `docs/DEPLOY.md`.
 - 보고서 초안은 claude.ai의 Claude Docs 문서 "감상노트 프로젝트 보고서 (초안)"에 있다(https://claude.ai/artifact/XUJUDzVMCwh3qudfUNpSVF). 이 폴더에서는 읽을 수 없으니, 보고서에 영향을 주는 변경(테이블·컬럼·API 변경)은 사용자에게 알려 반영하게 한다.
 
@@ -41,7 +41,7 @@
 
 ## 5. DB 요약 (Oracle, 16개 테이블)
 - 회원 `users`(user_id, nickname, email, created_at) — 현재 **비밀번호 컬럼이 없다**. 자체 가입으로 결정되어 비밀번호 해시 컬럼을 추가할 예정이다(Oracle·Turso 스크립트 동시 수정).
-- 작품: 슈퍼타입 `work`(type: MOVIE/BOOK/PERFORMANCE) → 서브타입 `movie`(runtime), `book`(isbn,pages), `performance`(venue,period). PK=FK(work_id). 장르 `genre`, 연결 `work_genre`. 인물 `person`, 연결 `work_person`(role 포함).
+- 작품: 슈퍼타입 `work`(type: MOVIE/BOOK/PERFORMANCE, 외부 출처 `source` TMDB/YES24/KOPIS + `external_id`, UNIQUE(source, external_id), 둘 다 NULL이거나 둘 다 값 CHECK; 2026-11-16 추가, 기존 DB는 `db/06_add_work_source.sql`·`db/turso/06_add_work_source.sql`) → 서브타입 `movie`(runtime), `book`(isbn,pages), `performance`(venue,period). PK=FK(work_id). 장르 `genre`, 연결 `work_genre`. 인물 `person`, 연결 `work_person`(role 포함).
 - `record`(감상 기록; user당 작품 1건, UNIQUE(user_id, work_id); status WANT/WATCHING/DONE; rating 0.5~5.0, 0.5 단위 CHECK; watched_date).
 - `review`(record_id, content CLOB, spoiler_yn Y/N, visibility ALL/FRIEND/PRIVATE, created_at), `review_like`(review_id,user_id), `comments`(review 댓글).
 - `friendship`(requester_id, receiver_id, status PENDING/ACCEPTED, 자기 자신 금지 CHECK, 함수 기반 유일 인덱스 `uq_friendship_pair`로 **반대 방향 중복 요청 차단**).
@@ -113,10 +113,12 @@
 완료: 프론트 2단계, `include-message` 적용, 내 기록 정렬(`findMine` JPQL `nulls last`), 친구·통계 화면(2026-11-09).
 **필수**
 1. ~~Oracle 회귀(`@Lob` 제거)~~ (완료 2026-11-11: 13KB 후기·2KB 댓글 저장·조회 정상).
-2. Turso 접속 시험(`docs/DEPLOY.md` 5번): 드라이버, 날짜 형식·정렬, `findMine`의 null 바인딩·`nulls last`, 트리거, 외래 키, Oracle과 응답 비교.
+2. ~~Turso 접속 시험~~ (완료 2026-11-16, 로컬 prod. 드라이버 결함 4가지를 `TursoConfig`·`TursoDialect`·gson 버전으로 우회, prod는 트랜잭션 없이 자동 커밋. `docs/DEPLOY.md` 5-1). Turso 접속 정보는 사용자 환경 변수 `TURSO_JDBC_URL`·`TURSO_AUTH_TOKEN`.
 3. Render 배포(`render.yaml`), 무료 플랜 절전 대비 절차를 README에.
 4. 자체 가입/로그인(비밀번호 해시, 세션 또는 토큰) 후 모든 API의 userId 파라미터를 로그인 사용자로 교체, 가입·로그인 화면, 샘플 회원 로그인 방법.
-5. 외부 작품 API 연동: 영화 TMDB, 도서 알라딘(TTB 키), 공연은 KOPIS 조사 후 안 되면 샘플 유지. 출처 표시, 키는 환경 변수로만. (2026-11-11 확정: KOBIS·국립중앙도서관은 포스터·줄거리·표지가 약하고 TMDB와 중복되어 제외)
+5. 외부 작품 API 연동: 영화 TMDB, 도서 YES24(공개 API 존재·키 확인 필요), 공연 KOPIS(키 `KOPIS_KEY` 사용자 환경 변수, 2026-11-16 호출 확인).
+   - KOPIS: 응답 XML. 목록 `/openApi/restful/pblprfr?service=&stdate=&eddate=(31일 이내 필수)&cpage=&rows=&shprfnm=`, 상세 `/pblprfr/{mt20id}`. 기간 `2026.11.28` 형식, 출연 `prfcast`는 "A, B 등" 문자열, 러닝타임 "1시간 30분" 글자, 줄거리 `sty`는 비는 경우가 많음(소개 이미지 `styurls`), 포스터는 http로 오지만 https로 바꿔도 열림, 장르는 `genrenm` 이름으로 매칭. 출처 문구 표시 필요.
+   출처 표시, 키는 환경 변수로만. (2026-11-11 확정: KOBIS·국립중앙도서관은 포스터·줄거리·표지가 약하고 TMDB와 중복되어 제외)
 6. 보낸 친구 요청 목록·취소 API(`GET /api/friends/requests/sent`)와 화면, 작품 상세의 인물(감독·배우; work_person → API).
 **시간이 남으면**
 7. 컬렉션 API·화면, 같이 볼 작품 추천(`db/04_queries.sql` Q12·Q13), 목록 후기 N+1 줄이기, `@Valid`, 별점 지우기, 에러 응답 통일, 간단한 테스트.

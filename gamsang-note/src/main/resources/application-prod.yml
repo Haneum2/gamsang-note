@@ -19,11 +19,12 @@ spring:
       # 이 드라이버는 연결 검사(isValid)가 불안정하다는 보고가 있어 쿼리로 검사한다.
       connection-test-query: SELECT 1
   jpa:
-    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    database-platform: com.gamsang.note.TursoDialect   # SQLiteDialect + INSERT ... RETURNING
     show-sql: false
     properties:
       hibernate:
         format_sql: false
+        # 드라이버가 트랜잭션(commit/rollback)을 지원하지 않는다 → TursoConfig.java 참고
         # 시작할 때 DB 메타데이터를 조회하지 않게 한다(libSQL 드라이버가 일부 메타데이터를 지원하지 않을 수 있음).
         boot:
           allow_jdbc_metadata_access: false
