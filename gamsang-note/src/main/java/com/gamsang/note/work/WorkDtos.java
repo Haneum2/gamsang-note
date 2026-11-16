@@ -21,6 +21,7 @@ public final class WorkDtos {
                              String isbn, Integer pages, // 책
                              String venue, String period, // 공연
                              String source,               // 외부 출처(TMDB/YES24/KOPIS), 샘플 작품은 null
+                             String externalId,           // 출처 쪽 ID (YES24 상품 링크 등에 쓴다)
                              List<PersonItem> people) {   // 감독·배우·저자 등 (work_person)
     }
 
@@ -28,8 +29,10 @@ public final class WorkDtos {
     public record PersonItem(String name, String role) {
     }
 
-    /** KOPIS 공연 검색 결과 한 건. workId 는 이미 가져온 공연이면 우리 DB의 작품 번호, 아니면 null */
-    public record KopisItem(String externalId, String title, String period, String venue,
-                            String genre, String posterUrl, Long workId) {
+    /**
+     * 외부 API(KOPIS, TMDB …) 검색 결과 한 건. meta 는 제목 아래 보여 줄 짧은 정보들(장르, 기간, 연도 …).
+     * workId 는 이미 가져온 작품이면 우리 DB의 작품 번호, 아니면 null.
+     */
+    public record ExternalItem(String externalId, String title, List<String> meta, String posterUrl, Long workId) {
     }
 }

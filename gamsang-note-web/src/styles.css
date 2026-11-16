@@ -357,29 +357,10 @@ input:not([type='checkbox']) {
   color: var(--muted);
 }
 .ticket-edit { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.ticket-edit select:not(.stamp) { width: 6.5em; }
+.ticket-edit select { min-width: 6.5em; } /* 상태·별점: 보통 셀렉트(테두리 + 화살표) */
 .ticket-edit input[type='date'] { width: 10.5em; }
 .ticket .review-form { margin-top: 14px; }
 
-/* 상태 도장: 색이 아니라 테두리로 구분 */
-select.stamp {
-  appearance: none;
-  -webkit-appearance: none;
-  min-width: 6.5em;
-  padding: 5px 10px;
-  line-height: 1.4;
-  text-align: center;
-  text-align-last: center;
-  border: 2px solid var(--ink);
-  border-radius: var(--r-ctl);
-  font-size: var(--fs-s);
-  font-weight: 700;
-  cursor: pointer;
-}
-select.stamp.done { background: var(--ink); color: var(--surface); }
-select.stamp.watching { border-style: solid; }
-select.stamp.want { border-style: dashed; }
-select.stamp option { font-family: var(--text); background: var(--surface); color: var(--ink); }
 
 /* 별점: 숫자 + 5칸 막대 */
 .rating {

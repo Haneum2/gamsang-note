@@ -117,22 +117,6 @@ INSERT INTO person (person_id, name) VALUES (80, '기시미 이치로');
 INSERT INTO person (person_id, name) VALUES (81, '고가 후미타케');
 INSERT INTO person (person_id, name) VALUES (82, '제임스 클리어');
 INSERT INTO person (person_id, name) VALUES (83, '이기주');
-INSERT INTO person (person_id, name) VALUES (84, '앤드류 로이드 웨버');
-INSERT INTO person (person_id, name) VALUES (85, '클로드미셸 쇤베르크');
-INSERT INTO person (person_id, name) VALUES (86, '스티븐 슈워츠');
-INSERT INTO person (person_id, name) VALUES (87, '프랭크 와일드혼');
-INSERT INTO person (person_id, name) VALUES (88, '베니 안데르손');
-INSERT INTO person (person_id, name) VALUES (89, '비에른 울바에우스');
-INSERT INTO person (person_id, name) VALUES (90, '존 캔더');
-INSERT INTO person (person_id, name) VALUES (91, '엘턴 존');
-INSERT INTO person (person_id, name) VALUES (92, '스티븐 트래스크');
-INSERT INTO person (person_id, name) VALUES (93, '윌리엄 셰익스피어');
-INSERT INTO person (person_id, name) VALUES (94, '소포클레스');
-INSERT INTO person (person_id, name) VALUES (95, '아서 밀러');
-INSERT INTO person (person_id, name) VALUES (96, '사뮈엘 베케트');
-INSERT INTO person (person_id, name) VALUES (97, '안톤 체호프');
-INSERT INTO person (person_id, name) VALUES (98, '표트르 차이콥스키');
-INSERT INTO person (person_id, name) VALUES (99, '아돌프 아당');
 INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (1, 'MOVIE', '기생충', '2019-01-01', NULL, NULL);
 INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (2, 'MOVIE', '올드보이', '2003-01-01', NULL, NULL);
 INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (3, 'MOVIE', '살인의 추억', '2003-01-01', NULL, NULL);
@@ -213,31 +197,6 @@ INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUE
 INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (78, 'BOOK', '미움받을 용기', '2013-01-01', NULL, NULL);
 INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (79, 'BOOK', '아주 작은 습관의 힘', '2018-01-01', NULL, NULL);
 INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (80, 'BOOK', '언어의 온도', '2016-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (81, 'PERFORMANCE', '오페라의 유령', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (82, 'PERFORMANCE', '레미제라블', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (83, 'PERFORMANCE', '위키드', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (84, 'PERFORMANCE', '캣츠', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (85, 'PERFORMANCE', '지킬 앤 하이드', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (86, 'PERFORMANCE', '맘마미아!', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (87, 'PERFORMANCE', '시카고', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (88, 'PERFORMANCE', '라이온 킹', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (89, 'PERFORMANCE', '웃는 남자', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (90, 'PERFORMANCE', '데스노트', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (91, 'PERFORMANCE', '빌리 엘리어트', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (92, 'PERFORMANCE', '헤드윅', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (93, 'PERFORMANCE', '햄릿', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (94, 'PERFORMANCE', '맥베스', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (95, 'PERFORMANCE', '로미오와 줄리엣', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (96, 'PERFORMANCE', '한여름 밤의 꿈', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (97, 'PERFORMANCE', '리어 왕', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (98, 'PERFORMANCE', '오이디푸스 왕', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (99, 'PERFORMANCE', '세일즈맨의 죽음', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (100, 'PERFORMANCE', '고도를 기다리며', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (101, 'PERFORMANCE', '벚꽃 동산', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (102, 'PERFORMANCE', '갈매기', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (103, 'PERFORMANCE', '백조의 호수', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (104, 'PERFORMANCE', '호두까기 인형', '2025-01-01', NULL, NULL);
-INSERT INTO work (work_id, type, title, release_date, summary, poster_url) VALUES (105, 'PERFORMANCE', '지젤', '2025-01-01', NULL, NULL);
 INSERT INTO movie (work_id, runtime) VALUES (1, 132);
 INSERT INTO movie (work_id, runtime) VALUES (2, 120);
 INSERT INTO movie (work_id, runtime) VALUES (3, 131);
@@ -318,31 +277,6 @@ INSERT INTO book (work_id, isbn, pages) VALUES (77, NULL, NULL);
 INSERT INTO book (work_id, isbn, pages) VALUES (78, NULL, NULL);
 INSERT INTO book (work_id, isbn, pages) VALUES (79, NULL, NULL);
 INSERT INTO book (work_id, isbn, pages) VALUES (80, NULL, NULL);
-INSERT INTO performance (work_id, venue, period) VALUES (81, '예술의전당 오페라극장', '2025-05-12 ~ 2025-09-06');
-INSERT INTO performance (work_id, venue, period) VALUES (82, '블루스퀘어 신한카드홀', '2025-06-04 ~ 2025-09-19');
-INSERT INTO performance (work_id, venue, period) VALUES (83, '샤롯데씨어터', '2025-04-11 ~ 2025-07-02');
-INSERT INTO performance (work_id, venue, period) VALUES (84, '세종문화회관 대극장', '2025-06-23 ~ 2025-09-15');
-INSERT INTO performance (work_id, venue, period) VALUES (85, 'LG아트센터', '2025-11-01 ~ 2025-12-22');
-INSERT INTO performance (work_id, venue, period) VALUES (86, '예술의전당 오페라극장', '2026-04-13 ~ 2026-07-29');
-INSERT INTO performance (work_id, venue, period) VALUES (87, '블루스퀘어 신한카드홀', '2025-11-17 ~ 2026-01-09');
-INSERT INTO performance (work_id, venue, period) VALUES (88, '샤롯데씨어터', '2025-06-24 ~ 2025-07-27');
-INSERT INTO performance (work_id, venue, period) VALUES (89, '세종문화회관 대극장', '2025-11-11 ~ 2026-01-14');
-INSERT INTO performance (work_id, venue, period) VALUES (90, 'LG아트센터', '2025-12-12 ~ 2026-01-17');
-INSERT INTO performance (work_id, venue, period) VALUES (91, '예술의전당 오페라극장', '2026-05-13 ~ 2026-06-20');
-INSERT INTO performance (work_id, venue, period) VALUES (92, '블루스퀘어 신한카드홀', '2026-05-05 ~ 2026-08-15');
-INSERT INTO performance (work_id, venue, period) VALUES (93, '대학로 소극장', '2025-07-10 ~ 2025-10-09');
-INSERT INTO performance (work_id, venue, period) VALUES (94, '국립극단 명동예술극장', '2025-06-16 ~ 2025-09-25');
-INSERT INTO performance (work_id, venue, period) VALUES (95, '예술의전당 자유소극장', '2026-01-22 ~ 2026-03-07');
-INSERT INTO performance (work_id, venue, period) VALUES (96, '대학로 아트원씨어터', '2026-05-25 ~ 2026-07-28');
-INSERT INTO performance (work_id, venue, period) VALUES (97, '대학로 소극장', '2026-07-14 ~ 2026-10-07');
-INSERT INTO performance (work_id, venue, period) VALUES (98, '국립극단 명동예술극장', '2025-02-17 ~ 2025-06-16');
-INSERT INTO performance (work_id, venue, period) VALUES (99, '예술의전당 자유소극장', '2026-06-13 ~ 2026-09-23');
-INSERT INTO performance (work_id, venue, period) VALUES (100, '대학로 아트원씨어터', '2026-04-26 ~ 2026-08-18');
-INSERT INTO performance (work_id, venue, period) VALUES (101, '대학로 소극장', '2025-02-25 ~ 2025-05-26');
-INSERT INTO performance (work_id, venue, period) VALUES (102, '국립극단 명동예술극장', '2026-04-04 ~ 2026-06-28');
-INSERT INTO performance (work_id, venue, period) VALUES (103, '세종문화회관 대극장', '2025-12-22 ~ 2026-04-07');
-INSERT INTO performance (work_id, venue, period) VALUES (104, 'LG아트센터', '2025-05-11 ~ 2025-07-09');
-INSERT INTO performance (work_id, venue, period) VALUES (105, '예술의전당 오페라극장', '2025-04-22 ~ 2025-06-22');
 INSERT INTO work_genre (work_id, genre_id) VALUES (1, 2);
 INSERT INTO work_genre (work_id, genre_id) VALUES (1, 5);
 INSERT INTO work_genre (work_id, genre_id) VALUES (2, 2);
@@ -480,34 +414,6 @@ INSERT INTO work_genre (work_id, genre_id) VALUES (78, 13);
 INSERT INTO work_genre (work_id, genre_id) VALUES (78, 15);
 INSERT INTO work_genre (work_id, genre_id) VALUES (79, 15);
 INSERT INTO work_genre (work_id, genre_id) VALUES (80, 12);
-INSERT INTO work_genre (work_id, genre_id) VALUES (81, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (82, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (83, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (84, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (85, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (86, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (87, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (88, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (89, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (90, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (91, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (92, 18);
-INSERT INTO work_genre (work_id, genre_id) VALUES (93, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (94, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (95, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (96, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (97, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (98, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (99, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (100, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (101, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (102, 19);
-INSERT INTO work_genre (work_id, genre_id) VALUES (103, 20);
-INSERT INTO work_genre (work_id, genre_id) VALUES (103, 21);
-INSERT INTO work_genre (work_id, genre_id) VALUES (104, 20);
-INSERT INTO work_genre (work_id, genre_id) VALUES (104, 21);
-INSERT INTO work_genre (work_id, genre_id) VALUES (105, 20);
-INSERT INTO work_genre (work_id, genre_id) VALUES (105, 21);
 INSERT INTO work_person (work_id, person_id, role) VALUES (1, 1, '감독');
 INSERT INTO work_person (work_id, person_id, role) VALUES (1, 2, '배우');
 INSERT INTO work_person (work_id, person_id, role) VALUES (2, 3, '감독');
@@ -614,32 +520,6 @@ INSERT INTO work_person (work_id, person_id, role) VALUES (78, 80, '저자');
 INSERT INTO work_person (work_id, person_id, role) VALUES (78, 81, '저자');
 INSERT INTO work_person (work_id, person_id, role) VALUES (79, 82, '저자');
 INSERT INTO work_person (work_id, person_id, role) VALUES (80, 83, '저자');
-INSERT INTO work_person (work_id, person_id, role) VALUES (81, 84, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (82, 85, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (83, 86, '작사·작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (84, 84, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (85, 87, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (86, 88, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (86, 89, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (87, 90, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (88, 91, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (89, 87, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (90, 87, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (91, 91, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (92, 92, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (93, 93, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (94, 93, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (95, 93, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (96, 93, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (97, 93, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (98, 94, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (99, 95, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (100, 96, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (101, 97, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (102, 97, '작가');
-INSERT INTO work_person (work_id, person_id, role) VALUES (103, 98, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (104, 98, '작곡');
-INSERT INTO work_person (work_id, person_id, role) VALUES (105, 99, '작곡');
 INSERT INTO friendship (requester_id, receiver_id, status, requested_at) VALUES (1, 2, 'ACCEPTED', '2025-02-01 12:00:00');
 INSERT INTO friendship (requester_id, receiver_id, status, requested_at) VALUES (1, 3, 'ACCEPTED', '2025-02-10 12:00:00');
 INSERT INTO friendship (requester_id, receiver_id, status, requested_at) VALUES (1, 5, 'ACCEPTED', '2025-02-19 12:00:00');
@@ -674,7 +554,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (13, 1, 66, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (14, 1, 73, 'DONE', 3.0, '2025-11-21');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (15, 1, 80, 'DONE', 3.5, '2026-03-07');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (16, 1, 82, 'DONE', 4.5, '2026-06-03');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (17, 2, 21, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (18, 2, 42, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (19, 2, 44, 'DONE', 3.5, '2025-11-07');
@@ -694,9 +573,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (33, 2, 76, 'DONE', 3.5, '2026-03-08');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (34, 2, 78, 'DONE', 2.5, '2025-12-07');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (35, 2, 80, 'DONE', 3.5, '2026-03-02');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (36, 2, 83, 'DONE', 1.0, '2026-07-13');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (37, 2, 85, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (38, 2, 103, 'DONE', 2.5, '2025-12-26');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (39, 3, 1, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (40, 3, 5, 'DONE', 4.5, '2026-03-27');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (41, 3, 6, 'DONE', 4.0, '2026-01-26');
@@ -720,28 +596,12 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (59, 3, 76, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (60, 3, 78, 'DONE', 4.5, '2026-02-11');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (61, 3, 80, 'DONE', 4.5, '2025-03-02');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (62, 3, 83, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (63, 3, 95, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (64, 3, 104, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (65, 4, 1, 'DONE', 4.5, '2025-09-20');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (66, 4, 20, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (67, 4, 35, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (68, 4, 45, 'DONE', 4.5, '2026-02-25');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (69, 4, 46, 'DONE', 3.0, '2026-02-23');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (70, 4, 67, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (71, 4, 81, 'DONE', 5.0, '2025-04-28');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (72, 4, 82, 'DONE', 4.5, '2026-09-08');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (73, 4, 86, 'DONE', 3.5, '2025-11-20');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (74, 4, 87, 'DONE', 2.0, '2026-09-10');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (75, 4, 91, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (76, 4, 92, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (77, 4, 93, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (78, 4, 96, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (79, 4, 98, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (80, 4, 100, 'DONE', 3.0, '2025-09-08');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (81, 4, 102, 'DONE', 3.5, '2026-07-16');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (82, 4, 104, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (83, 4, 105, 'DONE', 4.0, '2025-08-18');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (84, 5, 3, 'DONE', 4.0, '2026-04-17');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (85, 5, 8, 'DONE', 4.0, '2025-08-16');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (86, 5, 21, 'WANT', NULL, NULL);
@@ -756,12 +616,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (95, 5, 55, 'DONE', 4.0, '2026-06-29');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (96, 5, 63, 'DONE', 3.0, '2026-03-07');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (97, 5, 65, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (98, 5, 83, 'DONE', 3.5, '2026-05-09');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (99, 5, 88, 'DONE', 4.5, '2025-10-27');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (100, 5, 92, 'DONE', 4.0, '2026-07-10');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (101, 5, 94, 'DONE', 4.0, '2026-08-07');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (102, 5, 98, 'DONE', 3.5, '2026-07-25');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (103, 5, 105, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (104, 6, 4, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (105, 6, 11, 'DONE', 4.0, '2026-10-02');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (106, 6, 42, 'DONE', 4.0, '2026-10-02');
@@ -777,7 +631,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (116, 6, 68, 'DONE', 4.5, '2026-02-23');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (117, 6, 69, 'DONE', 4.0, '2025-01-16');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (118, 6, 70, 'DONE', 4.0, '2026-04-03');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (119, 6, 91, 'DONE', 4.5, '2025-10-10');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (120, 7, 3, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (121, 7, 7, 'DONE', 2.5, '2026-01-02');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (122, 7, 14, 'DONE', 5.0, '2026-10-14');
@@ -794,11 +647,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (133, 7, 40, 'DONE', 4.0, '2026-02-27');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (134, 7, 44, 'DONE', 3.0, '2025-11-23');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (135, 7, 64, 'DONE', 3.0, '2026-09-03');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (136, 7, 83, 'DONE', 3.0, '2025-05-01');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (137, 7, 93, 'DONE', 3.5, '2025-03-15');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (138, 7, 95, 'DONE', 0.5, '2026-03-17');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (139, 7, 98, 'DONE', 2.5, '2026-04-26');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (140, 7, 99, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (141, 8, 11, 'DONE', 3.5, '2025-07-12');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (142, 8, 27, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (143, 8, 43, 'WANT', NULL, NULL);
@@ -818,12 +666,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (157, 8, 75, 'DONE', 4.5, '2026-07-12');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (158, 8, 76, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (159, 8, 77, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (160, 8, 81, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (161, 8, 85, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (162, 8, 92, 'DONE', 4.0, '2026-01-06');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (163, 8, 93, 'DONE', 0.5, '2025-12-08');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (164, 8, 99, 'DONE', 4.5, '2025-12-28');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (165, 8, 103, 'DONE', 4.5, '2025-08-29');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (166, 9, 1, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (167, 9, 2, 'DONE', 3.5, '2026-02-27');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (168, 9, 3, 'WATCHING', NULL, NULL);
@@ -841,12 +683,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (180, 9, 40, 'DONE', 5.0, '2026-01-16');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (181, 9, 74, 'DONE', 4.0, '2025-11-09');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (182, 9, 80, 'DONE', 3.0, '2025-09-23');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (183, 9, 82, 'DONE', 4.0, '2026-03-05');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (184, 9, 87, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (185, 9, 91, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (186, 9, 99, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (187, 9, 100, 'DONE', 4.5, '2026-02-04');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (188, 9, 101, 'WATCHING', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (189, 10, 9, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (190, 10, 10, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (191, 10, 11, 'DONE', 4.5, '2025-12-09');
@@ -861,8 +697,6 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (200, 10, 46, 'DONE', 4.5, '2026-09-04');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (201, 10, 59, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (202, 10, 76, 'DONE', 0.5, '2025-05-24');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (203, 10, 86, 'DONE', 3.0, '2026-06-19');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (204, 10, 95, 'DONE', 2.0, '2025-02-08');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (205, 11, 2, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (206, 11, 3, 'DONE', 5.0, '2026-01-04');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (207, 11, 12, 'DONE', 4.0, '2025-12-31');
@@ -878,31 +712,11 @@ INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) V
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (217, 11, 69, 'DONE', 3.5, '2025-12-23');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (218, 11, 70, 'DONE', 5.0, '2026-05-18');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (219, 11, 74, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (220, 11, 81, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (221, 11, 83, 'DONE', 4.5, '2025-05-22');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (222, 11, 89, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (223, 11, 91, 'WATCHING', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (224, 11, 92, 'DONE', 4.5, '2026-04-16');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (225, 11, 100, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (226, 11, 103, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (227, 12, 2, 'DONE', 3.5, '2025-12-02');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (228, 12, 8, 'WANT', NULL, NULL);
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (229, 12, 16, 'DONE', 3.0, '2026-01-23');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (230, 12, 18, 'DONE', 4.0, '2025-11-03');
 INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (231, 12, 51, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (232, 12, 82, 'DONE', 3.0, '2026-05-26');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (233, 12, 83, 'DONE', 3.5, '2026-07-27');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (234, 12, 89, 'DONE', 3.0, '2026-08-17');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (235, 12, 91, 'DONE', 5.0, '2026-02-05');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (236, 12, 93, 'DONE', 4.5, '2025-06-27');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (237, 12, 94, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (238, 12, 97, 'DONE', 4.0, '2026-08-04');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (239, 12, 98, 'DONE', 3.0, '2025-05-23');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (240, 12, 99, 'DONE', 4.0, '2026-10-03');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (241, 12, 100, 'WANT', NULL, NULL);
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (242, 12, 102, 'DONE', 4.5, '2025-05-21');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (243, 12, 104, 'DONE', 3.0, '2026-01-26');
-INSERT INTO record (record_id, user_id, work_id, status, rating, watched_date) VALUES (244, 12, 105, 'DONE', 4.5, '2025-03-09');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (1, 1, '『아가씨』 다시 보면 새로운 장면이 보일 것 같다. 별점은 후하게 줬다.', 'N', 'ALL', '2026-09-20 17:43:55');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (2, 3, '『암살』 엔딩 이후에도 여운이 길게 남았다. 별점은 후하게 줬다.', 'N', 'FRIEND', '2025-12-12 14:59:42');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (3, 3, '『암살』 연출과 분위기가 인상 깊었다. 별점은 후하게 줬다.', 'Y', 'PRIVATE', '2025-12-12 21:59:41');
@@ -921,8 +735,6 @@ INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, creat
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (16, 31, '『토지』 읽고 나서 한동안 책을 덮고 가만히 있었다. 호불호는 갈릴 것 같다.', 'N', 'FRIEND', '2025-04-24 15:04:49');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (17, 32, '『코스모스』 생각할 거리를 많이 남겨 준다. 기대가 커서 더 아쉬웠다.', 'Y', 'PRIVATE', '2026-07-02 11:06:58');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (18, 33, '『정의란 무엇인가』 초반은 느리지만 갈수록 빠져든다. 호불호는 갈릴 것 같다.', 'N', 'ALL', '2026-03-11 13:39:00');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (19, 36, '『위키드』 음악과 대사가 오래 기억에 남는다. 개인적으로는 아쉬웠다.', 'N', 'FRIEND', '2026-07-14 13:25:26');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (20, 38, '『백조의 호수』 음악과 대사가 오래 기억에 남는다. 취향은 아니었다.', 'N', 'ALL', '2025-12-29 10:06:14');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (21, 44, '『암살』 엔딩 이후에도 여운이 길게 남았다. 별점은 후하게 줬다.', 'N', 'ALL', '2026-04-02 19:50:28');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (22, 45, '『건축학개론』 연출과 분위기가 인상 깊었다. 취향은 아니었다.', 'N', 'PRIVATE', '2025-12-27 23:45:47');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (23, 46, '『인터스텔라』 연출과 분위기가 인상 깊었다. 호불호는 갈릴 것 같다.', 'N', 'ALL', '2026-08-27 11:48:36');
@@ -934,13 +746,10 @@ INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, creat
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (29, 60, '『미움받을 용기』 문장이 읽기 편해서 금방 읽혔다. 강력 추천!', 'N', 'ALL', '2026-02-12 22:53:09');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (30, 61, '『언어의 온도』 천천히 곱씹으며 읽을 만한 책이다. 강력 추천!', 'N', 'FRIEND', '2025-03-04 22:59:00');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (31, 69, '『완전한 행복』 읽고 나서 한동안 책을 덮고 가만히 있었다. 무난하게 즐길 만했다.', 'N', 'FRIEND', '2026-02-25 12:58:33');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (32, 80, '『고도를 기다리며』 음악과 대사가 오래 기억에 남는다. 무난하게 즐길 만했다.', 'N', 'PRIVATE', '2025-09-09 11:17:06');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (33, 91, '『노트북』 연출과 분위기가 인상 깊었다. 기대가 커서 더 아쉬웠다.', 'Y', 'FRIEND', '2026-07-24 11:28:10');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (34, 92, '『불편한 편의점』 천천히 곱씹으며 읽을 만한 책이다. 개인적으로는 아쉬웠다.', 'N', 'PRIVATE', '2026-04-05 18:36:23');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (35, 95, '『위대한 개츠비』 초반은 느리지만 갈수록 빠져든다. 강력 추천!', 'Y', 'ALL', '2026-07-01 23:41:42');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (36, 96, '『용의자 X의 헌신』 읽고 나서 한동안 책을 덮고 가만히 있었다. 호불호는 갈릴 것 같다.', 'N', 'FRIEND', '2026-03-07 10:29:26');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (37, 98, '『위키드』 커튼콜까지 감동이었다. 기대한 만큼은 했다.', 'N', 'ALL', '2026-05-09 15:52:50');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (38, 102, '『오이디푸스 왕』 음악과 대사가 오래 기억에 남는다. 무난하게 즐길 만했다.', 'N', 'ALL', '2026-07-28 12:39:15');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (39, 105, '『택시운전사』 다시 보면 새로운 장면이 보일 것 같다. 강력 추천!', 'N', 'FRIEND', '2026-10-02 17:22:27');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (40, 106, '『소년이 온다』 문장이 읽기 편해서 금방 읽혔다. 별점은 후하게 줬다.', 'N', 'ALL', '2026-10-05 17:34:03');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (41, 110, '『1984』 문장이 읽기 편해서 금방 읽혔다. 오래 기억에 남을 작품이다.', 'N', 'ALL', '2026-05-11 22:59:47');
@@ -957,9 +766,6 @@ INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, creat
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (52, 132, '『노트북』 엔딩 이후에도 여운이 길게 남았다. 강력 추천!', 'N', 'PRIVATE', '2026-02-02 23:47:19');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (53, 134, '『불편한 편의점』 다시 읽고 싶은 책이다. 기대한 만큼은 했다.', 'N', 'ALL', '2025-11-26 10:44:24');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (54, 135, '『그리고 아무도 없었다』 다시 읽고 싶은 책이다. 호불호는 갈릴 것 같다.', 'N', 'PRIVATE', '2026-09-03 17:16:33');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (55, 136, '『위키드』 현장에서만 느낄 수 있는 에너지가 좋았다. 기대한 만큼은 했다.', 'N', 'PRIVATE', '2025-05-01 21:51:06');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (56, 137, '『햄릿』 음악과 대사가 오래 기억에 남는다. 호불호는 갈릴 것 같다.', 'N', 'PRIVATE', '2025-03-17 10:39:26');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (57, 139, '『오이디푸스 왕』 현장에서만 느낄 수 있는 에너지가 좋았다. 취향은 아니었다.', 'N', 'ALL', '2026-04-28 10:28:42');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (58, 141, '『택시운전사』 음악이 장면과 잘 어울렸다. 기대한 만큼은 했다.', 'N', 'ALL', '2025-07-14 23:19:02');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (59, 145, '『종의 기원』 초반은 느리지만 갈수록 빠져든다. 강력 추천!', 'N', 'ALL', '2026-03-03 19:08:18');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (60, 146, '『달러구트 꿈 백화점』 천천히 곱씹으며 읽을 만한 책이다. 오래 기억에 남을 작품이다.', 'N', 'FRIEND', '2026-05-09 18:00:46');
@@ -970,11 +776,6 @@ INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, creat
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (65, 153, '『사피엔스』 다시 읽고 싶은 책이다. 오래 기억에 남을 작품이다.', 'N', 'ALL', '2026-09-16 18:34:20');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (66, 154, '『총, 균, 쇠』 다시 읽고 싶은 책이다. 오래 기억에 남을 작품이다.', 'N', 'FRIEND', '2026-08-22 14:54:09');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (67, 155, '『코스모스』 천천히 곱씹으며 읽을 만한 책이다. 오래 기억에 남을 작품이다.', 'N', 'PRIVATE', '2026-01-02 20:04:35');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (68, 162, '『헤드윅』 배우들의 호흡이 좋았다. 별점은 후하게 줬다.', 'Y', 'ALL', '2026-01-09 17:07:06');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (69, 162, '『헤드윅』 커튼콜까지 감동이었다. 강력 추천!', 'N', 'PRIVATE', '2026-01-09 10:31:00');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (70, 163, '『햄릿』 커튼콜까지 감동이었다. 개인적으로는 아쉬웠다.', 'N', 'PRIVATE', '2025-12-10 20:13:32');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (71, 164, '『세일즈맨의 죽음』 현장에서만 느낄 수 있는 에너지가 좋았다. 별점은 후하게 줬다.', 'Y', 'ALL', '2025-12-29 23:41:00');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (72, 165, '『백조의 호수』 배우들의 호흡이 좋았다. 강력 추천!', 'N', 'ALL', '2025-08-29 16:54:31');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (73, 167, '『올드보이』 다시 보면 새로운 장면이 보일 것 같다. 호불호는 갈릴 것 같다.', 'N', 'PRIVATE', '2026-02-28 10:57:53');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (74, 171, '『택시운전사』 엔딩 이후에도 여운이 길게 남았다. 강력 추천!', 'N', 'PRIVATE', '2026-01-06 11:37:42');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (75, 175, '『건축학개론』 엔딩 이후에도 여운이 길게 남았다. 무난하게 즐길 만했다.', 'N', 'FRIEND', '2025-12-27 20:37:10');
@@ -983,15 +784,12 @@ INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, creat
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (78, 180, '『파묘』 엔딩 이후에도 여운이 길게 남았다. 강력 추천!', 'N', 'ALL', '2026-01-17 23:44:19');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (79, 181, '『이기적 유전자』 천천히 곱씹으며 읽을 만한 책이다. 오래 기억에 남을 작품이다.', 'N', 'ALL', '2025-11-10 17:24:50');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (80, 182, '『언어의 온도』 다시 읽고 싶은 책이다. 기대한 만큼은 했다.', 'N', 'ALL', '2025-09-25 12:46:41');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (81, 183, '『레미제라블』 좌석 시야가 아쉬웠지만 공연은 만족스러웠다. 별점은 후하게 줬다.', 'N', 'PRIVATE', '2026-03-08 12:32:09');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (82, 191, '『택시운전사』 배우들의 연기가 몰입감을 높여 줬다. 강력 추천!', 'N', 'PRIVATE', '2025-12-10 22:56:45');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (83, 192, '『베테랑』 배우들의 연기가 몰입감을 높여 줬다. 무난하게 즐길 만했다.', 'Y', 'ALL', '2026-09-02 22:55:30');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (84, 196, '『위플래쉬』 연출과 분위기가 인상 깊었다. 강력 추천!', 'N', 'ALL', '2026-09-22 23:56:04');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (85, 197, '『오펜하이머』 친구에게 추천하고 싶은 영화다. 강력 추천!', 'N', 'ALL', '2026-06-04 16:57:31');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (86, 198, '『듄』 음악이 장면과 잘 어울렸다. 별점은 후하게 줬다.', 'N', 'PRIVATE', '2026-02-18 20:54:54');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (87, 202, '『정의란 무엇인가』 천천히 곱씹으며 읽을 만한 책이다. 기대가 커서 더 아쉬웠다.', 'N', 'FRIEND', '2025-05-27 19:48:27');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (88, 203, '『맘마미아!』 커튼콜까지 감동이었다. 기대한 만큼은 했다.', 'N', 'PRIVATE', '2026-06-22 20:00:43');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (89, 204, '『로미오와 줄리엣』 음악과 대사가 오래 기억에 남는다. 개인적으로는 아쉬웠다.', 'Y', 'PRIVATE', '2025-02-10 15:48:16');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (90, 207, '『베테랑』 엔딩 이후에도 여운이 길게 남았다. 강력 추천!', 'N', 'FRIEND', '2026-01-01 18:57:24');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (91, 207, '『베테랑』 친구에게 추천하고 싶은 영화다. 강력 추천!', 'N', 'FRIEND', '2026-01-03 13:44:21');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (92, 208, '『포레스트 검프』 연출과 분위기가 인상 깊었다. 강력 추천!', 'N', 'ALL', '2026-04-07 17:13:20');
@@ -1000,16 +798,8 @@ INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, creat
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (95, 211, '『파묘』 배우들의 연기가 몰입감을 높여 줬다. 강력 추천!', 'N', 'PRIVATE', '2026-08-02 17:34:32');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (96, 215, '『1984』 초반은 느리지만 갈수록 빠져든다. 오래 기억에 남을 작품이다.', 'N', 'ALL', '2026-06-18 15:13:51');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (97, 218, '『토지』 읽고 나서 한동안 책을 덮고 가만히 있었다. 강력 추천!', 'N', 'FRIEND', '2026-05-18 21:59:55');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (98, 221, '『위키드』 커튼콜까지 감동이었다. 오래 기억에 남을 작품이다.', 'N', 'FRIEND', '2025-05-23 23:54:42');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (99, 224, '『헤드윅』 좌석 시야가 아쉬웠지만 공연은 만족스러웠다. 강력 추천!', 'Y', 'PRIVATE', '2026-04-18 13:01:33');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (100, 227, '『올드보이』 친구에게 추천하고 싶은 영화다. 무난하게 즐길 만했다.', 'N', 'ALL', '2025-12-05 11:12:58');
 INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (101, 230, '『건축학개론』 친구에게 추천하고 싶은 영화다. 오래 기억에 남을 작품이다.', 'Y', 'FRIEND', '2025-11-04 18:13:29');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (102, 232, '『레미제라블』 배우들의 호흡이 좋았다. 기대한 만큼은 했다.', 'Y', 'ALL', '2026-05-26 19:35:18');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (103, 234, '『웃는 남자』 좌석 시야가 아쉬웠지만 공연은 만족스러웠다. 기대한 만큼은 했다.', 'Y', 'ALL', '2026-08-17 15:44:07');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (104, 236, '『햄릿』 음악과 대사가 오래 기억에 남는다. 오래 기억에 남을 작품이다.', 'N', 'ALL', '2025-06-30 18:11:23');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (105, 238, '『리어 왕』 음악과 대사가 오래 기억에 남는다. 별점은 후하게 줬다.', 'N', 'ALL', '2026-08-04 23:10:51');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (106, 243, '『호두까기 인형』 현장에서만 느낄 수 있는 에너지가 좋았다. 무난하게 즐길 만했다.', 'N', 'PRIVATE', '2026-01-29 15:04:12');
-INSERT INTO review (review_id, record_id, content, spoiler_yn, visibility, created_at) VALUES (107, 244, '『지젤』 배우들의 호흡이 좋았다. 별점은 후하게 줬다.', 'N', 'PRIVATE', '2025-03-09 11:28:02');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (1, 6, '2026-09-21 20:43:55');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (1, 10, '2026-09-20 18:43:55');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (1, 12, '2026-09-22 07:43:55');
@@ -1045,11 +835,6 @@ INSERT INTO review_like (review_id, user_id, created_at) VALUES (12, 3, '2025-11
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (12, 4, '2025-11-12 01:22:07');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (14, 4, '2025-09-23 16:36:51');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (16, 3, '2025-04-26 11:04:49');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (19, 1, '2026-07-16 09:25:26');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (19, 3, '2026-07-16 12:25:26');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (19, 4, '2026-07-15 22:25:26');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (20, 3, '2025-12-30 07:06:14');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (20, 8, '2025-12-30 21:06:14');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (23, 1, '2026-08-29 17:48:36');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (23, 2, '2026-08-30 05:48:36');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (23, 4, '2026-08-29 04:48:36');
@@ -1098,8 +883,6 @@ INSERT INTO review_like (review_id, user_id, created_at) VALUES (51, 6, '2026-07
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (51, 9, '2026-07-27 19:04:23');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (53, 4, '2025-11-26 16:44:24');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (53, 12, '2025-11-26 20:44:24');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (57, 5, '2026-05-01 09:28:42');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (57, 9, '2026-04-28 22:28:42');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (58, 6, '2025-07-16 02:19:02');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (58, 7, '2025-07-17 01:19:02');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (59, 2, '2026-03-04 13:08:18');
@@ -1123,8 +906,6 @@ INSERT INTO review_like (review_id, user_id, created_at) VALUES (65, 10, '2026-0
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (65, 12, '2026-09-19 15:34:20');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (66, 6, '2026-08-23 04:54:09');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (66, 10, '2026-08-23 02:54:09');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (68, 7, '2026-01-11 09:07:06');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (72, 9, '2025-08-30 08:54:31');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (75, 7, '2025-12-30 01:37:10');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (75, 11, '2025-12-28 10:37:10');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (76, 7, '2026-03-13 23:35:54');
@@ -1159,11 +940,6 @@ INSERT INTO review_like (review_id, user_id, created_at) VALUES (97, 1, '2026-05
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (97, 9, '2026-05-19 19:59:55');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (101, 4, '2025-11-06 02:13:29');
 INSERT INTO review_like (review_id, user_id, created_at) VALUES (101, 10, '2025-11-06 08:13:29');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (102, 1, '2026-05-29 08:35:18');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (102, 11, '2026-05-27 11:35:18');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (103, 6, '2026-08-18 12:44:07');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (104, 5, '2025-07-03 14:11:23');
-INSERT INTO review_like (review_id, user_id, created_at) VALUES (105, 8, '2026-08-07 07:10:51');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (1, 5, 3, '좋은 후기 잘 읽었습니다.', '2026-06-03 03:48:21');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (2, 5, 11, '저도 보고 싶어졌어요!', '2026-06-04 23:48:21');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (3, 6, 3, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-03-13 03:55:45');
@@ -1178,7 +954,6 @@ INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUE
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (12, 18, 3, '추천 감사합니다. 보고 싶어요에 담았어요.', '2026-03-15 06:39:00');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (13, 18, 12, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-03-13 18:39:00');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (14, 18, 5, '저도 보고 싶어졌어요!', '2026-03-15 05:39:00');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (15, 20, 1, '저도 보고 싶어졌어요!', '2025-12-30 11:06:14');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (16, 23, 8, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-08-27 23:48:36');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (17, 23, 12, '스포일러 조심하세요!', '2026-08-30 15:48:36');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (18, 23, 2, '좋은 후기 잘 읽었습니다.', '2026-08-28 06:48:36');
@@ -1193,11 +968,6 @@ INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUE
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (27, 29, 5, '좋은 후기 잘 읽었습니다.', '2026-02-16 22:53:09');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (28, 35, 7, '추천 감사합니다. 보고 싶어요에 담았어요.', '2026-07-02 03:41:42');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (29, 35, 11, '저도 보고 싶어졌어요!', '2026-07-04 03:41:42');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (30, 37, 11, '별점이 후하시네요 ㅎㅎ', '2026-05-10 15:52:50');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (31, 37, 7, '스포일러 조심하세요!', '2026-05-10 00:52:50');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (32, 37, 12, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-05-11 10:52:50');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (33, 38, 10, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-07-31 08:39:15');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (34, 38, 3, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-07-29 09:39:15');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (35, 43, 7, '좋은 후기 잘 읽었습니다.', '2026-03-14 22:56:36');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (36, 43, 8, '별점이 후하시네요 ㅎㅎ', '2026-03-16 01:56:36');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (37, 43, 3, '저도 보고 싶어졌어요!', '2026-03-15 15:56:36');
@@ -1214,15 +984,11 @@ INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUE
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (48, 53, 3, '별점이 후하시네요 ㅎㅎ', '2025-11-29 22:44:24');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (49, 53, 11, '좋은 후기 잘 읽었습니다.', '2025-11-30 04:44:24');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (50, 53, 5, '좋은 후기 잘 읽었습니다.', '2025-11-28 00:44:24');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (51, 57, 3, '저는 조금 다르게 느꼈어요. 다음에 얘기해 봐요.', '2026-04-28 12:28:42');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (52, 57, 10, '다음에 같이 봐요!', '2026-05-01 07:28:42');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (53, 57, 6, '다음에 같이 봐요!', '2026-04-29 14:28:42');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (54, 59, 12, '추천 감사합니다. 보고 싶어요에 담았어요.', '2026-03-06 06:08:18');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (55, 59, 2, '공감해요. 같은 부분이 인상 깊었어요.', '2026-03-04 11:08:18');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (56, 59, 7, '공감해요. 같은 부분이 인상 깊었어요.', '2026-03-04 14:08:18');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (57, 65, 5, '추천 감사합니다. 보고 싶어요에 담았어요.', '2026-09-19 10:34:20');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (58, 65, 1, '저도 보고 싶어졌어요!', '2026-09-19 07:34:20');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (59, 68, 3, '다음에 같이 봐요!', '2026-01-10 17:07:06');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (60, 75, 11, '공감해요. 같은 부분이 인상 깊었어요.', '2025-12-29 13:37:10');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (61, 76, 7, '스포일러 조심하세요!', '2026-03-14 13:35:54');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (62, 83, 2, '좋은 후기 잘 읽었습니다.', '2026-09-06 13:55:30');
@@ -1241,14 +1007,6 @@ INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUE
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (75, 94, 9, '공감해요. 같은 부분이 인상 깊었어요.', '2025-03-26 17:54:33');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (76, 100, 2, '좋은 후기 잘 읽었습니다.', '2025-12-08 17:12:58');
 INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (77, 100, 7, '공감해요. 같은 부분이 인상 깊었어요.', '2025-12-06 04:12:58');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (78, 103, 8, '공감해요. 같은 부분이 인상 깊었어요.', '2026-08-21 09:44:07');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (79, 103, 6, '다음에 같이 봐요!', '2026-08-20 06:44:07');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (80, 104, 4, '다음에 같이 봐요!', '2025-07-03 13:11:23');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (81, 104, 2, '공감해요. 같은 부분이 인상 깊었어요.', '2025-07-02 15:11:23');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (82, 104, 11, '좋은 후기 잘 읽었습니다.', '2025-07-04 14:11:23');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (83, 105, 7, '좋은 후기 잘 읽었습니다.', '2026-08-06 05:10:51');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (84, 105, 9, '추천 감사합니다. 보고 싶어요에 담았어요.', '2026-08-06 03:10:51');
-INSERT INTO comments (comment_id, review_id, user_id, content, created_at) VALUES (85, 105, 11, '스포일러 조심하세요!', '2026-08-08 15:10:51');
 INSERT INTO collection (collection_id, user_id, title) VALUES (1, 1, '올해의 영화');
 INSERT INTO collection (collection_id, user_id, title) VALUES (2, 2, '입문용 소설');
 INSERT INTO collection (collection_id, user_id, title) VALUES (3, 3, '비 오는 날 보는 영화');
@@ -1275,11 +1033,6 @@ INSERT INTO collection_item (collection_id, work_id) VALUES (3, 20);
 INSERT INTO collection_item (collection_id, work_id) VALUES (3, 27);
 INSERT INTO collection_item (collection_id, work_id) VALUES (3, 31);
 INSERT INTO collection_item (collection_id, work_id) VALUES (3, 35);
-INSERT INTO collection_item (collection_id, work_id) VALUES (4, 81);
-INSERT INTO collection_item (collection_id, work_id) VALUES (4, 85);
-INSERT INTO collection_item (collection_id, work_id) VALUES (4, 88);
-INSERT INTO collection_item (collection_id, work_id) VALUES (4, 90);
-INSERT INTO collection_item (collection_id, work_id) VALUES (4, 92);
 INSERT INTO collection_item (collection_id, work_id) VALUES (5, 1);
 INSERT INTO collection_item (collection_id, work_id) VALUES (5, 3);
 INSERT INTO collection_item (collection_id, work_id) VALUES (5, 36);
@@ -1302,9 +1055,902 @@ INSERT INTO collection_item (collection_id, work_id) VALUES (8, 30);
 INSERT INTO collection_item (collection_id, work_id) VALUES (8, 31);
 INSERT INTO collection_item (collection_id, work_id) VALUES (8, 32);
 INSERT INTO collection_item (collection_id, work_id) VALUES (8, 33);
-INSERT INTO collection_item (collection_id, work_id) VALUES (9, 94);
-INSERT INTO collection_item (collection_id, work_id) VALUES (9, 95);
-INSERT INTO collection_item (collection_id, work_id) VALUES (9, 96);
-INSERT INTO collection_item (collection_id, work_id) VALUES (9, 98);
-INSERT INTO collection_item (collection_id, work_id) VALUES (9, 99);
-INSERT INTO collection_item (collection_id, work_id) VALUES (9, 101);
+
+-- ------------------------------------------------------------
+-- 영화 40편 TMDB 실제 데이터(개봉일·줄거리·포스터·상영 시간·TMDB ID). 내용은 08_movies_tmdb.sql 과 같다.
+-- ------------------------------------------------------------
+-- 08_movies_tmdb.sql : 샘플 영화 40편(work_id 1~40)을 TMDB 실제 데이터로 채운다 (2026-11-16)
+-- 1 기생충
+UPDATE work SET release_date = '2019-05-30', summary = '가족 모두가 일자리를 구하지 못해 앞날이 막막한 기택의 집에, 장남 기우를 위한 고액 과외 제안이 들어온다. 명문대생 친구가 연결해 준 자리인 만큼, 기우에게는 오랜만에 찾아온 고정수입의 기회이자 가족의 기대를 짊어진 일이다. 온 가족의 도움을 받고 박 사장의 저택으로 향한 그는, 살던 곳과 전혀 다른 풍요롭고 정돈된 공간을 마주한다. 집주인의 아내 연교와 가정부 문광의 안내를 받은 기우는 딸 다혜의 수업을 시작하며 새로운 집안의 일상에 조심스레 들어간다. 과외가 순조롭게 진행되자 어렵게 열린 기회를 놓치고 싶지 않은 마음은 커지고, 두 가족의 생활은 조금씩 맞닿기 시작한다. 서로에게 필요한 것을 채워줄 듯한 이 만남은, 처음에는 보이지 않던 차이와 욕망을 드러내는데...', poster_url = 'https://image.tmdb.org/t/p/w500/jjHccoFjbqlfr4VGLVLT7yek0Xn.jpg', source = 'TMDB', external_id = '496243' WHERE work_id = 1 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 131 WHERE work_id = 1;
+-- 2 올드보이
+UPDATE work SET release_date = '2003-11-21', summary = '오대수는 어느 날 술이 거나하게 취해 집에 돌아가는 길에 누군가에게 납치, 사설 감금방에 갇히게 된다. 중국집 군만두만을 먹으며 8평이라는 제한된 공간에서 그가 할 수 있는 일이라곤 텔레비전 보는 게 전부. 1년이 지났을 무렵, 뉴스를 통해 나오는 아내의 살해소식. 게다가 아내의 살인범으로 자신이 지목되고 있음을 알게 된 오대수는 복수와 탈출을 위해 감금방 한쪽 구석을 쇠젓가락으로 파기 시작한다. 감금 15년을 맞이하는 해, 마침내 사람 몸 하나 빠져나갈 만큼의 탈출구가 생겼을 때, 어이없게도 15년 전 납치됐던 바로 그 장소로 풀려나 있는 자신을 발견하게 된다.', poster_url = 'https://image.tmdb.org/t/p/w500/xpa9ybm6tYGna5LseqSXvKpSSJn.jpg', source = 'TMDB', external_id = '670' WHERE work_id = 2 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 120 WHERE work_id = 2;
+-- 3 살인의 추억
+UPDATE work SET release_date = '2003-04-25', summary = '1986년 경기도. 젊은 여인이 무참히 강간, 살해당한 시체로 발견된다. 2개월 후 비슷한 수법의 강간살인사건이 연이어 발생하면서 사건은 세간의 주목을 받기 시작하고, 일대는 연쇄살인이라는 생소한 범죄의 공포에 휩싸인다. 사건 발생 지역에 특별수사본부가 설치되고, 수사본부는 구희봉 반장을 필두로 지역토박이 형사 박두만과 조용구, 그리고 서울 시경에서 자원해 온 서태윤이 배치된다. 육감과 폭력으로 수사를 진행하는 박형사와 증거와 과학수사를 추구하는 서형사는 수사 내내 마찰을 일으키는데...', poster_url = 'https://image.tmdb.org/t/p/w500/wrsf1ebQ6S4gVhjR9FJElfdxAjj.jpg', source = 'TMDB', external_id = '11423' WHERE work_id = 3 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 127 WHERE work_id = 3;
+-- 4 괴물
+UPDATE work SET release_date = '2006-07-27', summary = '한강 둔치의 작은 매점에서 아버지를 도우며 살아가는 강두는 딸 현서와 함께 평범한 하루를 보내던 중 정체불명의 괴물을 목격한다. 순식간에 사람들을 덮친 괴물은 달아나던 현서까지 낚아채 강물 속으로 사라지고, 강두의 가족은 아이를 잃었다는 절망에 빠진다. 괴물과 접촉했다는 이유로 병원에 격리된 강두에게 어느 밤 현서의 전화가 걸려오지만, 누구도 그의 말을 믿어주지 않는다. 딸이 살아 있다는 확신을 얻은 강두는 아버지와 두 동생을 설득해 병원을 빠져나와 수색에 나선다. 군경이 통제하는 한강에서 가족은 손에 쥔 얼마 안 되는 단서로 아이가 갇힌 장소를 찾아야 한다. 도움을 청할 곳마저 막힌 이들은 괴물보다 먼저 현서에게 닿기 위해 위험구역 안으로 들어간다.', poster_url = 'https://image.tmdb.org/t/p/w500/tqDQzYGi1EWHgUZY91YRSJLDJVf.jpg', source = 'TMDB', external_id = '1255' WHERE work_id = 4 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 119 WHERE work_id = 4;
+-- 5 박쥐
+UPDATE work SET release_date = '2009-04-30', summary = '환자들을 돌보던 신부 상현은 질병을 막을 백신 실험에 자원하지만 감염되고, 정체를 알 수 없는 피를 수혈받은 뒤 살아난다. 기적처럼 회복한 그를 찾아 사람들이 몰려드는 동안 상현은 햇빛을 견디지 못하고 피를 갈망하는 변화를 숨긴다. 살인을 피하며 신앙을 지키려 애쓰는 그는 어린 시절 친구 강우와 재회하고, 친구의 집을 드나들다 아내 태주에게 이끌린다. 남편과 시어머니에게 억눌려 살던 태주 역시 상현과의 만남에서 익숙한 생활을 벗어나고 싶은 욕망을 느낀다. 서로를 향한 감정이 커질수록 상현은 사제로서 넘지 말아야 할 선과 살아남기 위해 필요한 피 사이에서 갈등한다. 타인을 구하려 내놓았던 몸이 이제 타인을 원하게 된 순간, 그의 기도와 행동은 점점 다른 곳을 향한다.', poster_url = 'https://image.tmdb.org/t/p/w500/2CoIYuNwGmdhsV5CM8jRJ2sAZKe.jpg', source = 'TMDB', external_id = '22536' WHERE work_id = 5 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 133 WHERE work_id = 5;
+-- 6 아가씨
+UPDATE work SET release_date = '2016-06-01', summary = '일제강점기 조선, 소매치기로 살아가던 숙희는 일본 귀족을 사칭하는 사기꾼의 제안을 받고 외딴 저택의 하녀로 들어간다. 막대한 재산을 상속받을 아가씨 히데코는 엄격한 이모부의 감시 아래 책을 읽으며 제한된 생활을 한다. 가짜 백작은 히데코를 유혹해 재산을 차지하려 하고, 숙희에게는 아가씨가 그를 사랑하도록 부추기는 역할이 주어진다. 순박한 하녀처럼 행동하며 가까이에서 시중을 들던 숙희는 자신을 의지하는 히데코에게 점차 예상하지 못한 감정을 느낀다. 백작이 저택에 드나들며 계획을 진행할수록, 아가씨의 마음을 움직여야 하는 숙희는 자신이 품은 마음부터 숨기기 어려워진다. 서로 다른 욕망을 감춘 사람들이 한 지붕 아래 모인 가운데, 누가 누구를 속이고 있는지조차 흐려진다.', poster_url = 'https://image.tmdb.org/t/p/w500/3eo3rQyiW4XIr27oSjAv2d09WMA.jpg', source = 'TMDB', external_id = '290098' WHERE work_id = 6 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 144 WHERE work_id = 6;
+-- 7 헤어질 결심
+UPDATE work SET release_date = '2022-06-29', summary = '산 정상에서 추락한 한 남자의 변사 사건. 담당 형사 해준은 사망자의 아내 서래와 마주하게 된다. 남편의 죽음 앞에서 특별한 동요를 보이지 않는 서래. 경찰은 보통의 유가족과는 다른 서래를 용의선상에 올린다. 해준은 사건 당일의 알리바이 탐문과 신문, 잠복수사를 통해 서래를 알아가면서 그녀에 대한 관심이 점점 커져가는 것을 느낀다. 한편 좀처럼 속을 짐작하기 어려운 서래는 상대가 자신을 의심한다는 것을 알면서도 조금의 망설임도 없이 해준을 대하는데...', poster_url = 'https://image.tmdb.org/t/p/w500/rXEJ28XDQsogIGqwVEgwM2oDdpl.jpg', source = 'TMDB', external_id = '705996' WHERE work_id = 7 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 138 WHERE work_id = 7;
+-- 8 부산행
+UPDATE work SET release_date = '2016-07-20', summary = '일에 쫓겨 딸 수안과 멀어진 펀드매니저 석우는 생일 소원을 들어주려고, 엄마가 있는 부산으로 향하는 KTX에 함께 오른다. 출발 직전 다친 여자가 열차에 숨어들고, 곧 승무원을 덮치는 기이한 공격이 객차 안으로 번진다. 감염된 사람들이 다른 승객을 물어뜯으며 늘어나자, 평범했던 여행은 좁은 통로에서 목숨을 지켜야 하는 도주로 바뀐다. 석우는 임신한 아내를 지키는 상화와 야구부 학생 영국 등 낯선 이들과 힘을 합쳐, 떨어진 가족들에게 다가갈 방법을 찾는다. 전국의 재난 소식이 전해지는 가운데 승객들은 안전하다고 알려진 부산에 마지막 기대를 건다. 하지만 살아남으려는 공포가 사람들 사이의 불신으로 번지면서, 열차 안에서는 감염자와의 싸움만큼 문을 열어주는 일도 어려워진다.', poster_url = 'https://image.tmdb.org/t/p/w500/6XvEZVBFFjybvb1yQd1qfOC6F2S.jpg', source = 'TMDB', external_id = '396535' WHERE work_id = 8 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 118 WHERE work_id = 8;
+-- 9 극한직업
+UPDATE work SET release_date = '2019-01-23', summary = '불철주야 달리고 구르지만 실적은 바닥, 급기야 해체 위기를 맞는 마약반!  더 이상 물러설 곳이 없는 팀의 맏형 고반장은 국제 범죄조직의 국내 마약 밀반입 정황을 포착하고 장형사, 마형사, 영호, 재훈까지 4명의 팀원들과 함께 잠복 수사에 나선다.  마약반은 24시간 감시를 위해 범죄조직의 아지트 앞 치킨집을 인수해 위장 창업을 하게 되고, 뜻밖의 절대미각을 지닌 마형사의 숨은 재능으로 치킨집은 일약 맛집으로 입소문이 나기 시작한다.  수사는 뒷전, 치킨장사로 눈코 뜰 새 없이 바빠진 마약반에게 어느 날 절호의 기회가 찾아오는데…', poster_url = 'https://image.tmdb.org/t/p/w500/lzzb384pgYyr0GQvu3K2ZW62CEE.jpg', source = 'TMDB', external_id = '567646' WHERE work_id = 9 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 111 WHERE work_id = 9;
+-- 10 명량
+UPDATE work SET release_date = '2014-07-30', summary = '1597년, 오랜 전쟁과 연이은 패배로 조선 수군이 무너진 가운데 파면당했던 이순신이 다시 삼도수군통제사로 돌아온다. 그러나 그를 기다리는 것은 열두 척의 배와 전의를 잃은 병사들, 왜군의 진격 소식에 피란을 서두르는 백성들뿐이다. 압도적인 전력을 앞세운 적의 함대가 다가오고 잔혹한 장수 구루지마까지 가세하자, 수군을 포기해야 한다는 목소리도 높아진다. 이순신은 물러서면 육지의 백성들까지 위험해진다는 사실을 알기에, 극심한 두려움에 빠진 군사들을 다시 전장에 세울 방법을 찾는다. 거센 물살이 흐르는 명량 해협을 바라보는 그의 판단은 동료들조차 쉽게 받아들이기 어려운 결단으로 이어진다. 누구도 승산을 말하지 못하는 바다에서, 그는 먼저 한 척의 배를 앞으로 움직인다.', poster_url = 'https://image.tmdb.org/t/p/w500/fl3G8TprVzt4icbYyQKqdPmUfIO.jpg', source = 'TMDB', external_id = '282631' WHERE work_id = 10 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 128 WHERE work_id = 10;
+-- 11 택시운전사
+UPDATE work SET release_date = '2017-08-02', summary = '택시운전사 만섭은 아내를 여의고 11살 딸을 키우며 어렵게 살림을 꾸리는 가장. 외국손님을 태우고 광주에 갔다 통금 전에 돌아오면 밀린 월세를 갚을 수 있는 거금 10만원을 준다는 말에  독일기자 피터를 태우고 영문도 모른 채 길을 나선다. 피터는 독일 공영방송 소속 기자로, 일본에서 ‘광주가 심상치 않다’는 말을 듣고 광주로 향한다. 어떻게든 택시비를 받아야 하는 만섭의 기지로 검문을 뚫고 겨우 들어선 광주. 위험하니 서울로 돌아가자는 만섭의 만류에도 피터는 대학생 재식과 황기사의 도움 속에 촬영을 시작하는데...', poster_url = 'https://image.tmdb.org/t/p/w500/pCdx7X5JLaSJZLNVtpryGSdjvvB.jpg', source = 'TMDB', external_id = '437068' WHERE work_id = 11 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 137 WHERE work_id = 11;
+-- 12 베테랑
+UPDATE work SET release_date = '2015-08-05', summary = '광역수사대 형사 서도철은 한 번 맡은 사건은 끝까지 파고드는 집념으로 동료들과 함께 거친 범죄 현장을 누빈다. 큰 사건을 마친 뒤 참석한 자리에서 재벌 3세 조태오를 만난 그는 남을 거리낌 없이 짓밟는 태도에 불쾌한 인상을 받는다. 얼마 뒤 수사를 도왔던 화물차 기사 배씨가 조태오의 회사에서 추락했다는 소식이 들리고, 도철은 단순한 자살 시도라는 설명을 의심한다. 피해자의 사정을 알아볼수록 조태오와 그를 보좌하는 최상무가 사건에 얽혀 있다는 정황이 드러난다. 돈과 인맥으로 수사를 막으려는 회유가 이어지고 주변에서도 물러서라는 압박이 들어오지만, 도철은 동료들과 증거를 좇는다. 법보다 자신의 힘을 믿는 조태오 앞에서 도철은 이번만큼은 넘어갈 수 없는 선을 긋는다.', poster_url = 'https://image.tmdb.org/t/p/w500/8OJ4VtaddbDDwP1ydCitsYxgzCT.jpg', source = 'TMDB', external_id = '346646' WHERE work_id = 12 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 123 WHERE work_id = 12;
+-- 13 범죄도시
+UPDATE work SET release_date = '2017-10-03', summary = '2004년 서울 가리봉동, 형사 마석도는 거친 주먹과 현장의 감각으로 범죄 조직 사이의 충돌을 누르며 동네의 질서를 지켜 왔다. 그러던 중 중국 하얼빈에서 넘어온 신흥 조직이 잔혹한 폭력으로 기존 세력을 밀어내면서 거리의 분위기가 달라진다. 돈을 거둬들이는 데 수단을 가리지 않는 일당은 빠르게 영역을 넓히고, 지역의 강자인 황사장까지 위협한다. 주민들의 일상에 공포가 퍼지자 마석도와 전일만 반장이 이끄는 강력반은 더는 힘의 균형에 기댈 수 없다고 판단한다. 형사들은 거리의 정보와 조직들의 움직임을 모으며 예측하기 어려운 범인들을 한꺼번에 붙잡을 소탕 작전을 준비한다. 말보다 폭력이 먼저 오가는 동네에서 마석도는 익숙한 골목을 다시 경찰의 손에 돌려놓으려 한다.', poster_url = 'https://image.tmdb.org/t/p/w500/sVwbHA4nhw389PwpDzkJam4WMoB.jpg', source = 'TMDB', external_id = '479718' WHERE work_id = 13 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 121 WHERE work_id = 13;
+-- 14 7번방의 선물
+UPDATE work SET release_date = '2013-01-23', summary = '최악의 흉악범들이 모인 교도소 7번방에 이상한 놈이 들어왔다! 그는 바로 6살 지능의 딸바보 용구. 평생 죄만 짓고 살아온 7번방 패밀리들에게 떨어진 미션은 바로 용구 딸 예승이를 외부인 절대 출입금지인 교도소에 반.입.하.는.것! 웃음과 감동 가득한 사상초유의 합동작전이 시작된다!', poster_url = 'https://image.tmdb.org/t/p/w500/c9TqJPm4pZCuiEXumTayoNIrBSK.jpg', source = 'TMDB', external_id = '158445' WHERE work_id = 14 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 127 WHERE work_id = 14;
+-- 15 타짜
+UPDATE work SET release_date = '2006-09-28', summary = '가구공장에서 일하며 남루한 삶을 사는 고니는 대학보다 가난을 벗어나게 해줄 돈이 우선인 청년. 어느 날 고니는 가구공장 한 켠에서 박무석 일행이 벌이는 화투판에 끼게 되지만, 고니는 그 판에서 3년 동안 모아두었던 돈 전부를 날리고 만다. 그것이 전문 도박꾼들이 짜고 친 판이었단 사실을 뒤늦게 안 고니는 박무석 일행을 찾아 나서고, 도박으로 시비가 붙은 한 창고에서 우연인 듯 필연처럼 전설의 타짜 평경장을 만난다. 그리고 잃었던 돈의 다섯 배를 따면 화투를 그만두겠단 약속을 하고, 그와 함께 본격적인 꽃싸움에 몸을 던지기 위한 동행길에 오른다.', poster_url = 'https://image.tmdb.org/t/p/w500/o1a5FULQTObsNbcgjapJtunpFzV.jpg', source = 'TMDB', external_id = '38015' WHERE work_id = 15 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 139 WHERE work_id = 15;
+-- 16 도둑들
+UPDATE work SET release_date = '2012-07-25', summary = '미술관을 턴 뽀빠이의 팀은 옛 동료 마카오박의 제안을 받고, 막 출소한 금고털이 팹시와 함께 홍콩으로 향한다. 그곳에서 첸이 이끄는 중국 도둑들과 만난 이들은 협력을 약속하면서도 서로를 경계한다. 마카오박이 내놓은 목표는 마카오 카지노에 보관된 2천만 달러짜리 다이아몬드 태양의 눈물로, 각 분야 전문가의 손발이 맞아야 접근할 수 있다. 그러나 뽀빠이는 마카오박을 믿지 않고, 팹시에게는 그와 얽힌 과거의 상처가 남아 있어 준비 과정부터 감정이 부딪친다. 현금을 먼저 챙기려는 예니콜과 한국 팀을 의심하는 첸까지 가세하면서, 같은 보석을 노리는 열 명의 계산은 제각각 어긋난다. 치밀하게 짠 계획이 실행되기 전부터, 도둑들은 이미 함께 일할 동료의 속내를 훔쳐보기 시작한다.', poster_url = 'https://image.tmdb.org/t/p/w500/tB26UY6RBbv7zs5MVzbcL2gpbJO.jpg', source = 'TMDB', external_id = '124157' WHERE work_id = 16 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 135 WHERE work_id = 16;
+-- 17 암살
+UPDATE work SET release_date = '2015-07-22', summary = '1933년 일제강점기, 대한민국 임시정부는 일본 측에 얼굴이 알려지지 않은 세 사람을 골라 비밀 암살 작전을 준비한다. 저격수 안옥윤과 신흥무관학교 출신 속사포, 폭탄 전문가 황덕삼은 각자의 기술을 가진 채 하나의 임무로 모인다. 임시정부 경무국 대장 염석진이 이들을 찾아 나서고, 암살단은 일본군 사령관과 친일파 강인국을 표적으로 삼는다. 적의 영역에서 기회를 잡아야 하는 세 사람에게는, 서로를 믿고 정해진 순간에 움직이는 일이 중요하다. 그러나 거액의 의뢰를 받은 청부 살인업자 하와이 피스톨이 암살단을 뒤쫓으면서, 표적을 노리는 자들 또한 누군가의 표적이 된다. 누가 자신의 편인지 쉽게 알 수 없는 상황에서, 세 사람은 서로 다른 목적의 총구 사이로 작전을 이어간다.', poster_url = 'https://image.tmdb.org/t/p/w500/2gAym5Oig2NM7k6iu0DwXlxYaGY.jpg', source = 'TMDB', external_id = '291549' WHERE work_id = 17 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 139 WHERE work_id = 17;
+-- 18 건축학개론
+UPDATE work SET release_date = '2012-03-22', summary = '생기 넘치지만 숫기 없던 스무 살, 건축학과 승민은 건축학개론 수업에서 처음 만난 음대생 서연에게 반한다. 함께 숙제를 하게 되면서 차츰 마음을 열고 친해지지만, 자신의 마음을 표현하는 데 서툰 순진한 승민은 입 밖에 낼 수 없었던 고백을 마음 속에 품은 채 작은 오해로 인해 서연과 멀어지게 된다. 서른 다섯의 건축가가 된 승민 앞에 15년 만에 불쑥 나타난 서연. 당황스러움을 감추지 못하는 승민에게 서연은 자신을 위한 집을 설계해달라고 한다. 자신의 이름을 건 첫 작품으로 서연의 집을 짓게 된 승민, 함께 집을 완성해 가는 동안 어쩌면 사랑이었을지 모를 그때의 기억이 되살아나 두 사람 사이에 새로운 감정이 쌓이기 시작하는데...', poster_url = 'https://image.tmdb.org/t/p/w500/6ChBkMt5fwYPtKvbtq8irLfuKHc.jpg', source = 'TMDB', external_id = '107235' WHERE work_id = 18 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 118 WHERE work_id = 18;
+-- 19 아바타
+UPDATE work SET release_date = '2009-12-16', summary = '가까운 미래, 지구는 에너지 고갈 문제를 해결하기 위해 머나먼 행성 판도라에서 대체 자원을 채굴하기 시작한다. 하지만 판도라의 독성을 지닌 대기로 인해 자원 획득에 어려움을 겪게 된 인류는 판도라의 토착민 나비의 외형에 인간의 의식을 주입, 원격 조종이 가능한 새로운 생명체를 탄생시키는 프로그램을 개발한다. 한편 하반신이 마비된 전직 해병대원 제이크 설리는 아바타 프로그램에 참가할 것을 제안받는다. 그 곳에서 자신의 아바타를 통해 자유롭게 걸을 수 있게 된 제이크는 자원 채굴을 막으려는 나비의 무리에 침투하라는 임무를 부여받는데...', poster_url = 'https://image.tmdb.org/t/p/w500/m5lCha2XcbDowDoYHPc0DTNaCPU.jpg', source = 'TMDB', external_id = '19995' WHERE work_id = 19 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 162 WHERE work_id = 19;
+-- 20 인터스텔라
+UPDATE work SET release_date = '2014-11-04', summary = '세계 각국의 정부와 경제가 완전히 붕괴된 미래가 다가온다. 지난 20세기에 범한 잘못이 전 세계적인 식량 부족을 불러왔고, NASA도 해체되었다. 나사 소속 우주비행사였던 쿠퍼는 지구에 몰아친 식량난으로 옥수수나 키우며 살고 있다. 거센 황사가 몰아친 어느 날 알 수 없는 힘에 이끌려 딸과 함께 도착한 곳은 인류가 이주할 행성을 찾는 나사의 비밀본부. 이 때 시공간에 불가사의한 틈이 열리고, 이 곳을 탐험해 인류를 구해야 하는 임무를 위해 쿠퍼는 만류하는 딸을 뒤로한 채 우주선에 탑승하는데...', poster_url = 'https://image.tmdb.org/t/p/w500/gDN2NWtHbs8ZWEBQM8Dh5OVXdb4.jpg', source = 'TMDB', external_id = '157336' WHERE work_id = 20 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 169 WHERE work_id = 20;
+-- 21 인셉션
+UPDATE work SET release_date = '2010-07-15', summary = '타인의 꿈에 들어가 잠재의식 속 비밀을 훔치는 코브는 뛰어난 실력에도 불구하고 과거의 사건 때문에 아이들이 있는 집으로 돌아가지 못한다. 사업가 사이토는 경쟁 기업의 후계자 피셔에게 회사를 해체하겠다는 생각을 심어 주면, 코브가 귀국할 수 있도록 돕겠다고 제안한다. 남의 생각을 빼내는 것보다 훨씬 어려운 임무를 위해 코브는 설계자와 위장 전문가, 약제사로 팀을 꾸린다. 이들은 피셔가 그 생각을 자신의 결정으로 받아들이도록 꿈속에 또 다른 꿈을 겹겹이 설계한다. 그러나 깊은 잠으로 내려갈수록 목표의 방어 본능뿐 아니라 코브가 숨겨 온 아내의 기억도 작전을 위협한다. 현실로 돌아갈 기회를 잡으려는 코브에게 가장 통제하기 어려운 침입자는 자신의 마음속에 있다.', poster_url = 'https://image.tmdb.org/t/p/w500/atSxEGstxXRoSKDQFBgqQ5lpGSt.jpg', source = 'TMDB', external_id = '27205' WHERE work_id = 21 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 148 WHERE work_id = 21;
+-- 22 다크 나이트
+UPDATE work SET release_date = '2008-07-16', summary = '범죄와 부정부패를 제거하여 고담시를 지키려는 배트맨. 그는 짐 고든 형사와 패기 넘치는 고담시 지방 검사 하비 덴트와 함께 도시를 범죄 조직으로부터 영원히 구원하고자 한다. 세 명의 의기투합으로 위기에 처한 악당들이 모인 자리에 보라색 양복을 입고 얼굴에 짙게 화장을 한 괴이한 존재가 나타나 배트맨을 죽이자는 사상 초유의 제안을 한다. 그는 바로 어떠한 룰도, 목적도 없는 사상 최악의 악당 미치광이 살인광대 조커. 배트맨을 죽이고 고담시를 끝장내버리기 위한 조커의 광기 어린 행각에 도시는 혼란에 빠지는데...', poster_url = 'https://image.tmdb.org/t/p/w500/xQPgyZOBhaz1GdCQIPf5A5VeFzO.jpg', source = 'TMDB', external_id = '155' WHERE work_id = 22 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 152 WHERE work_id = 22;
+-- 23 타이타닉
+UPDATE work SET release_date = '1997-12-18', summary = '1912년 첫 항해를 떠나는 여객선 타이타닉에 화가 잭은 카드 게임으로 얻은 삼등실 표를 들고 오른다. 일등실의 로즈는 부유한 약혼자와 어머니 곁에 있지만, 집안의 형편을 위해 정해진 결혼과 숨 막히는 예절 속에서 자신의 삶을 잃어가고 있다. 절망에 빠진 로즈를 잭이 돕는 일을 계기로, 마주칠 이유조차 없던 두 사람은 서로의 세계에 발을 들인다. 잭의 자유로운 태도와 진심에 마음이 움직인 로즈는 처음으로 자신이 원하는 미래를 그려본다. 신분의 차이와 주변의 반대가 두 사람을 갈라놓으려는 동안, 화려한 선상 생활 아래로 대서양의 차가운 밤이 다가온다. 모두가 안전하리라 믿었던 배 안에서 잭과 로즈는 정해진 삶과 막 시작된 사랑 사이에서 선택해야 한다.', poster_url = 'https://image.tmdb.org/t/p/w500/132KjhVrWUqKFVfMAKKNkherytA.jpg', source = 'TMDB', external_id = '597' WHERE work_id = 23 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 194 WHERE work_id = 23;
+-- 24 매트릭스
+UPDATE work SET release_date = '1999-03-31', summary = '인간의 기억마저 AI에 의해 입력되고 삭제되는 세상, 진짜보다 더 진짜 같은 가상 현실 매트릭스. 그 속에서 진정한 현실을 인식할 수 없게 재배되는 인간들. 그 매트릭스를 빠져 나오면서 AI에게 가장 위험한 인물이 된 모피어스는 몇 안 되는 동료들과 함께 기계와의 전쟁 전후의의 폐허를 떠돌며 인류를 구할 마지막 영웅을 찾아 헤맨다. 마침내 모피어스는 낮에는 평범한 회사원 앤더슨으로, 밤에는 해커로 활동하는 청년 네오를 그로 지목한다. 모피어스의 지시대로 그를 만나게 된 네오는 두개의 알약 중 하나를 고르는 선택을 하게 되는데...', poster_url = 'https://image.tmdb.org/t/p/w500/fxBxoXFAYKWde6lKzXxSusn18Av.jpg', source = 'TMDB', external_id = '603' WHERE work_id = 24 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 136 WHERE work_id = 24;
+-- 25 쥬라기 공원
+UPDATE work SET release_date = '1993-06-11', summary = '코스타리카 서해안의 한 섬에 세워진 테마 파크 쥬라기 공원. 최신 복제 기술로 살아난 공룡들이 활보하는 이곳에 공룡학자를 비롯한 각계의 전문가가 일반 공개에 앞서 정밀 안전 진단을 위한 투어에 나선다. 그러나 최첨단 컴퓨터 시스템으로 철저히 통제되고 있는 공룡들이 예기치 않은 사고로 폭주하게 되고, 여기에 설상가상으로 태풍까지 몰려오면서 일행들의 투어는 순식간에 생존을 위한 사투의 현장으로 뒤바뀌는데...', poster_url = 'https://image.tmdb.org/t/p/w500/m4T4h20ame5nG7a5iNPCwk0pHEG.jpg', source = 'TMDB', external_id = '329' WHERE work_id = 25 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 127 WHERE work_id = 25;
+-- 26 포레스트 검프
+UPDATE work SET release_date = '1994-06-23', summary = '불편한 다리, 남들보다 조금 떨어지는 지능을 가진 포레스트 검프는 헌신적인 어머니의 보살핌과 첫사랑 제니와의 만남으로 편견과 괴롭힘 속에서도 따뜻한 마음을 지니고 성장한다. 또래들의 괴롭힘을 피해 도망치던 포레스트는 누구보다 빠르게 달릴 수 있는 자신의 재능을 깨닫는다. 그의 재능을 알아 본 대학에서 그를 미식축구 선수로 발탁하고, 졸업 후에도 뛰어난 신체능력으로 군에 들어가 무공훈장을 수여받는 등 탄탄한 인생 가도에 오르게 된 포레스트. 하지만 어머니가 병에 걸려 죽음을 맞이하고, 첫사랑 제니 역시 그의 곁을 떠나가며 다시 한 번 인생의 전환점을 맞이하게 되는데...', poster_url = 'https://image.tmdb.org/t/p/w500/l8wvbQQIBV8LBHmx3Wx9xbE2kzt.jpg', source = 'TMDB', external_id = '13' WHERE work_id = 26 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 142 WHERE work_id = 26;
+-- 27 라이프 오브 파이
+UPDATE work SET release_date = '2012-11-20', summary = '인도에서 동물원을 운영하던 ‘파이’의 가족들은 정부의 지원이 끊기자 캐나다로 이민을 준비한다.  동물들을 싣고 캐나다로 떠나는 배에 탑승한 가족들.  하지만 상상치 못한 폭풍우에 화물선은 침몰하고 가까스로 구명선에 탄 파이만 목숨을 건지게 된다.  구명 보트에는 다리를 다친 얼룩말과 굶주린 하이에나,  그리고 바나나 뭉치를 타고 구명보트로 뛰어든 오랑우탄이 함께 탑승해 긴장감이 감돈다.  하지만 이들 모두를 놀라게 만든 진짜 주인공은  보트 아래에 몸을 숨기고 있었던 벵갈 호랑이 ‘리처드 파커’!  시간이 갈수록 배고픔에 허덕이는 동물들은 서로를 공격하고  결국 리처드 파커와 파이만이 배에 남게 된다.  파이는 배에서 발견한 생존 지침서를 바탕으로  점차 ‘리처드 파커’와 함께 바다 위에서 살아가는 법을 습득하게 된다.  그리고 태평양 한가운데서..  집채 만한 고래와 빛을 내는 해파리, 하늘을 나는 물고기, 그리고 미어캣이 사는 신비의 섬 등  그 누구도 보지 않고서는 믿을 수 없는 놀라운 사건들을 겪게 되는데…!', poster_url = 'https://image.tmdb.org/t/p/w500/mexaTje46m4uJ9YToFUydtZuqaL.jpg', source = 'TMDB', external_id = '87827' WHERE work_id = 27 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 127 WHERE work_id = 27;
+-- 28 센과 치히로의 행방불명
+UPDATE work SET release_date = '2001-07-20', summary = '평범한 열 살 짜리 소녀 치히로 식구는 이사 가던 중 길을 잘못 들어 낡은 터널을 지나가게 된다. 터널 저편엔 폐허가 된 놀이공원이 있었고 그곳엔 이상한 기운이 흘렀다. 인기척 하나 없는 이 마을의 낯선 분위기에 불길한 기운을 느낀 치히로는 부모님에게 돌아가자고 조르지만 부모님은 호기심에 들떠 마을 곳곳을 돌아다니기 시작한다. 어느 음식점에 도착한 치히로의 부모님은 그 곳에 차려진 음식들을 보고 즐거워하며 허겁지겁 먹어대다가 돼지로 변해버린다. 겁에 질려 당황하는 치히로에게 낯선 소년 하쿠가 나타나 빨리 이곳을 나가라고 소리치는데...', poster_url = 'https://image.tmdb.org/t/p/w500/u1L4qxIu5sC2P082uMHYt7Ifvnj.jpg', source = 'TMDB', external_id = '129' WHERE work_id = 28 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 124 WHERE work_id = 28;
+-- 29 하울의 움직이는 성
+UPDATE work SET release_date = '2004-09-09', summary = '19세기 말 마법과 과학이 공존하고 있는 세계 앵거리. 소피는 돌아가신 아버지의 모자상점에서 쉴틈없이 일하는 18살 소녀이다. 어느 날 오랫만에 마을로 나간 소피는 우연히 하울을 만나게 된다. 하울은 왕실 마법사로서 핸섬하지만 조금 겁이 많은 청년이다. 황무지 마녀는 두 사람의 사이를 오해, 주문을 걸어 소피를 90살의 늙은 할머니로 만들어 버린다. 가족을 걱정한 소피는 집을 나오게 되고 황무지를 헤매다가 하울이 사는 성에서 가정부로 낯선 생활을 시작한다. 4개의 다리로 걷는 기괴한 움직이는 성 안에서 하울과 소피의 기묘한 사랑과 모험이 시작되는데...', poster_url = 'https://image.tmdb.org/t/p/w500/xiz6TiSduvR1U3VLfWVlBEdT9fO.jpg', source = 'TMDB', external_id = '4935' WHERE work_id = 29 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 119 WHERE work_id = 29;
+-- 30 이웃집 토토로
+UPDATE work SET release_date = '1988-04-16', summary = '1955년 일본의 아름다운 시골 마을, 상냥하고 의젓한 11살 사츠키와 장난꾸러기에 호기심 많은 4살의 메이 는 사이좋은 자매로 아빠와 함께 도시를 떠나 시골로 이사온다. 자상한 아빠 쿠사카베타츠오는 도쿄에서 대학 연구원이며, 입원 중이지만 따뜻한 미소를 잃지 않는 엄마가 있다. 곧 퇴원하실 엄마를 공기가 맑은 곳에서 맞이하기 위해서다. 숲 한복판에 금방이라도 쓰러질 것처럼 낡은 집을 보며 자매는 새로운 환경에 대한 호기심으로 잔뜩 들뜬다. 그러던 어느 날 사츠키가 학교에 간 동안 메이는 숲에서 정령을 만나다. 메이는 그 정령에게 토토로란 이름을 붙여주는데...', poster_url = 'https://image.tmdb.org/t/p/w500/c9zCkL0rTkNQ1HB9cmeFIqbkS50.jpg', source = 'TMDB', external_id = '8392' WHERE work_id = 30 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 87 WHERE work_id = 30;
+-- 31 너의 이름은.
+UPDATE work SET release_date = '2016-07-01', summary = '산골 마을의 생활을 답답해하는 소녀 미츠하는 어느 날 잠에서 깨어나 도쿄의 남학생 타키가 되어 있는 자신을 발견한다. 타키도 낯선 집과 가족들 사이에서 미츠하의 몸으로 하루를 보내며 꿈이라고 하기에는 너무 생생한 혼란을 겪는다. 두 사람은 반복되는 몸의 교환을 알아차리고, 서로의 일상을 망치지 않도록 규칙을 정해 메모를 남기기 시작한다. 친구 관계와 학교생활에 뜻밖의 변화가 생기는 동안, 얼굴을 마주한 적 없는 상대가 점점 가까운 존재로 느껴진다. 그러나 어느 순간 교환이 멈추고 연락마저 닿지 않자, 타키는 희미해지는 기억을 붙잡고 미츠하가 사는 곳을 찾아 나선다. 이름과 풍경의 조각만 남은 낯선 소녀를 만나기 위해 그는 지도에서도 확신할 수 없는 길을 더듬는다.', poster_url = 'https://image.tmdb.org/t/p/w500/2DJCufz3Oa703PbLjNX1pM6MCG2.jpg', source = 'TMDB', external_id = '372058' WHERE work_id = 31 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 106 WHERE work_id = 31;
+-- 32 토이 스토리
+UPDATE work SET release_date = '1995-11-22', summary = '카우보이 인형 우디는 꼬마 주인인 앤디의 가장 사랑받는 장난감이다. 그러나 어느날 버즈라는 새로운 장난감이 등장한다.  버즈는 최신형 장난감으로 레이저 빔 등의 첨단장비를 갖추고 있으나, 버즈는 자신이 장난감임을 인식하지 못하고 자신이 우주에서 온 전사이며 자신이 갖춘 장비로 하늘을 날 수 있다고 믿고 있다. 버즈의 허상을 상처받지 않고 인식시켜 주려는 우디와 친구들. 그러나 뜻밖의 사고가 일어난다. 옆집 개에게 버즈가 납치당하고 이런 버즈를 구하기 위해 우디와 친구들은 구조대를 조직해 버즈를 구하러 가는데...', poster_url = 'https://image.tmdb.org/t/p/w500/iJbm78MxPjLutWUYixbeege8EVe.jpg', source = 'TMDB', external_id = '862' WHERE work_id = 32 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 81 WHERE work_id = 32;
+-- 33 겨울왕국
+UPDATE work SET release_date = '2013-11-20', summary = '서로가 최고의 친구였던 자매 엘사와 안나. 하지만 언니 엘사에게는 하나뿐인 동생에게조차 말 못할 비밀이 있다. 모든 것을 얼려버리는 신비로운 힘이 바로 그 것. 엘사는 통제할 수 없는 자신의 힘이 두려워 왕국을 떠나 북쪽 산으로 도망치고, 홀로 그곳에서 얼음 궁전을 지어 지내게 된다. 한편 얼어버린 왕국의 저주를 풀기 위해 안나는 언니를 찾아 나서고, 그 과정에서 안나는 까칠한 매력의 얼음장수 크리스토프와 만나 영원히 얼어붙은 왕국을 구해내기 위해 함께 고군분투한다.', poster_url = 'https://image.tmdb.org/t/p/w500/lYceQKe3EsYn7VdDXGTy7dSwBLp.jpg', source = 'TMDB', external_id = '109445' WHERE work_id = 33 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 108 WHERE work_id = 33;
+-- 34 라라랜드
+UPDATE work SET release_date = '2016-12-01', summary = '차들로 빽빽이 들어찬 LA의 고속도로. 거북이 걸음이던 도로가 뚫리기 시작하지만 미아 지금 손에 든 연기 오디션 대본을 놓지 못한다. 세바스찬은 경적을 누르며 미아를 노려보고는 사라진다. 악연의 시작. 이후 미아는 감미로운 피아노 선율에 이끌려 재즈바로 향하는데, 연주자가 바로 세바스찬이다. 미아가 세바스찬에게 인사를 건네려고 다가가던 순간은 하필 그가 재즈바의 레퍼토리를 무시하고 연주한 탓에 해고된 직후. 세바스찬은 인사를 건네려 다가온 미아를 쌩하니 스쳐 지나가버린다. 세 번째로 두 사람은 파티에 온 손님과 출장 밴드의 키보드 연주자로 다시 만나는데...', poster_url = 'https://image.tmdb.org/t/p/w500/ad9ndytwOckyShSc0A6tx1rZRkW.jpg', source = 'TMDB', external_id = '313369' WHERE work_id = 34 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 127 WHERE work_id = 34;
+-- 35 위플래쉬
+UPDATE work SET release_date = '2014-10-10', summary = '최고의 드러머가 되기 위해서라면 무엇이든 할 각오가 되어있는 음악대학 신입생 앤드류는 아무도 없는 지하실에서 혼자 드럼을 연습하던 중 우연한 기회로 누구든지 성공으로 이끄는 최고의 실력자이지만, 또한 동시에 최악의 폭군인 플렛처 교수에게 발탁되어 그의 밴드에 들어가게 된다. 설레는 마음으로 참가한 첫 연습에서, 그는 플렛처 교수의 진짜 얼굴을 마주치게 된다. 폭언과 학대 속에 좌절과 성취를 동시에 안겨주는 플렛처의 지독한 교육방식은 천재가 되길 갈망하는 앤드류의 집착을 끌어내며 그를 점점 광기로 몰아넣는데...', poster_url = 'https://image.tmdb.org/t/p/w500/oKNkhmyIBiDENivK6ELZxfBWa3q.jpg', source = 'TMDB', external_id = '244786' WHERE work_id = 35 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 106 WHERE work_id = 35;
+-- 36 조커
+UPDATE work SET release_date = '2019-10-01', summary = '불황과 범죄로 지친 고담시에서 아서 플렉은 광대 일을 하며 병든 어머니를 돌보고, 언젠가 코미디언이 되겠다는 꿈을 품는다. 하지만 뜻과 상관없이 터져 나오는 웃음은 사람들의 오해를 부르고, 거리에서 당하는 폭력과 일터의 냉대는 그를 더욱 고립시킨다. 상담과 약에 의지하는 아서는 텔레비전 속 진행자처럼 사람들에게 인정받는 무대를 상상한다. 자신을 지탱하던 생활이 조금씩 무너지는 가운데, 동료가 건넨 총 한 자루는 모욕을 참아 오던 그의 곁에 위험한 선택지를 남긴다. 거리에 쌓인 분노와 자신의 상처가 맞물리면서 아서는 남들에게 보여 주는 웃음과 자신의 감정 사이의 간격을 견디기 어려워진다. 누군가를 웃기고 싶었던 남자는 자신을 보고 웃는 도시 앞에서 낯선 얼굴을 준비한다.', poster_url = 'https://image.tmdb.org/t/p/w500/6OnFzi7nU6t4j1rmX9QI8EYDWb4.jpg', source = 'TMDB', external_id = '475557' WHERE work_id = 36 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 122 WHERE work_id = 36;
+-- 37 오펜하이머
+UPDATE work SET release_date = '2023-07-19', summary = '제2차 세계대전이 한창이던 시기, 나치 독일보다 먼저 원자폭탄을 개발하기 위한 극비 계획 맨해튼 프로젝트가 시작된다. 천재 이론물리학자 J. 로버트 오펜하이머는 레슬리 그로브스 장군에 의해 책임자로 발탁되어, 뉴멕시코의 사막 한가운데 로스앨러모스에 연구소를 세우고 미국 최고의 과학자들을 불러 모은다. 인류 역사를 바꿀 실험을 향해 달려가는 동안 그는 과학자로서의 야망과 도덕적 갈등 사이에서 끊임없이 흔들린다. 그리고 전쟁이 끝난 뒤, 원자력위원회 의장 루이스 스트로스와의 갈등 속에서 그는 자신의 충성심과 과거를 추궁당하는 청문회에 서게 되는데...', poster_url = 'https://image.tmdb.org/t/p/w500/jpD6z9fgNe7OqsHoDeAWQWoULde.jpg', source = 'TMDB', external_id = '872585' WHERE work_id = 37 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 181 WHERE work_id = 37;
+-- 38 듄
+UPDATE work SET release_date = '2021-09-15', summary = '10191년, 아트레이데스 가문의 후계자인 폴은 시간과 공간을 초월해 과거와 미래를 모두 볼 수 있고, 더 나은 미래를 만들 유일한 구원자인 예지된 자의 운명을 타고났다. 그리고 어떤 계시처럼 매일 꿈에서 아라키스의 행성에 있는 한 여인을 만난다. 귀족들이 지지하는 아트레이데스 가문에 대한 황제의 질투는 폴과 그 일족들을 죽음이 기다리는 아라키스로 이끄는데...', poster_url = 'https://image.tmdb.org/t/p/w500/7zV8FTYofAORGm0Umgh1mNNCym8.jpg', source = 'TMDB', external_id = '438631' WHERE work_id = 38 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 155 WHERE work_id = 38;
+-- 39 노트북
+UPDATE work SET release_date = '2004-06-25', summary = '17살, 노아는 밝고 순수한 앨리를 보고 첫눈에 반한다. 빠른 속도로 서로에게 빠져드는 둘. 그러나 이들 앞에 놓인 장벽에 막혀 이별하게 된다. 24살, 앨리는 우연히 신문에서 노아의 소식을 접하고 잊을 수 없는 첫사랑 앞에서 다시 한 번 선택의 기로에 서게 되는데…', poster_url = 'https://image.tmdb.org/t/p/w500/ntdgcdsmMuHd9s4oEKTvWDiUyU7.jpg', source = 'TMDB', external_id = '11036' WHERE work_id = 39 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 123 WHERE work_id = 39;
+-- 40 파묘
+UPDATE work SET release_date = '2024-02-22', summary = '미국 LA, 거액의 의뢰를 받은 무당 화림과 봉길은 기이한 병이 대물림되는 집안의 장손을 만난다. 조상의 묫자리가 화근임을 알아챈 화림은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 상덕과 장의사 영근이 합류한다. 절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘. 상덕은 불길한 기운을 느끼고 제안을 거절하지만, 화림의 설득으로 결국 파묘가 시작되고… 나와서는 안될 것이 나왔다.', poster_url = 'https://image.tmdb.org/t/p/w500/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg', source = 'TMDB', external_id = '838209' WHERE work_id = 40 AND type = 'MOVIE' AND source IS NULL;
+UPDATE movie SET runtime = 133 WHERE work_id = 40;
+
+-- ------------------------------------------------------------
+-- 공연 25편: KOPIS 실제 공연(2026-11-16 교체). 내용은 09_kopis_performances.sql 의 INSERT 와 같다.
+-- ------------------------------------------------------------
+-- 81 오페라의 유령 40주년 스페셜 시즌 (뮤지컬, KOPIS PF302842)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (81, 'PERFORMANCE', '오페라의 유령 40주년 스페셜 시즌', '2026-12-22', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF302842_261008_143949.jpg', 'KOPIS', 'PF302842');
+INSERT INTO performance (work_id, venue, period) VALUES (81, '블루스퀘어 (우리은행홀 (구. 인터파크홀, 구. 신한카드홀) )', '2026-12-22 ~ 2027-02-28');
+INSERT INTO work_genre (work_id, genre_id) SELECT 81, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1001, '최재림');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1001, '출연');
+INSERT INTO person (person_id, name) VALUES (1002, '전동석');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1002, '출연');
+INSERT INTO person (person_id, name) VALUES (1003, '박강현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1003, '출연');
+INSERT INTO person (person_id, name) VALUES (1004, '이해원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1004, '출연');
+INSERT INTO person (person_id, name) VALUES (1005, '최선호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1005, '출연');
+INSERT INTO person (person_id, name) VALUES (1006, '송원근');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1006, '출연');
+INSERT INTO person (person_id, name) VALUES (1007, '김성식');
+INSERT INTO work_person (work_id, person_id, role) VALUES (81, 1007, '출연');
+-- 82 스위니토드 (SWEENEY TODD) (뮤지컬, KOPIS PF303043)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (82, 'PERFORMANCE', '스위니토드 (SWEENEY TODD)', '2026-12-04', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF303043_261012_171201.gif', 'KOPIS', 'PF303043');
+INSERT INTO performance (work_id, venue, period) VALUES (82, '디큐브링크아트센터 (디큐브씨어터)', '2026-12-04 ~ 2027-05-02');
+INSERT INTO work_genre (work_id, genre_id) SELECT 82, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1008, '조승우');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1008, '출연');
+INSERT INTO person (person_id, name) VALUES (1009, '강필석');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1009, '출연');
+INSERT INTO person (person_id, name) VALUES (1010, '김주택');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1010, '출연');
+INSERT INTO person (person_id, name) VALUES (1011, '전미도');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1011, '출연');
+INSERT INTO person (person_id, name) VALUES (1012, '김소현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1012, '출연');
+INSERT INTO person (person_id, name) VALUES (1013, '박지연');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1013, '출연');
+INSERT INTO person (person_id, name) VALUES (1014, '서영주');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1014, '출연');
+INSERT INTO person (person_id, name) VALUES (1015, '신춘수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1015, '제작진');
+INSERT INTO person (person_id, name) VALUES (1016, '에릭 셰펴');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1016, '제작진');
+INSERT INTO person (person_id, name) VALUES (1017, '조정만');
+INSERT INTO work_person (work_id, person_id, role) VALUES (82, 1017, '제작진');
+-- 83 시카고 [서울] (뮤지컬, KOPIS PF302015)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (83, 'PERFORMANCE', '시카고 [서울]', '2026-12-05', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF302015_260929_151431.gif', 'KOPIS', 'PF302015');
+INSERT INTO performance (work_id, venue, period) VALUES (83, 'LG아트센터 서울 (LG SIGNATURE 홀)', '2026-12-05 ~ 2027-03-14');
+INSERT INTO work_genre (work_id, genre_id) SELECT 83, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1018, '최정원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1018, '출연');
+INSERT INTO person (person_id, name) VALUES (1019, '윤공주');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1019, '출연');
+INSERT INTO person (person_id, name) VALUES (1020, '이지연');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1020, '출연');
+INSERT INTO person (person_id, name) VALUES (1021, '박은혜');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1021, '출연');
+INSERT INTO person (person_id, name) VALUES (1022, '황미영');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1022, '출연');
+INSERT INTO person (person_id, name) VALUES (1023, '김수하');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1023, '출연');
+INSERT INTO person (person_id, name) VALUES (1024, '박건형');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1024, '출연');
+INSERT INTO person (person_id, name) VALUES (1025, '김태훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1025, '제작진');
+INSERT INTO person (person_id, name) VALUES (1026, '김준태');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1026, '제작진');
+INSERT INTO person (person_id, name) VALUES (1027, '오민영');
+INSERT INTO work_person (work_id, person_id, role) VALUES (83, 1027, '제작진');
+-- 84 겨울왕국 [서울] (뮤지컬, KOPIS PF292160)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (84, 'PERFORMANCE', '겨울왕국 [서울]', '2026-08-13', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF292160_260601_111455.gif', 'KOPIS', 'PF292160');
+INSERT INTO performance (work_id, venue, period) VALUES (84, '샤롯데씨어터 (샤롯데씨어터)', '2026-08-13 ~ 2027-03-01');
+INSERT INTO work_genre (work_id, genre_id) SELECT 84, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1028, '정선아');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1028, '출연');
+INSERT INTO person (person_id, name) VALUES (1029, '정유지');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1029, '출연');
+INSERT INTO person (person_id, name) VALUES (1030, '민경아');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1030, '출연');
+INSERT INTO person (person_id, name) VALUES (1031, '박진주');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1031, '출연');
+INSERT INTO person (person_id, name) VALUES (1032, '홍금비');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1032, '출연');
+INSERT INTO person (person_id, name) VALUES (1033, '최지혜');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1033, '출연');
+INSERT INTO person (person_id, name) VALUES (1034, '차윤해');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1034, '출연');
+INSERT INTO person (person_id, name) VALUES (1035, '마이클 그랜데이지');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1035, '제작진');
+INSERT INTO person (person_id, name) VALUES (1036, '롭 애시포드');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1036, '제작진');
+INSERT INTO person (person_id, name) VALUES (1037, '크리스토퍼 오람');
+INSERT INTO work_person (work_id, person_id, role) VALUES (84, 1037, '제작진');
+-- 85 해밀턴 내한공연 (Musical HAMILTON) [부산] (뮤지컬, KOPIS PF306154)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (85, 'PERFORMANCE', '해밀턴 내한공연 (Musical HAMILTON) [부산]', '2026-12-17', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF306154_261111_160932.gif', 'KOPIS', 'PF306154');
+INSERT INTO performance (work_id, venue, period) VALUES (85, '드림씨어터 [부산] (드림씨어터 [부산] )', '2026-12-17 ~ 2027-01-16');
+INSERT INTO work_genre (work_id, genre_id) SELECT 85, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1038, '마크 앤더슨');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1038, '출연');
+INSERT INTO person (person_id, name) VALUES (1039, '제이슨 애로우');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1039, '출연');
+INSERT INTO person (person_id, name) VALUES (1040, '조던 캐슬');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1040, '출연');
+INSERT INTO person (person_id, name) VALUES (1041, '존 데버로');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1041, '출연');
+INSERT INTO person (person_id, name) VALUES (1042, '니콜라 에스파야르도');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1042, '출연');
+INSERT INTO person (person_id, name) VALUES (1043, '제이크 할시-존스');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1043, '출연');
+INSERT INTO person (person_id, name) VALUES (1044, '조렐 하비에르');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1044, '출연');
+INSERT INTO person (person_id, name) VALUES (1045, '토마스 케일');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1045, '제작진');
+INSERT INTO person (person_id, name) VALUES (1046, '앤디 블랭컨뷸러');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1046, '제작진');
+INSERT INTO person (person_id, name) VALUES (1047, '알렉스 라카무아');
+INSERT INTO work_person (work_id, person_id, role) VALUES (85, 1047, '제작진');
+-- 86 레베카 [서울] (뮤지컬, KOPIS PF302516)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (86, 'PERFORMANCE', '레베카 [서울]', '2026-11-24', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF302516_261006_134804.jpg', 'KOPIS', 'PF302516');
+INSERT INTO performance (work_id, venue, period) VALUES (86, '충무아트센터 (대극장)', '2026-11-24 ~ 2027-03-14');
+INSERT INTO work_genre (work_id, genre_id) SELECT 86, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1048, '김우형');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1048, '출연');
+INSERT INTO person (person_id, name) VALUES (1049, '김호경');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1049, '출연');
+INSERT INTO person (person_id, name) VALUES (1050, '박성혁');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1050, '출연');
+INSERT INTO person (person_id, name) VALUES (1051, '신영숙');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1051, '출연');
+INSERT INTO person (person_id, name) VALUES (1052, '옥주현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1052, '출연');
+INSERT INTO person (person_id, name) VALUES (1053, '이아름솔');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1053, '출연');
+INSERT INTO person (person_id, name) VALUES (1054, '김다혜');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1054, '출연');
+INSERT INTO person (person_id, name) VALUES (1055, '로버트 요한슨');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1055, '제작진');
+INSERT INTO person (person_id, name) VALUES (1056, '기진주');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1056, '제작진');
+INSERT INTO person (person_id, name) VALUES (1057, '김문정');
+INSERT INTO work_person (work_id, person_id, role) VALUES (86, 1057, '제작진');
+-- 87 미세스 다웃파이어 [서울] (뮤지컬, KOPIS PF302677)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (87, 'PERFORMANCE', '미세스 다웃파이어 [서울]', '2026-12-03', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF302677_261007_113759.jpg', 'KOPIS', 'PF302677');
+INSERT INTO performance (work_id, venue, period) VALUES (87, 'GS아트센터 (GS아트센터)', '2026-12-03 ~ 2027-02-21');
+INSERT INTO work_genre (work_id, genre_id) SELECT 87, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1058, '황정민');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1058, '출연');
+INSERT INTO person (person_id, name) VALUES (1059, '정성화');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1059, '출연');
+INSERT INTO person (person_id, name) VALUES (1060, '정상훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1060, '출연');
+INSERT INTO person (person_id, name) VALUES (1061, '박혜나');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1061, '출연');
+INSERT INTO person (person_id, name) VALUES (1062, '장은아');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1062, '출연');
+INSERT INTO person (person_id, name) VALUES (1063, '이지훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1063, '출연');
+INSERT INTO person (person_id, name) VALUES (1064, '김다현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1064, '출연');
+INSERT INTO person (person_id, name) VALUES (1065, '김동연');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1065, '제작진');
+INSERT INTO person (person_id, name) VALUES (1066, '김문정');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1066, '제작진');
+INSERT INTO person (person_id, name) VALUES (1067, '송희진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (87, 1067, '제작진');
+-- 88 두 도시 이야기 (뮤지컬, KOPIS PF300974)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (88, 'PERFORMANCE', '두 도시 이야기', '2026-11-11', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF300974_260915_132402.gif', 'KOPIS', 'PF300974');
+INSERT INTO performance (work_id, venue, period) VALUES (88, '광림아트센터 (BBCH홀)', '2026-11-11 ~ 2027-02-08');
+INSERT INTO work_genre (work_id, genre_id) SELECT 88, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1068, '정기열');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1068, '출연');
+INSERT INTO person (person_id, name) VALUES (1069, '신성록');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1069, '출연');
+INSERT INTO person (person_id, name) VALUES (1070, '고은성');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1070, '출연');
+INSERT INTO person (person_id, name) VALUES (1071, '백형훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1071, '출연');
+INSERT INTO person (person_id, name) VALUES (1072, '진태화');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1072, '출연');
+INSERT INTO person (person_id, name) VALUES (1073, '노윤');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1073, '출연');
+INSERT INTO person (person_id, name) VALUES (1074, '이선민');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1074, '출연');
+INSERT INTO person (person_id, name) VALUES (1075, '이성훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1075, '제작진');
+INSERT INTO person (person_id, name) VALUES (1076, '임양혁');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1076, '제작진');
+INSERT INTO person (person_id, name) VALUES (1077, '송한샘');
+INSERT INTO work_person (work_id, person_id, role) VALUES (88, 1077, '제작진');
+-- 89 로미오와 줄리엣 (뮤지컬, KOPIS PF305670)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (89, 'PERFORMANCE', '로미오와 줄리엣', '2026-12-01', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF305670_261106_131225.jpg', 'KOPIS', 'PF305670');
+INSERT INTO performance (work_id, venue, period) VALUES (89, '한전아트센터 (한전아트센터)', '2026-12-01 ~ 2027-01-31');
+INSERT INTO work_genre (work_id, genre_id) SELECT 89, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1078, '남우현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1078, '출연');
+INSERT INTO person (person_id, name) VALUES (1079, '하성운');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1079, '출연');
+INSERT INTO person (person_id, name) VALUES (1080, '김희재');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1080, '출연');
+INSERT INTO person (person_id, name) VALUES (1081, '박민혁');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1081, '출연');
+INSERT INTO person (person_id, name) VALUES (1082, '이경윤');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1082, '출연');
+INSERT INTO person (person_id, name) VALUES (1083, '이루원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1083, '출연');
+INSERT INTO person (person_id, name) VALUES (1084, '김수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1084, '출연');
+INSERT INTO person (person_id, name) VALUES (1085, '김완식');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1085, '제작진');
+INSERT INTO person (person_id, name) VALUES (1086, '김규종');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1086, '제작진');
+INSERT INTO person (person_id, name) VALUES (1087, '이성준');
+INSERT INTO work_person (work_id, person_id, role) VALUES (89, 1087, '제작진');
+-- 90 엘리자벳 (뮤지컬, KOPIS PF294946)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (90, 'PERFORMANCE', '엘리자벳', '2026-08-16', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF294946_260701_134627.gif', 'KOPIS', 'PF294946');
+INSERT INTO performance (work_id, venue, period) VALUES (90, '블루스퀘어 (우리은행홀 (구. 인터파크홀, 구. 신한카드홀) )', '2026-08-16 ~ 2026-11-15');
+INSERT INTO work_genre (work_id, genre_id) SELECT 90, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1088, '이지연');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1088, '출연');
+INSERT INTO person (person_id, name) VALUES (1089, '이지혜');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1089, '출연');
+INSERT INTO person (person_id, name) VALUES (1090, '이지수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1090, '출연');
+INSERT INTO person (person_id, name) VALUES (1091, '정기열');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1091, '출연');
+INSERT INTO person (person_id, name) VALUES (1092, '서경수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1092, '출연');
+INSERT INTO person (person_id, name) VALUES (1093, '고은성');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1093, '출연');
+INSERT INTO person (person_id, name) VALUES (1094, '박은태');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1094, '출연');
+INSERT INTO person (person_id, name) VALUES (1095, '로버트 요한슨');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1095, '제작진');
+INSERT INTO person (person_id, name) VALUES (1096, '엄홍현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1096, '제작진');
+INSERT INTO person (person_id, name) VALUES (1097, '권은아');
+INSERT INTO work_person (work_id, person_id, role) VALUES (90, 1097, '제작진');
+-- 91 캣츠 내한공연 (Musical CATS) [전남광주] (뮤지컬, KOPIS PF304965)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (91, 'PERFORMANCE', '캣츠 내한공연 (Musical CATS) [전남광주]', '2027-01-08', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF304965_261030_150638.gif', 'KOPIS', 'PF304965');
+INSERT INTO performance (work_id, venue, period) VALUES (91, '전남광주통합특별시 예술의전당 (구. 광주예술의전당) (대극장)', '2027-01-08 ~ 2027-01-10');
+INSERT INTO work_genre (work_id, genre_id) SELECT 91, genre_id FROM genre WHERE name = '뮤지컬';
+-- 92 렛미플라이 [서울] (뮤지컬, KOPIS PF299346)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (92, 'PERFORMANCE', '렛미플라이 [서울]', '2026-10-06', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF299346_260825_140107.jpg', 'KOPIS', 'PF299346');
+INSERT INTO performance (work_id, venue, period) VALUES (92, '두산아트센터 (연강홀)', '2026-10-06 ~ 2027-01-03');
+INSERT INTO work_genre (work_id, genre_id) SELECT 92, genre_id FROM genre WHERE name = '뮤지컬';
+INSERT INTO person (person_id, name) VALUES (1098, '안재욱');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1098, '출연');
+INSERT INTO person (person_id, name) VALUES (1099, '이희준');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1099, '출연');
+INSERT INTO person (person_id, name) VALUES (1100, '오의식');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1100, '출연');
+INSERT INTO person (person_id, name) VALUES (1101, '이형훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1101, '출연');
+INSERT INTO person (person_id, name) VALUES (1102, '배해선');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1102, '출연');
+INSERT INTO person (person_id, name) VALUES (1103, '윤공주');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1103, '출연');
+INSERT INTO person (person_id, name) VALUES (1104, '김지현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1104, '출연');
+INSERT INTO person (person_id, name) VALUES (1105, '홍윤경');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1105, '제작진');
+INSERT INTO person (person_id, name) VALUES (1106, '이대웅');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1106, '제작진');
+INSERT INTO person (person_id, name) VALUES (1107, '민활란');
+INSERT INTO work_person (work_id, person_id, role) VALUES (92, 1107, '제작진');
+-- 93 두 번째 아이 (연극, KOPIS PF305728)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (93, 'PERFORMANCE', '두 번째 아이', '2026-12-08', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF305728_261109_114350.gif', 'KOPIS', 'PF305728');
+INSERT INTO performance (work_id, venue, period) VALUES (93, 'LG아트센터 서울 (U+ 스테이지)', '2026-12-08 ~ 2027-03-28');
+INSERT INTO work_genre (work_id, genre_id) SELECT 93, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1108, '김지온');
+INSERT INTO work_person (work_id, person_id, role) VALUES (93, 1108, '출연');
+INSERT INTO person (person_id, name) VALUES (1109, '손우현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (93, 1109, '출연');
+INSERT INTO person (person_id, name) VALUES (1110, '정택운');
+INSERT INTO work_person (work_id, person_id, role) VALUES (93, 1110, '출연');
+INSERT INTO person (person_id, name) VALUES (1111, '고강민');
+INSERT INTO work_person (work_id, person_id, role) VALUES (93, 1111, '제작진');
+INSERT INTO person (person_id, name) VALUES (1112, '김태형');
+INSERT INTO work_person (work_id, person_id, role) VALUES (93, 1112, '제작진');
+INSERT INTO person (person_id, name) VALUES (1113, '민찬홍');
+INSERT INTO work_person (work_id, person_id, role) VALUES (93, 1113, '제작진');
+-- 94 러브레터 [서울 강남] (연극, KOPIS PF303036)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (94, 'PERFORMANCE', '러브레터 [서울 강남]', '2026-11-05', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF303036_261012_165250.gif', 'KOPIS', 'PF303036');
+INSERT INTO performance (work_id, venue, period) VALUES (94, 'KT&G 상상마당 대치아트홀 (KT&G 상상마당 대치아트홀)', '2026-11-05 ~ 2026-12-27');
+INSERT INTO work_genre (work_id, genre_id) SELECT 94, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1114, '최수종');
+INSERT INTO work_person (work_id, person_id, role) VALUES (94, 1114, '출연');
+INSERT INTO person (person_id, name) VALUES (1115, '하희라');
+INSERT INTO work_person (work_id, person_id, role) VALUES (94, 1115, '출연');
+INSERT INTO person (person_id, name) VALUES (1116, '박수이');
+INSERT INTO work_person (work_id, person_id, role) VALUES (94, 1116, '제작진');
+INSERT INTO person (person_id, name) VALUES (1117, '오루피나');
+INSERT INTO work_person (work_id, person_id, role) VALUES (94, 1117, '제작진');
+INSERT INTO person (person_id, name) VALUES (1118, '이범재');
+INSERT INTO work_person (work_id, person_id, role) VALUES (94, 1118, '제작진');
+-- 95 스타크로스드 [대학로] (연극, KOPIS PF298289)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (95, 'PERFORMANCE', '스타크로스드 [대학로]', '2026-09-22', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF298289_260812_103259.jpg', 'KOPIS', 'PF298289');
+INSERT INTO performance (work_id, venue, period) VALUES (95, '예스24아트원(구.대학로아트원씨어터) (2관)', '2026-09-22 ~ 2026-12-13');
+INSERT INTO work_genre (work_id, genre_id) SELECT 95, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1119, '정동화');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1119, '출연');
+INSERT INTO person (person_id, name) VALUES (1120, '박정복');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1120, '출연');
+INSERT INTO person (person_id, name) VALUES (1121, '양지원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1121, '출연');
+INSERT INTO person (person_id, name) VALUES (1122, '김경수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1122, '출연');
+INSERT INTO person (person_id, name) VALUES (1123, '김찬호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1123, '출연');
+INSERT INTO person (person_id, name) VALUES (1124, '신주협');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1124, '출연');
+INSERT INTO person (person_id, name) VALUES (1125, '정상윤');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1125, '출연');
+INSERT INTO person (person_id, name) VALUES (1126, '박준영');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1126, '제작진');
+INSERT INTO person (person_id, name) VALUES (1127, '김희은');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1127, '제작진');
+INSERT INTO person (person_id, name) VALUES (1128, '최영은');
+INSERT INTO work_person (work_id, person_id, role) VALUES (95, 1128, '제작진');
+-- 96 꽃의 비밀 [대학로] (연극, KOPIS PF297978)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (96, 'PERFORMANCE', '꽃의 비밀 [대학로]', '2026-09-12', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF297978_260807_141003.gif', 'KOPIS', 'PF297978');
+INSERT INTO performance (work_id, venue, period) VALUES (96, '링크아트센터 (벅스홀)', '2026-09-12 ~ 2026-11-29');
+INSERT INTO work_genre (work_id, genre_id) SELECT 96, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1129, '정경순');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1129, '출연');
+INSERT INTO person (person_id, name) VALUES (1130, '성지루');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1130, '출연');
+INSERT INTO person (person_id, name) VALUES (1131, '추귀정');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1131, '출연');
+INSERT INTO person (person_id, name) VALUES (1132, '정웅인');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1132, '출연');
+INSERT INTO person (person_id, name) VALUES (1133, '황석정');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1133, '출연');
+INSERT INTO person (person_id, name) VALUES (1134, '유선');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1134, '출연');
+INSERT INTO person (person_id, name) VALUES (1135, '박하선');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1135, '출연');
+INSERT INTO person (person_id, name) VALUES (1136, '장진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1136, '제작진');
+INSERT INTO person (person_id, name) VALUES (1137, '이엄지');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1137, '제작진');
+INSERT INTO person (person_id, name) VALUES (1138, '나한수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (96, 1138, '제작진');
+-- 97 국립극장, 마당놀이: 춘풍처도 온다 (연극, KOPIS PF295977)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (97, 'PERFORMANCE', '국립극장, 마당놀이: 춘풍처도 온다', '2026-11-27', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF295977_261104_130521.gif', 'KOPIS', 'PF295977');
+INSERT INTO performance (work_id, venue, period) VALUES (97, '국립극장 (하늘극장)', '2026-11-27 ~ 2027-01-24');
+INSERT INTO work_genre (work_id, genre_id) SELECT 97, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1139, '박애리');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1139, '출연');
+INSERT INTO person (person_id, name) VALUES (1140, '정은혜');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1140, '출연');
+INSERT INTO person (person_id, name) VALUES (1141, '추현종');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1141, '출연');
+INSERT INTO person (person_id, name) VALUES (1142, '이광복');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1142, '출연');
+INSERT INTO person (person_id, name) VALUES (1143, '김율희');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1143, '출연');
+INSERT INTO person (person_id, name) VALUES (1144, '김나니');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1144, '출연');
+INSERT INTO person (person_id, name) VALUES (1145, '홍승희');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1145, '출연');
+INSERT INTO person (person_id, name) VALUES (1146, '김성녀');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1146, '제작진');
+INSERT INTO person (person_id, name) VALUES (1147, '박범훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1147, '제작진');
+INSERT INTO person (person_id, name) VALUES (1148, '국수호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (97, 1148, '제작진');
+-- 98 유리동물원 [서울 서초] (연극, KOPIS PF298502)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (98, 'PERFORMANCE', '유리동물원 [서울 서초]', '2026-10-17', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF298502_260814_102324.gif', 'KOPIS', 'PF298502');
+INSERT INTO performance (work_id, venue, period) VALUES (98, '예술의전당 [서울] (CJ 토월극장)', '2026-10-17 ~ 2026-11-22');
+INSERT INTO work_genre (work_id, genre_id) SELECT 98, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1149, '김성령');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1149, '출연');
+INSERT INTO person (person_id, name) VALUES (1150, '최정원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1150, '출연');
+INSERT INTO person (person_id, name) VALUES (1151, '정운선');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1151, '출연');
+INSERT INTO person (person_id, name) VALUES (1152, '정새별');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1152, '출연');
+INSERT INTO person (person_id, name) VALUES (1153, '임세미');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1153, '출연');
+INSERT INTO person (person_id, name) VALUES (1154, '장승조');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1154, '출연');
+INSERT INTO person (person_id, name) VALUES (1155, '권세인');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1155, '출연');
+INSERT INTO person (person_id, name) VALUES (1156, '신유정');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1156, '제작진');
+INSERT INTO person (person_id, name) VALUES (1157, '황정원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1157, '제작진');
+INSERT INTO person (person_id, name) VALUES (1158, '김진숙');
+INSERT INTO work_person (work_id, person_id, role) VALUES (98, 1158, '제작진');
+-- 99 클로저 [대학로] (연극, KOPIS PF298745)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (99, 'PERFORMANCE', '클로저 [대학로]', '2026-09-15', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF298745_260818_154141.gif', 'KOPIS', 'PF298745');
+INSERT INTO performance (work_id, venue, period) VALUES (99, '예스24 스테이지(구. DCF대명문화공장) (2관)', '2026-09-15 ~ 2026-12-06');
+INSERT INTO work_genre (work_id, genre_id) SELECT 99, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1159, '오만석');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1159, '출연');
+INSERT INTO person (person_id, name) VALUES (1160, '배수빈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1160, '출연');
+INSERT INTO person (person_id, name) VALUES (1161, '홍우진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1161, '출연');
+INSERT INTO person (person_id, name) VALUES (1162, '최강희');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1162, '출연');
+INSERT INTO person (person_id, name) VALUES (1163, '장희진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1163, '출연');
+INSERT INTO person (person_id, name) VALUES (1164, '홍종현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1164, '출연');
+INSERT INTO person (person_id, name) VALUES (1165, '강영석');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1165, '출연');
+INSERT INTO person (person_id, name) VALUES (1166, '김지호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1166, '제작진');
+INSERT INTO person (person_id, name) VALUES (1167, '손형민');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1167, '제작진');
+INSERT INTO person (person_id, name) VALUES (1168, '김미경');
+INSERT INTO work_person (work_id, person_id, role) VALUES (99, 1168, '제작진');
+-- 100 연극열전10, 네이처 오브 포겟팅 (연극, KOPIS PF296942)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (100, 'PERFORMANCE', '연극열전10, 네이처 오브 포겟팅', '2026-09-18', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF296942_260727_103259.gif', 'KOPIS', 'PF296942');
+INSERT INTO performance (work_id, venue, period) VALUES (100, '세종문화회관 (세종S씨어터)', '2026-09-18 ~ 2026-11-29');
+INSERT INTO work_genre (work_id, genre_id) SELECT 100, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1169, '박정원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1169, '출연');
+INSERT INTO person (person_id, name) VALUES (1170, '전성우');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1170, '출연');
+INSERT INTO person (person_id, name) VALUES (1171, '백성현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1171, '출연');
+INSERT INTO person (person_id, name) VALUES (1172, '김주연');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1172, '출연');
+INSERT INTO person (person_id, name) VALUES (1173, '이정화');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1173, '출연');
+INSERT INTO person (person_id, name) VALUES (1174, '김시유');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1174, '출연');
+INSERT INTO person (person_id, name) VALUES (1175, '곽다인');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1175, '출연');
+INSERT INTO person (person_id, name) VALUES (1176, '허지혜');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1176, '제작진');
+INSERT INTO person (person_id, name) VALUES (1177, '기욤 피지');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1177, '제작진');
+INSERT INTO person (person_id, name) VALUES (1178, '김치영');
+INSERT INTO work_person (work_id, person_id, role) VALUES (100, 1178, '제작진');
+-- 101 멘치카 (연극, KOPIS PF306341)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (101, 'PERFORMANCE', '멘치카', '2026-12-22', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF306341_261113_112624.gif', 'KOPIS', 'PF306341');
+INSERT INTO performance (work_id, venue, period) VALUES (101, '더 서울라이티움 (갤러리아포레) (G층 전용관)', '2026-12-22 ~ 2027-01-17');
+INSERT INTO work_genre (work_id, genre_id) SELECT 101, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1179, '이동연');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1179, '출연');
+INSERT INTO person (person_id, name) VALUES (1180, '한도우');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1180, '출연');
+INSERT INTO person (person_id, name) VALUES (1181, '도준영');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1181, '출연');
+INSERT INTO person (person_id, name) VALUES (1182, '정찬호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1182, '출연');
+INSERT INTO person (person_id, name) VALUES (1183, '박지은');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1183, '출연');
+INSERT INTO person (person_id, name) VALUES (1184, '송상훈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1184, '출연');
+INSERT INTO person (person_id, name) VALUES (1185, '김미나');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1185, '제작진');
+INSERT INTO person (person_id, name) VALUES (1186, '박한별');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1186, '제작진');
+INSERT INTO person (person_id, name) VALUES (1187, '현지야');
+INSERT INTO work_person (work_id, person_id, role) VALUES (101, 1187, '제작진');
+-- 102 슛 더 크로우 (Shoot the Crow) (연극, KOPIS PF305968)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (102, 'PERFORMANCE', '슛 더 크로우 (Shoot the Crow)', '2026-12-08', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF305968_261110_134826.jpg', 'KOPIS', 'PF305968');
+INSERT INTO performance (work_id, venue, period) VALUES (102, '링크아트센터 (벅스홀)', '2026-12-08 ~ 2027-03-07');
+INSERT INTO work_genre (work_id, genre_id) SELECT 102, genre_id FROM genre WHERE name = '연극';
+INSERT INTO person (person_id, name) VALUES (1188, '임하룡');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1188, '출연');
+INSERT INTO person (person_id, name) VALUES (1189, '박지일');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1189, '출연');
+INSERT INTO person (person_id, name) VALUES (1190, '김승욱');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1190, '출연');
+INSERT INTO person (person_id, name) VALUES (1191, '송종호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1191, '출연');
+INSERT INTO person (person_id, name) VALUES (1192, '김도현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1192, '출연');
+INSERT INTO person (person_id, name) VALUES (1193, '최재웅');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1193, '출연');
+INSERT INTO person (person_id, name) VALUES (1194, '오용');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1194, '출연');
+INSERT INTO person (person_id, name) VALUES (1195, '이헌재');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1195, '제작진');
+INSERT INTO person (person_id, name) VALUES (1196, '김달중');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1196, '제작진');
+INSERT INTO person (person_id, name) VALUES (1197, '남경식');
+INSERT INTO work_person (work_id, person_id, role) VALUES (102, 1197, '제작진');
+-- 103 유니버설발레단, 호두까기인형 [서울 종로] (무용, KOPIS PF303402)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (103, 'PERFORMANCE', '유니버설발레단, 호두까기인형 [서울 종로]', '2026-12-17', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF303402_261016_101506.gif', 'KOPIS', 'PF303402');
+INSERT INTO performance (work_id, venue, period) VALUES (103, '세종문화회관 (세종대극장)', '2026-12-17 ~ 2026-12-30');
+INSERT INTO work_genre (work_id, genre_id) SELECT 103, genre_id FROM genre WHERE name = '무용';
+INSERT INTO person (person_id, name) VALUES (1198, '김광현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1198, '출연');
+INSERT INTO person (person_id, name) VALUES (1199, '강미선');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1199, '출연');
+INSERT INTO person (person_id, name) VALUES (1200, '콘스탄틴 노보셀로프');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1200, '출연');
+INSERT INTO person (person_id, name) VALUES (1201, '전여진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1201, '출연');
+INSERT INTO person (person_id, name) VALUES (1202, '이승민');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1202, '출연');
+INSERT INTO person (person_id, name) VALUES (1203, '서혜원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1203, '출연');
+INSERT INTO person (person_id, name) VALUES (1204, '이현준');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1204, '출연');
+INSERT INTO person (person_id, name) VALUES (1205, '올레그 비노그라도프');
+INSERT INTO work_person (work_id, person_id, role) VALUES (103, 1205, '제작진');
+-- 104 제6회 SAL 기획공연: DELTA (무용, KOPIS PF305440)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (104, 'PERFORMANCE', '제6회 SAL 기획공연: DELTA', '2026-12-05', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF305440_261104_132956.jpg', 'KOPIS', 'PF305440');
+INSERT INTO performance (work_id, venue, period) VALUES (104, '국립극장 (해오름극장)', '2026-12-05 ~ 2026-12-06');
+INSERT INTO work_genre (work_id, genre_id) SELECT 104, genre_id FROM genre WHERE name = '무용';
+INSERT INTO person (person_id, name) VALUES (1206, '최호종');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1206, '출연');
+INSERT INTO person (person_id, name) VALUES (1207, '윤혁중');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1207, '출연');
+INSERT INTO person (person_id, name) VALUES (1208, '서이진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1208, '출연');
+INSERT INTO person (person_id, name) VALUES (1209, '유재성');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1209, '출연');
+INSERT INTO person (person_id, name) VALUES (1210, '최정홍');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1210, '출연');
+INSERT INTO person (person_id, name) VALUES (1211, '서예진');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1211, '출연');
+INSERT INTO person (person_id, name) VALUES (1212, '이지수');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1212, '출연');
+INSERT INTO person (person_id, name) VALUES (1213, '배진호');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1213, '제작진');
+INSERT INTO person (person_id, name) VALUES (1214, '신재윤');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1214, '제작진');
+INSERT INTO person (person_id, name) VALUES (1215, '최호종');
+INSERT INTO work_person (work_id, person_id, role) VALUES (104, 1215, '제작진');
+-- 105 국립발레단, 카멜리아 레이디 (무용, KOPIS PF303266)
+INSERT INTO work (work_id, type, title, release_date, summary, poster_url, source, external_id) VALUES (105, 'PERFORMANCE', '국립발레단, 카멜리아 레이디', '2026-11-10', NULL, 'https://www.kopis.or.kr/upload/pfmPoster/PF_PF303266_261103_165440.gif', 'KOPIS', 'PF303266');
+INSERT INTO performance (work_id, venue, period) VALUES (105, '예술의전당 [서울] (오페라극장)', '2026-11-10 ~ 2026-11-15');
+INSERT INTO work_genre (work_id, genre_id) SELECT 105, genre_id FROM genre WHERE name = '무용';
+INSERT INTO person (person_id, name) VALUES (1216, '알리나 코조카루');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1216, '출연');
+INSERT INTO person (person_id, name) VALUES (1217, '조연재');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1217, '출연');
+INSERT INTO person (person_id, name) VALUES (1218, '한나래');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1218, '출연');
+INSERT INTO person (person_id, name) VALUES (1219, '양준영');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1219, '출연');
+INSERT INTO person (person_id, name) VALUES (1220, '변성완');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1220, '출연');
+INSERT INTO person (person_id, name) VALUES (1221, '곽동현');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1221, '출연');
+INSERT INTO person (person_id, name) VALUES (1222, '존 노이마이어');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1222, '제작진');
+INSERT INTO person (person_id, name) VALUES (1223, '위르겐 로즈');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1223, '제작진');
+INSERT INTO person (person_id, name) VALUES (1224, '김주원');
+INSERT INTO work_person (work_id, person_id, role) VALUES (105, 1224, '제작진');
+
+-- ------------------------------------------------------------
+-- 책 40권 YES24 실제 데이터(출간일·소개·표지·YES24 상품 번호·ISBN·쪽수). 내용은 10_books_yes24.sql 과 같다.
+-- ------------------------------------------------------------
+-- 41 채식주의자 → 채식주의자 (창비)
+UPDATE work SET release_date = '2022-03-28', summary = '인터내셔널 부커상, 산클레멘테 문학상 수상작
+전세계가 주목한 한강의 역작을 다시 만나다
+2016년 인터내셔널 부커상을 수상하며 한국문학의 입지를 한단계 확장시킨 한강의 장편소설 『채식주의자』를 15년 만에 새로운 장정으로 선보인다. 상처받은 영혼의 고통과 식물적 상상력의 강렬한 결합을 정교한 구성과 흡인력 있는 문체로 보여주는 이 작품은 섬뜩한 아름다움의 미학을 한강만의 방식으로 완성한 역작이다. “탄탄하고 정교하며 충격적인 작품으로, 독자들의 마음에 그리고 아마도 그들의 꿈에 오래도록 머물 것이다”라는 평을 받으며 인터내셔널 부커상을 수상했던 『채식주의자』는 “미국 문학계에 파문을 일으키면서도 독자들과 공명할 것으로 보인다”(뉴욕타임스), “놀라울 정도로 아름다운 산문과 믿을 수 없을 만큼 폭력적인 내용의 조합이 충격적이다”(가디언)라는 해외서평을 받았고 2018년에는 스페인에서 산클레멘테 문학상을 받는 등 전세계에서 뜨거운 반응을 일으켰다.', poster_url = 'https://image.yes24.com/goods/108422348/L', source = 'YES24', external_id = '108422348' WHERE work_id = 41 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788936434595', pages = 276 WHERE work_id = 41;
+-- 42 소년이 온다 → 소년이 온다 (창비)
+UPDATE work SET release_date = '2014-05-19', summary = '말라파르테 문학상, 만해문학상 수상작
+우리 시대의 소설 『소년이 온다』 출간 10주년 기념 특별한정판
+2014년 만해문학상, 2017년 이탈리아 말라파르테 문학상을 수상하고 전세계 20여개국에 번역 출간되며 세계를 사로잡은 우리 시대의 소설 『소년이 온다』를 출간 10주년을 맞아 특별한정판으로 새롭게 선보인다. 이 작품은 『채식주의자』로 인터내셔널 부커상을 수상한 한강 작가에게 “눈을 뗄 수 없는, 보편적이며 깊은 울림”(뉴욕타임즈), “역사와 인간의 본질을 다룬 충격적이고 도발적인 소설”(가디언), “한강을 뛰어넘은 한강의 소설”(문학평론가 신형철)이라는 찬사를 선사한 작품으로, 그간 많은 독자들에게 광주의 상처를 깨우치고 함께 아파하는 문학적인 헌사로 높은 관심과 찬사를 받아왔다.', poster_url = 'https://image.yes24.com/goods/13137546/L', source = 'YES24', external_id = '13137546' WHERE work_id = 42 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788936434120', pages = 216 WHERE work_id = 42;
+-- 43 82년생 김지영 → 82년생 김지영 (민음사)
+UPDATE work SET release_date = '2016-10-14', summary = '문학성과 다양성, 참신성을 기치로 한국문학의 미래를 이끌어 갈 신예들의 작품을 엄선한 「오늘의 젊은 작가」의 열세 번째 작품. 서민들의 일상 속 비극을 사실적이면서 공감대 높은 스토리로 표현하는 데 재능을 보이는 작가 조남주는 이번 작품에서 1982년생 ''김지영 씨''의 기억을 바탕으로 한 고백을 한 축으로, 고백을 뒷받침하는 각종 통계자료와 기사들을 또 다른 축으로 삼아 30대를 살고 있는 한국 여성들의 보편적인 일상을 완벽하게 재현한다. 슬하에 딸을 두고 있는 서른네 살 김지영 씨는 어느 날 갑자기 이상 증세를 보인다. 시댁 식구들이 모여 있는 자리에서 친정 엄마로 빙의해 속말을 뱉어 내고, 남편의 결혼 전 애인으로 빙의해 그를 식겁하게 만들기도 한다.', poster_url = 'https://image.yes24.com/goods/32972572/L', source = 'YES24', external_id = '32972572' WHERE work_id = 43 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937473135', pages = 192 WHERE work_id = 43;
+-- 44 불편한 편의점 → 불편한 편의점 (나무옆의자)
+UPDATE work SET release_date = '2021-04-20', summary = '불편한데 자꾸 가고 싶은 편의점이 있다!
+힘들게 살아낸 오늘을 위로하는 편의점의 밤
+정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
+『망원동 브라더스』 김호연의 ‘동네 이야기’ 시즌 2
+2013년 세계문학상 우수상 수상작 『망원동 브라더스』로 데뷔한 후 일상적 현실을 위트 있게 그린 경쾌한 작품과 인간의 내밀한 욕망을 기발한 상상력으로 풀어낸 스릴러 장르를 오가며 독자적인 작품 세계를 쌓아올린 작가 김호연. 그의 다섯 번째 장편소설 『불편한 편의점』이 출간되었다. 『불편한 편의점』은 청파동 골목 모퉁이에 자리 잡은 작은 편의점을 무대로 힘겨운 시대를 살아가는 우리 이웃들의 삶의 속내와 희로애락을 따뜻하고 유머러스하게 담아낸 작품이다. 『망원동 브라더스』에서 망원동이라는 공간의 체험적 지리지를 잘 활용해 유쾌한 재미와 공감을 이끌어냈듯 이번에는 서울의 오래된 동네 청파동에 대한 공감각을 생생하게 포착해 또 하나의 흥미진진한 ‘동네 이야기’를 탄생시켰다.', poster_url = 'https://image.yes24.com/goods/99308021/L', source = 'YES24', external_id = '99308021' WHERE work_id = 44 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791161571188', pages = 268 WHERE work_id = 44;
+-- 45 아몬드 → 아몬드 (다즐링)
+UPDATE work SET release_date = '2023-07-14', summary = '* 전 세계 30개국 출간
+* 국내 100만 부 판매 베스트셀러
+* 아시아권 최초, 일본 서점대상 1위 수상
+* 美 아마존 베스트북 선정
+* 특별부록, 단편 외전 수록
+인간을 구성하는 두 가지 위대한 키워드, ‘감정’ 그리고 ‘사랑’
+감정을 느끼지 못하는 독특한 소년의 특별하고 사랑스러운 성장 이야기
+청소년, 부모, 성인 독자를 아우르는
+100만 부 베스트셀러, 올타임 스테디셀러 『아몬드』의 귀환!
+2017년 처음 출간된 이래 국내 종이책 기준 100만 부 판매를 기록한 베스트셀러이자 스테디 셀러 『아몬드』가 절판기간을 거쳐 재출간된다. 강렬하고 새로운 2종의 표지로 청소년과 성인 독자에게 새롭게 다가가며, 단편 외전이 함께 수록돼 상상력과 읽는 재미를 배가시킨다.
+『아몬드』는 ‘감정을 느끼지 못하는 소년’ 윤재가 세상에 걸음을 내딛는 이야기로, 청소년부터 성인에 이르기까지 전연령대 독자의 꾸준한 사랑을 받아왔다.', poster_url = 'https://image.yes24.com/goods/119697570/L', source = 'YES24', external_id = '119697570' WHERE work_id = 45 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791198363510', pages = 314 WHERE work_id = 45;
+-- 46 완전한 행복 → 완전한 행복 (은행나무)
+UPDATE work SET release_date = '2021-06-08', summary = '다시, 정유정!
+자기애의 늪에 빠진 삶은 얼마나 위태로운가,
+압도적 서사 위 정교하고 서늘한 공포
+우리가 기다린 바로 그, 정유정!
+『내 인생의 스프링 캠프』 『내 심장을 쏴라』 『7년의 밤』 『28』 『종의 기원』 『진이, 지니』. 발표하는 작품마다 독자들의 열광적인 지지를 받으며 한국문학의 대체불가한 작가로 자리매김한 정유정이 신작 『완전한 행복』으로 돌아왔다. 500여 쪽을 꽉 채운 압도적인 서사와 적재적소를 타격하는 속도감 있는 문장, 치밀하고 정교하게 쌓아올린 플롯과 독자의 눈에 작열하는 생생한 묘사로 정유정만의 스타일을 가감 없이 보여주는 한편, 더 완숙해진 서스펜스와 인간의 심연에 대한 밀도 높은 질문으로 가득 찬 수작이다.
+『완전한 행복』은 버스도 다니지 않는 버려진 시골집에서 늪에 사는 오리들을 먹이기 위해 오리 먹이를 만드는 한 여자의 뒷모습에서 시작된다. 그녀와 딸, 그리고 그 집을 찾은 한 남자의 얼굴을 비춘다.', poster_url = 'https://image.yes24.com/goods/101908580/L', source = 'YES24', external_id = '101908580' WHERE work_id = 46 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791167370280', pages = 524 WHERE work_id = 46;
+-- 47 7년의 밤 → 7년의 밤 (은행나무)
+UPDATE work SET release_date = '2011-03-23', summary = '제1회 세계청소년문학상 수상작 『내 인생의 스프링 캠프』, 제5회 세계문학상 수상작 『내 심장을 쏴라』의 작가 정유정의 장편소설. 전작을 통해 치밀한 얼개와 속도감 넘치는 문체, 살아 있는 캐릭터와 적재적소에 터지는 블랙유머까지, 놀라운 문학적 역량을 보이며 문단의 주목을 받기 시작한 작가는 다시 한 번 치밀한 사전 조사와 압도적인 상상력으로 무장한 작품 『7년의 밤』으로 독자들에게 강렬한 인상을 남긴다. 7년의 밤 동안 아버지와 아들에게 일어난 슬프고 신비로우며 통렬한 이야기.', poster_url = 'https://image.yes24.com/goods/4701388/L', source = 'YES24', external_id = '4701388' WHERE work_id = 47 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788956604992', pages = 524 WHERE work_id = 47;
+-- 48 종의 기원 → 종의 기원 (은행나무)
+UPDATE work SET release_date = '2016-05-14', summary = '3년, 모두가 손꼽아 기다려온 소설
+악惡은 어떻게 존재하고 점화되는가
+심연에서 건져 올린 인간 본성의 ‘어두운 숲’
+작가 정유정이 돌아왔다!
+펴내는 작품마다 압도적인 서사와 폭발적인 이야기의 힘으로 많은 독자들의 뜨거운 사랑을 받아온 정유정이 전작 《28》 이후 3년 만에 장편소설 《종의 기원》으로 독자들을 찾았다. 새로운 작품을 내놓을 때마다 다음 작품을 기다리게 하는 작가이기에 3년 만에 만나는 그의 신작을 향한 독자들의 기대는 그 시간만큼이나 높게 쌓였을 것이다.', poster_url = 'https://image.yes24.com/goods/27643793/L', source = 'YES24', external_id = '27643793' WHERE work_id = 48 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788956609959', pages = 384 WHERE work_id = 48;
+-- 49 달러구트 꿈 백화점 → 달러구트 꿈 백화점 1 (팩토리나인)
+UPDATE work SET release_date = '2020-07-08', summary = '잠들어야만 입장할 수 있는 독특한 마을. 그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은, 온갖 꿈을 한데 모아 판매하는 ‘달러구트의 꿈 백화점’이다. 긴 잠을 자는 사람들은 물론이고, 짧은 낮잠을 자는 사람들과 동물들로 매일매일 대성황을 이룬다. 범상치 않은 혈통의 주인장 ‘달러구트’, 그리고 그의 최측근에서 일하게 된 신참 직원 ‘페니’, 꿈을 만드는 제작자 ‘아가넵 코코’, 그리고 베일에 둘러싸인 비고 마이어스…등이 등장한다. 『달러구트 꿈 백화점』은 ‘무의식에서만 존재하는 꿈을 정말 사고 팔 수 있을까?’라는 기발한 질문에 답을 찾아가며, 꿈을 만드는 사람, 파는 사람, 사는 사람의 비밀스런 에피소드를 담고 있는 판타지 소설이다. 텀블벅 펀딩 1812% 달성, 전자책 출간 즉시 베스트셀러 1위를 3주간 기록하며 수많은 독자들의 요청으로 종이책으로 출간하게 되었다.', poster_url = 'https://image.yes24.com/goods/91065309/L', source = 'YES24', external_id = '91065309' WHERE work_id = 49 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791165341909', pages = 300 WHERE work_id = 49;
+-- 50 노인과 바다 → 노인과 바다 (민음사)
+UPDATE work SET release_date = '2012-01-02', summary = '미국 현대 문학의 개척자라 불리는 헤밍웨이는 제1차 세계대전 후 삶의 좌표를 잃어버린 ‘길 잃은 세대’를 대표하는 작가이다. 그러나 그동안 저작권 계약이 어려워, 국내에는 제대로 소개되지 못하다가 이번에 대표작 세 권을 동시에 선보이게 되었다.', poster_url = 'https://image.yes24.com/goods/6157159/L', source = 'YES24', external_id = '6157159' WHERE work_id = 50 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937462788', pages = 193 WHERE work_id = 50;
+-- 51 데미안 → 데미안 (민음사)
+UPDATE work SET release_date = '2000-12-20', summary = '데미안을 통해 참다운 어른이 되어 가는 소년 싱클레어의 이야기.
+한 폭의 수채화같이 아름답고 유려한 문체로 전세계인의 사랑을 받고 있는 작품. 감수성이 풍부한 주인공 싱클레어가 소년기에서 청년기를 거쳐 어른으로 자라가는 과정이 세밀하고 지적인 문장으로 그려져 있습니다. 진저한 삶에 대해 고민하고 올바르게 살기 위해 노력하는데미안과 싱클레어의 깊이 있...', poster_url = 'https://image.yes24.com/goods/176787/L', source = 'YES24', external_id = '176787' WHERE work_id = 51 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937460449', pages = 239 WHERE work_id = 51;
+-- 52 어린 왕자 → 어린 왕자 (열린책들)
+UPDATE work SET release_date = '2015-10-20', summary = '고 황현산 선생의 미려하고 충실한 번역과 함께
+한겨울의 풍경을 그린 특별한 한정판 디자인으로 만나는 어린 왕자
+프랑스 문학 연구자이자 문학 평론가인 고 황현산 선생의 미려한 번역으로 열린책들에서 출간된 생텍쥐페리의 『어린 왕자』가 특별한 한정판 디자인으로 다시 선보인다. 다양한 번역본 중에서도 단연 아름답고 충실한 문장으로 손꼽히는 황현산 선생의 번역은 지금껏 가장 많이 팔리는 한국어판으로 자리 잡고 있다.
+이번에 출간하는 한정판은 우리의 마음에 언제나 남아 있는 어린 왕자가 맞이한 한겨울의 크리스마스 모습을 담은 디자인이다. 눈사람과 산타클로스 모자, 반짝이는 장식과 한 아름의 선물이 어린 왕자를 따스하게 둘러싼 사랑스러운 풍경을 특별하게 간직해 볼 수 있다.
+「밤하늘을 바라볼 때면, 그 별들 중의 어느 별에서 살고 있을 테니까」라고 속삭인 어린 왕자의 말처럼, 이번 겨울 에디션은 먼 별에서 보내고 있을 어린 왕자의 다정한 시간을 행복하게 상상하도록 한다.', poster_url = 'https://image.yes24.com/goods/22431294/L', source = 'YES24', external_id = '22431294' WHERE work_id = 52 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788932917245', pages = 136 WHERE work_id = 52;
+-- 53 1984 → 1984 (민음사)
+UPDATE work SET release_date = '2003-06-16', summary = '전제주의라는 거대한 지배 시스템 앞에 놓인 한 개인이 어떻게 저항하다가 어떻게 파멸해 가는지, 그 과정과 배후를 적나라하게 보여주는 디스토피아 소설이다. 작품의 무대는 전체주의의 극한적인 양상을 띠고 있는 나라, 오세아니아. 정치 통제 기구인 당은 허구적 인물인 빅 브라더를 내세워 독재 권력의 극대화를 꾀하는 한편, 정치 체제를 항구적으로 유지하기 위해 텔레스크린, 사상경찰, 마이크로폰 등을 이용하여 당원들을 철저하게 감시한다.', poster_url = 'https://image.yes24.com/goods/372300/L', source = 'YES24', external_id = '372300' WHERE work_id = 53 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937460777', pages = 444 WHERE work_id = 53;
+-- 54 동물농장 → 동물농장 (민음사)
+UPDATE work SET release_date = '2001-02-28', summary = '풍자 우화를 통한 사회 비판을 담은 기념비적 소설
+“모든 동물은 평등하다. 그러나 어떤 동물은 다른 동물들보다 더 평등하다.”
+우화 형식으로 당대의 정치적 현실을 날카롭게 묘파한 『동물농장』은 『1984』, 『카탈로니아 찬가』와 함께 조지 오웰이 47세의 나이로 갑작스레 사망하기 전 짧은 작가 생활 동안 남긴 영국 문학의 위대한 결실이다. 이 작품이 영국에서 처음 출간된 것은 2차 세계 대전이 갓 끝난 1945년이었다. 소련과 사회주의에 민감하던 세계 정치적 분위기에서 이 작품은 처음엔 거의 모든 출판사에서 출판을 거절할 정도로 홀대받았으나, 그의 전작 『카탈로니아 찬가』를 출간했던 섹커 앤드 와버그 출판사의 결정으로 겨우 출간에 이를 수 있었다.', poster_url = 'https://image.yes24.com/goods/17352/L', source = 'YES24', external_id = '17352' WHERE work_id = 54 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937460050', pages = 184 WHERE work_id = 54;
+-- 55 위대한 개츠비 → 위대한 개츠비 (민음사)
+UPDATE work SET release_date = '2003-05-06', summary = '‘재즈의 시대’였던 미국의 1920년대를 배경으로 무너져 가는 아메리칸드림을
+예리한 필치로 그려 낸 20세기 가장 뛰어난 미국 소설
+『위대한 개츠비』는 20세기 가장 뛰어난 미국 소설로 꼽히는 작품이다. 우리나라에서만 수십 번 출간되었으며, 현재 팔리고 있는 판본만 27종에 이른다. 이처럼 세대를 거듭하여 번역되고 읽히는 고전은 보통 텍스트가 정확하다고 생각하기 쉽지만 실제로는 그러하지 않은 경우가 허다하다. 『위대한 개츠비』 역시 출간 이래 계속 텍스트가 문젯거리가 되어왔으나 1991년 영국 케임브리지 대학교 출판부에서 ‘결정판’ 텍스트를 출간하여 이러한 문제를 해결하였다.', poster_url = 'https://image.yes24.com/goods/370331/L', source = 'YES24', external_id = '370331' WHERE work_id = 55 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937460753', pages = 284 WHERE work_id = 55;
+-- 56 호밀밭의 파수꾼 → 호밀밭의 파수꾼 (민음사)
+UPDATE work SET release_date = '2023-01-17', summary = '20세기 최고의 베스트셀러이자 전 세계 청춘들을 열광하게 한 성장 소설
+20세기 미국 문단의 이단아 J. D. 샐린저의 『호밀밭의 파수꾼』은 사립학교의 문제아 홀든 콜필드가 퇴학을 당하고 집으로 돌아오기까지 며칠간의 일들을 담은 작품이다. 십대들의 언어를 그대로 옮긴 듯한 욕설과 비속어 속에 위트를 간직한 문장으로 청춘만이 공감할 수 있는 페이소스를 녹여 낸 이 소설은 젊은 독자들 사이에서 ‘콜필드 신드롬’을 일으켰고, 홀든 콜필드라는 이름은 반항아의 대명사가 되었다. 전통적인 성장 서사가 자아의 발견과 성찰에 집중하고 있다면, 『호밀밭의 파수꾼』은 인간 존재를 특징짓는 공허함과 소외 그리고 위선적인 기성세대에 대한 예민한 성찰을 보여 준다. 이 작품은 전 세계적으로 누적 판매 7,000만 부를 기록했다.', poster_url = 'https://image.yes24.com/goods/204300/L', source = 'YES24', external_id = '204300' WHERE work_id = 56 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937460470', pages = 320 WHERE work_id = 56;
+-- 57 변신 → 변신 (문학동네)
+UPDATE work SET release_date = '2005-07-30', summary = '어느 날 아침 그레고르 잠자가 불안한 꿈에서 깨어났을 때 그는 침대 속에서 한 마리의 흉측한 갑충으로 변해 있는 자신의 모습을 발견했다. 그는 철갑처럼 단단한 등껍질을 등에 대고 누워 있었다. 머리를 약간 쳐들어보니 불룩하게 솟은 갈색의 배가 보였고, 그 배는 다시 활 모양으로 휜 각질의 칸들로 나위어 있었다. 이불은 금방이라도 주르륵 미끄러질 듯 둥그런 언덕 같은 배 위에 가까스로 덮여 있었다. 몸뚱이에 비해 형편없이 가느다란 수많은 다리들은 애처롭게 버둥거리며 그의 눈앞에서 어른거렸다.
+‘이게 대체 어찌된 일...', poster_url = 'https://image.yes24.com/goods/1525142/L', source = 'YES24', external_id = '1525142' WHERE work_id = 57 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788954600200', pages = 137 WHERE work_id = 57;
+-- 58 이방인 → 이방인 (민음사)
+UPDATE work SET release_date = '2011-03-25', summary = '20세기의 지성이자 실존주의 문학의 대표 작가 알베르 카뮈.
+현실에서 소외되어 이방인으로 살아가는 현대인의 초상을 그리다.
+낯선 인물과 독창적인 형식으로 현대 프랑스 문단에 ''이방인''처럼 나타난 소설. 젊은 무명 작가였던 알베르 카뮈에게 세계적 명성을 안겨준 이 작품은 현실에서 소외되어 이방인으로 살아가는 현대인이 죽음을 앞두고 비로소 마주하는 실존의 체험을 강렬하게 그린다.', poster_url = 'https://image.yes24.com/goods/4827613/L', source = 'YES24', external_id = '4827613' WHERE work_id = 58 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937443848', pages = 270 WHERE work_id = 58;
+-- 59 백년 동안의 고독 → 백년 동안의 고독 (문학사상)
+UPDATE work SET release_date = '2005-07-28', summary = '1982년 노벨문학상 수상작! 마술적 리얼리즘의 극치를 보여 주며 일단 한 번 잡기 시작하면 끝까지 손을 놓을 수 없게 하는 소설이다. 창세기의 역사와 라틴아메리카의 역사를 융합하여 인류 최후의 비극적 서사시를 빚어내고 있다. 라틴아메리카의 역사를 알려면 딱딱한 역사책 대신 《백 년 동안의 고독》을 읽으라는 말이 있을 정도로 이 작품은 라틴아메리카에서 일어난 실제 사건을 배경으로 사회적 이중성을 적나라하게 파헤친다.', poster_url = 'https://image.yes24.com/goods/1524538/L', source = 'YES24', external_id = '1524538' WHERE work_id = 59 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788970126937', pages = 457 WHERE work_id = 59;
+-- 60 해리 포터와 마법사의 돌 → 해리 포터와 마법사의 돌 (문학수첩)
+UPDATE work SET release_date = '2025-01-15', summary = '해리 포터 세대의, 해리 포터 세대를 위한, 해리 포터 세대에 의한 새 번역!
+‘21세기 대표 아이콘’에 걸맞은 완성도 높은 작품으로 재탄생하다!
+1997년 영국에서 출간된 이래 《해리 포터》 시리즈는 지금까지 200개국 이상 80개의 언어로 번역되고 출간되어 5억 부 이상을 판매했다. 국내에서도 1999년 《해리 포터와 마법사의 돌》의 출간을 필두로 지금까지 약 1,500만 부가 판매되었으며, 현재에도 독자들에게 변함없는 사랑을 받고 있다. 이 시리즈는 여덟 편의 영화로도 제작되어 전 세계 곳곳에서 흥행을 거두었고, 영화와 관련된 새로운 도서가 출간되고 테마 파크가 조성되는 등 놀라운 기현상을 빚어냈다.
+뿐만 아니라 《해리 포터》 시리즈에서 또 다른 작품들이 문화상품으로 파생되어 지금도 꾸준히 독자들을 만나고 있다.', poster_url = 'https://image.yes24.com/goods/140977307/L', source = 'YES24', external_id = '140977307' WHERE work_id = 60 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791193790656', pages = 456 WHERE work_id = 60;
+-- 61 반지의 제왕 → 반지의 제왕 1 (arte(아르테))
+UPDATE work SET release_date = '2021-02-23', summary = '가운데땅 역사상
+가장 스펙터클한 원정이 시작되다!
+전 세계 1억 부 판매 신화!
+아마존 독자 선정 세기 최고의 도서!
+[해리 포터], [리그 오브 레전드] 세계관의 원류!
+현대문학을 대표하는 천재적인 작품!
+20세기 판타지 문학의 걸작 『반지의 제왕』, 새롭게 태어나다!
+국내 최초 60주년판 완역 전면 개정!
+모든 힘을 지배할 절대반지를 갖게 된 호빗 ‘프로도’가 악의 세력을 물리치고 절대반지를 파괴하기 위해 목숨을 건 여정을 떠나는 판타지 서사 『반지의 제왕(Part1 반지 원정대)』(전 3권) 1권이 북이십일 아르테에서 출간되었다.
+『반지의 제왕』이 처음 세상에 나온 것은 1954년이다. 톨킨은 쇄를 거듭할 때마다 수정을 진행했고 독자들은 변경된 내용을 기록하면서 책의 완성도를 높여나갔다. 2004년 하퍼콜린스에서 출간된 50주년 기념판의 서문에서 편집자는 초판에 비해 300~400개의 수정이 이루어졌다고 밝혔다.', poster_url = 'https://image.yes24.com/goods/97422515/L', source = 'YES24', external_id = '97422515' WHERE work_id = 61 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788950992460', pages = 708 WHERE work_id = 61;
+-- 62 나미야 잡화점의 기적 → 나미야 잡화점의 기적 (현대문학)
+UPDATE work SET release_date = '2022-12-19', summary = '히가시노 게이고의 가장 경이로운 대표작
+국내 출간 10주년 기념 무선 보급판 발간
+2012년 12월 19일 국내에 번역 출간된 이래 10년 연속 역대 최장기 베스트셀러 소설의 자리를 지키며, 2017년 지난 10년간 가장 많이 판매된 소설 1위, 2018년 국내 누적 판매 100만 부, 2019년 2010년대 베스트셀러 2위(소설 분야 1위), 2020년 초판 100쇄 돌파, 2022년 현재 170만 독자의 선택이라는 대기록을 세운 “21세기 가장 경이로운 베스트셀러”(교보문고), 한국인이 가장 사랑하는 일본 작가 히가시노 게이고의 아주 특별한 대표작 『나미야 잡화점의 기적』이 국내 출간 10주년을 맞아 무선 보급판으로 발간된다.
+위로와 공감을 얻을 수 있는 따뜻한 공간을 그린 초판 표지의 감동을 그대로 담아낸 무선판은 다소 무게감 있었던 양장판과 다르게 누구나 가볍게 들고 다니며 읽을 수 있도록 했다.', poster_url = 'https://image.yes24.com/goods/116586056/L', source = 'YES24', external_id = '116586056' WHERE work_id = 62 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791167901484', pages = 456 WHERE work_id = 62;
+-- 63 용의자 X의 헌신 → 용의자 X의 헌신 (재인)
+UPDATE work SET release_date = '2017-08-30', summary = '백 퍼센트의 사랑, 백 퍼센트의 헌신……
+추리 소설 역사상 가장 처절하고 가장 아름다운 한 편의 서사시
+히가시노 게이고 문학의 정수로 일컬어지는 『용의자 X의 헌신』이 새롭게 번역되어 출간됐다. 일본 문학 전문 번역가 양억관 씨가 자신의 번역을 대폭 손질해 원작이 지닌 문학적 향기와 감동을 오롯이 되살려 냈다.
+『용의자 X의 헌신』은 명실상부 히가시노 게이고의 출세작이자 대표작으로 평가되는 장편 미스터리 소설이다. 출간된 해에[주간 문춘 미스터리 베스트 10] 1위를 수상한 것을 시작으로 이듬해 [본격 미스터리 대상] 1위, [이 미스터리가 대단하다] 1위를 차지했으며, 급기야 일본의 대표적인 문학상인 제134회 나오키 상을 거머쥐었다. 2008년 일본에서 영화로 만들어져 그 해 개봉한 일본 영화 가운데 흥행 수입 3위를 기록했다.', poster_url = 'https://image.yes24.com/goods/45353675/L', source = 'YES24', external_id = '45353675' WHERE work_id = 63 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788990982704', pages = 448 WHERE work_id = 63;
+-- 64 그리고 아무도 없었다 → 그리고 아무도 없었다 (황금가지)
+UPDATE work SET release_date = '2013-12-31', summary = '전 세계 미스터리의 역사를 재창조한 추리 소설의 여왕,
+애거서 크리스티를 대표하는 작품만을 모은 에디터스 초이스
+1억 부 이상이 팔린 명실공히 최고의 애거서 크리스티 소설이자, 출간 이래 항상 세계에서 가장 많이 팔리고 있는 미스터리 소설! 세계 3대 추리 소설 중의 하나이자, 수없이 많은 영화와 드라마로 제작된 최고의 미스터리이며, 애거서 크리스티 자신이 뽑은 제일 좋아하는 작품 목록의 1위에 올라 있다. 외딴 섬에 저마다 숨기고픈 비밀이 있는 열 명의 손님이 초대를 받는다. 저택의 곳곳에 섬뜩한 내용의 동요 가사가 든 액자가 걸려 있고, 그 동요에 맞춰 10명의 손님들은 차례차례 죽음을 맞이하는데…….', poster_url = 'https://image.yes24.com/goods/11865751/L', source = 'YES24', external_id = '11865751' WHERE work_id = 64 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788960177758', pages = 331 WHERE work_id = 64;
+-- 65 셜록 홈즈의 모험 → 셜록 홈즈의 모험 (문예춘추사)
+UPDATE work SET release_date = '2012-12-10', summary = '추리 소설의 절대 고전,
+완역본으로 만나는 셜록 홈즈 시리즈!
+수많은 문학작품 캐릭터 중 세계에서 가장 유명한 셜록 홈즈. 아서 코난 도일은 약 40여 년 동안, 4편의 장편과 56편의 단편을 통해 세상에 셜록 홈즈를 소개했다. 이미 영화나 드라마로도 제작되어 많은 인기를 누리고 있지만, 원작에서 만날 수 있는 셜록 홈즈 특유의 재치와 번득이는 추리력을 뛰어넘기는 힘들다. 게다가 세간에 다수 출간된 셜록 홈즈 관련 도서들은 아동물에 치우쳐 있어서 그의 명성에 비하면 완역본을 읽어 본 사람을 찾기가 힘들 정도이다.
+그동안 많은 분량에 지레 겁을 먹고 읽기에 도전하기 꺼렸던 독자라도, 누구나 읽기 쉽고 재미있게 다가갈 수 있으며 다양한 삽화를 삽입해 읽는 재미를 더한 문예춘추사 《셜록 홈즈 시리즈》완역본을 통해 ‘셜록 홈즈’의 진면목을 만날 수 있다.
+최 신간 번역으로 만나는 문예춘추사 《셜록 홈즈 시리즈》는 세련된 표지와 읽기 편한 본문 디자인, 가독성 뛰어난 번역과 편집, 친절한 주석으로 인해 많은 독자들에게 만족감을 선사할 것이다. 또한 《셜록 홈즈》전집에는 별도 부록으로 제작한 《셜록 홈즈의 발자취》를 통해 《셜록 홈즈 시리즈》와 ‘아서 코난 도일’에 관한 재미있는 이야기들이 독자들의 궁금증을 다소나마 해결해 줄 것이다.', poster_url = 'https://image.yes24.com/goods/13356337/L', source = 'YES24', external_id = '13356337' WHERE work_id = 65 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788976041500', pages = 456 WHERE work_id = 65;
+-- 66 연금술사 → 연금술사 (북다)
+UPDATE work SET release_date = '2026-07-03', summary = '“무언가를 간절히 원할 때
+온 우주는 소망이 실현되도록 도와준다네.”
+베스트셀러를 넘어 ‘시대의 고전’이 되다
+새로운 번역으로 원작의 감동을 전하는 특별증보판
+전 세계 1억 2천만 독자에게 감동과 삶의 변화를 안겨준 세기의 책, 파울로 코엘료의 『연금술사』를 새로운 번역으로 다시 만난다. 원작의 깊이와 감동을 더욱 충실하게 담아냈으며, 또한 화폐(유로 이전)에 초상화와 작품이 실릴 만큼 리투아니아를 대표하는 화가이자 작곡가인 미칼로유스 콘스탄티나스 치우를리오니스의 스케치 작품을 표지 이미지에 사용해 『연금술사』 특유의 신화적이고 신비로운 정서를 시각적으로 구현했다.
+베스트셀러를 넘어 ‘시대의 고전’으로 평가받는 이 책은 모든 것이 빠르게 변하고 미래를 예측하기 어려운 불확실 시대에 자신의 가치와 가능성을 믿고, 이를 발견하는 내면의 지혜를 일깨운다는 점에서 오늘날과 더욱 깊이 공명하는 작품이다. 한국어판 출간 25년 만에 새롭게 선보이는 『연금술사』가 전하는 메시지는 불안과 불신이 사람들의 마음을 잠식한 이 시대에도 우리의 영혼 깊은 곳에 변함없는 울림을 전한다.
+“이 책은 여전히 생생히 살아 숨 쉬고 있다. 여러분이 여러분 자신의 보물을 찾아 헤매는 양치기 청년 산티아고이듯, 나는 내 보물을 찾아 헤매는 산티아고다”라는 파울로 코엘료 ‘작가의 말’처럼, 『연금술사』는 미래의 독자에게도 끊임없이 새롭게 발견되고 해석되며 세상에서 가장 값진 보물인 ‘자아의 신화’를 찾아가는 여정을 함께할 것이다.', poster_url = 'https://image.yes24.com/goods/192872043/L', source = 'YES24', external_id = '192872043' WHERE work_id = 66 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791170614029', pages = 316 WHERE work_id = 66;
+-- 67 모모 → 모모 (비룡소)
+UPDATE work SET release_date = '1999-02-09', summary = '사람들에게서 시간을 빼앗아가는 회색 신사집단, 시간을 저축해야 한다는 강박관념에 쫓겨 강팍해지고 피폐해지는 사람들, 그리고 모모. 이 책은 아이들에게는 그들의 마음으로 읽히고, 어른들에게는 또 그 나름의 감동으로 읽히는 아주 특별한 동화이다. 시간은 삶이고 삶은 우리 마음 속에 깃들어 있다는 메시지가 마음 한 구석에 자리잡고 나면 삶이 보다 더 풍족해진다.', poster_url = 'https://image.yes24.com/goods/1263/L', source = 'YES24', external_id = '1263' WHERE work_id = 67 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788949190020', pages = 367 WHERE work_id = 67;
+-- 68 오만과 편견 → 오만과 편견 (민음사)
+UPDATE work SET release_date = '2003-09-20', summary = '영국 BBC의 ''지난 천년간 최고의 문학가'' 조사에서 셰익스피어에 이어 2위를 차지할 만큼 영국인의 큰 사랑을 받고 있는 작가, 제인 오스틴. 이번에 출간된 『오만과 편견』은 두 영문학자들이 10년 동안 꼼꼼한 원문 대조 과정과 교차 검토 과정을 거쳐 탄생한 번역본이다. 오역이나 부정확한 번역을 없앴음은 물론, 오스틴 문체의 특징으로 잘 알려져있는 ''묘출화법''이나 반어와 풍자, 그리고 당시 시대상에 맞는 적절한 단어 표현과 선택에 신경써서 번역했다.
+----------------------
+하트포드셔의 작은 마을에 사는 베넷 ...', poster_url = 'https://image.yes24.com/goods/402246/L', source = 'YES24', external_id = '402246' WHERE work_id = 68 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937460883', pages = 559 WHERE work_id = 68;
+-- 69 죄와 벌 → 죄와 벌 1 (민음사)
+UPDATE work SET release_date = '2012-03-30', summary = '러시아의 대문호 도스토예프스키가 8년간의 유형 후 발표한 대작
+이성의 광기 속으로 침잠하는 자폐적 인간, 고뇌하는 청춘의 전형 ‘라스콜니코프’를 창조해 냄으로써 20세기 문학, 철학, 심리학에 하나의 ‘사건’으로 기록된 소설
+러시아의 대문호 표도르 도스토예프스키의 『죄와 벌』(전 2권)이 민음사 세계문학전집으로 출간되었다. 『죄와 벌』은 도스토예프스키가 사형선고에 이은 8년간의 유형 생활 후 두 번째로 발표한 작품이다. 전작 『지하로부터의 수기』에서 싹튼 새로운 ‘인물 유형’과 소설 기법이 바로 이 소설에서 만개하여, 인간의 가장 깊은 곳에 숨겨진 심리가 낱낱이 파헤쳐진다. 작가 스스로 『죄와 벌』은 “범죄에 대한 심리학적 보고서”라고 밝혔듯, 죄와 속죄에 대한 다양한 인식들이 팽팽하게 갈등하고 교차한다. 이 소설은 도스토예프스키가 작가로서의 성숙기에 정점을 찍을 수 있게 했고, 또한 조이스, 헤밍웨이, 고리키, 버지니아 울프, 토마스 만, 헨리 밀러, D. H.', poster_url = 'https://image.yes24.com/goods/6712992/L', source = 'YES24', external_id = '6712992' WHERE work_id = 69 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937462849', pages = 502 WHERE work_id = 69;
+-- 70 토지 → 토지 1 (다산책방)
+UPDATE work SET release_date = '2023-06-07', summary = '54년 만에 현대적 감각으로 재탄생한
+우리 시대 최고의 고전 ‘토지’!
+“어떠한 역경을 겪더라도 생명은 아름다운 것이며
+삶만큼 진실한 것은 없다.”
+명실상부 한국 문학사의 기념비적 작품으로 자리하고 있는 박경리의 대하소설 『토지』가 첫 집필 54년 만에 현대적 감각으로 다시 탄생했다. 주지하다시피 우리 근대사의 굵직한 사건들이 선명하게 기록되어 있는 『토지』는 우리말의 미적 감각을 첨예하게 보여주는 작품이다. 이러한 『토지』는 누구도 부인할 수 없는 한국문학의 대표 작품으로서 오늘날까지 범국민적으로 읽혀온 것이 사실이다. 한말부터 일제강점기까지 근대 우리 민족이 겪은 피탈의 상처들을 아우르며 격변하는 시대 속 한민족의 삶을 생생하게 그려낸 대하소설 『토지』. 한국 문학사에 다시없을 걸작이 원전을 충실하게 살린 편집과 고전에 대한 선입견을 완벽하게 깨부수어줄 디자인으로 새 시대의 새 독자를 만날 준비를 마쳤다.', poster_url = 'https://image.yes24.com/goods/119458386/L', source = 'YES24', external_id = '119458386' WHERE work_id = 70 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791130699462', pages = 472 WHERE work_id = 70;
+-- 71 사피엔스 → 사피엔스 (김영사)
+UPDATE work SET release_date = '2015-11-23', summary = '출간 10주년·200쇄·115만부 기념
+유발 하라리 특별 서문 수록
+“인공지능의 시대, 우리가 알아야 할 것은 코딩보다 인간의 마음.”
+인간의 역사와 미래에 대한 가장 논쟁적이고 대담한 대서사
+문명의 배를 타고 진화의 바다를 항해한 인류는 이제 어디로 나아갈 것인가!
+“당신은 이 책을 사랑할 수밖에 없다.” (제레드 다이아몬드)
+‘천재 사상가’(뉴욕타임스) 유발 하라리의 대표작 『사피엔스』. 이제 불황이라는 수식어가 전혀 어색하지 않은 국내 출판시장에서도 『사피엔스』는 인문교양 분야의 트렌드를 주도하며 2023년 1월 기준 ‘200쇄 발행·115만부 판매’라는 놀라운 기록을 거두고 있다. 인류 역사와 미래를 종횡무진 가로지르는 『사피엔스』의 통찰은 불확실하고 복잡한 세계를 이해하고 대비하는 데 반드시 필요하다. 책 서두에는 2011년 원서 출간 이후 10년을 돌아보고 위기 상황을 맞은 인류에게 건네는 제언이 특별 서문으로 수록되었다.', poster_url = 'https://image.yes24.com/goods/23030284/L', source = 'YES24', external_id = '23030284' WHERE work_id = 71 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788934972464', pages = 636 WHERE work_id = 71;
+-- 72 총, 균, 쇠 → 총 균 쇠 (김영사)
+UPDATE work SET release_date = '2023-05-10', summary = '문명의 생성과 번영의 수수께끼를 밝힌 세계적 명저
+마침내 만나는 출간 25년 기념 뉴에디션!
+학문의 경계를 넘나드는 세계적 석학 재레드 다이아몬드. 인류 문명에 대한 예리한 통찰을 전해온 그의 대표작이자 1998년 퓰리처상 수상작 《총, 균, 쇠》를 새 번역, 새 편집으로 만난다. 왜 어떤 국가는 부유하고 어떤 국가는 가난한가? 왜 어떤 민족은 다른 민족의 정복과 지배의 대상이 되었는가? 생물학, 지리학, 인류학, 역사학 등 다양한 학문의 융합을 통해 장대한 인류사를 풀어내며 오늘날 현대 세계가 불평등한 원인을 종합 규명한 혁신적 저작. 출간 25년 기념 뉴에디션에는 2023년 저자 특별서문과 서울대 인류학과 박한선 교수의 해제, 새 서문과 후기를 수록해 풍성한 읽을거리를 더했다.', poster_url = 'https://image.yes24.com/goods/118755085/L', source = 'YES24', external_id = '118755085' WHERE work_id = 72 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788934942467', pages = 784 WHERE work_id = 72;
+-- 73 코스모스 → 코스모스 (사이언스북스)
+UPDATE work SET release_date = '2006-12-20', summary = '전 세계 60개국에 방송되어 6억 시청자를 감동시킨 텔레비전 교양 프로그램을 책으로 옮긴 칼 세이건(Carl Sagan)의 『코스모스(Cosmos)』. 현대 천문학을 대표하는 저명한 과학자인 칼 세이건은 이 책에서 사람들의 상상력을 사로잡고, 난해한 개념을 명쾌하게 해설하는 놀라운 능력을 마음껏 발휘한다. 그는 에라토스테네스, 데모크리토스, 히파티아, 케플러, 갈릴레오, 뉴턴, 다윈 같은 과학의 탐험가들이 개척해 놓은 길을 따라가며 과거, 현재, 미래의 과학이 이뤘고, 이루고 있으며, 앞으로 이룰 성과들을 알기 쉽게 풀이해 들려준?..', poster_url = 'https://image.yes24.com/goods/2312211/L', source = 'YES24', external_id = '2312211' WHERE work_id = 73 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788983711892', pages = 719 WHERE work_id = 73;
+-- 74 이기적 유전자 → 이기적 유전자 (을유문화사)
+UPDATE work SET release_date = '2010-08-10', summary = '진화생물학 분야의 과학자치고 리처드 도킨스만큼 대중적 인기와 학술적 논쟁을 결합시킨 사람도 흔치 않다. 그는 일찍이 촉망받는 젊은 동물행동학자로 간결한 문체와 생생한 비유, 논리적인 전개를 갖춘 글로 능력을 인정받아 왔다. 도킨스는 자신의 동물행동학 연구를 유전자가 진화의 역사에서 차지하는 중심적 역할에 대한 좀더 넓은 이론적 맥락과 연결시키기 시작했는데, 그 결과가 바로 『이기적 유전자』(1976)이다.', poster_url = 'https://image.yes24.com/goods/4078717/L', source = 'YES24', external_id = '4078717' WHERE work_id = 74 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788932471631', pages = 540 WHERE work_id = 74;
+-- 75 시간의 역사 → 그림으로 보는 시간의 역사 (까치(까치글방))
+UPDATE work SET release_date = '2021-04-15', summary = '새로운 서문과 부록이 추가된 결정판 드디어 출간!
+전 세계 2,500만 부 판매 돌파! 세계 최고의 과학 베스트셀러
+“간결하고 재미있으면서도 눈부시게 명쾌하다”_가디언
+스티븐 호킹의 『시간의 역사』는 1988년에 처음 발간된 이래로 대중과학서의 이정표와도 같은 위치를 차지했다. 40개 국어로 번역되었고, 전 세계적으로 2,500만 부 이상이 판매된 이 책은 당시까지 알려져 있던 우주의 본질에 대한 최첨단의 이론을 다루었다. 이 책은 스티븐 호킹이 2017년에 새로 쓴 “서문”과 “부록”을 수록한 결정판으로, “부록”에는 무경계 제안에 대한 스티븐 호킹의 최신 견해와 암흑 에너지, 정보 역설, 영원한 인플레이션, 중력파의 발견에 대한 새로운 정보가 담겨 있다. 또한 이 책의 역자인 김동광 교수가 1998년에 『그림으로 보는 시간의 역사』가 출간된 이후로 연구된 결과들을 토대로, 그 변화된 내용을 보완하고 번역을 새롭게 손보고 다듬었다.', poster_url = 'https://image.yes24.com/goods/100293105/L', source = 'YES24', external_id = '100293105' WHERE work_id = 75 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788972917359', pages = 270 WHERE work_id = 75;
+-- 76 정의란 무엇인가 → 정의란 무엇인가 (와이즈베리)
+UPDATE work SET release_date = '2014-11-20', summary = '한국에 ‘정의’ 열풍을 불러일으킨 마이클 샌델은 구제 금융, 대리 출산, 동성 결혼, 과거사 공개 사과 등 현대 사회에서 우리가 흔히 부딪히는 문제를 통해 ‘무엇이 정의로운가’에 대한 해답을 탐구했다. 이 책은 탁월한 정치 철학자들이 남긴 시대를 초월한 철학적인 질문을 알기 쉽게 소개한다. 이를 통해 옳고 그름, 정의와 부당함, 평등과 불평등, 개인의 권리와 공동선을 둘러싼 주장들이 경쟁하는 공적 담론과 토론의 장에서 정의에 관한 자신만의 견해를 정립하고 논리 기반을 굳건하게 다지는 토대를 제공한다. 이 책은 현대 사회의 문제를 진단하고 새로운 대안을 찾아내는 정치 철학자들의 지적 탐색 과정을 보여준다.', poster_url = 'https://image.yes24.com/goods/15156691/L', source = 'YES24', external_id = '15156691' WHERE work_id = 76 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937834790', pages = 444 WHERE work_id = 76;
+-- 77 자기만의 방 → 자기만의 방 (민음사)
+UPDATE work SET release_date = '2016-11-25', summary = '20세기 페미니즘 비평의 선구자 버지니아 울프,
+가부장제와 성적 불평등에 맞서
+여성 문학의 가능성을 모색한 페미니즘의 정전
+『자기만의 방』은 「세계 문학 전집」뿐 아니라 다양한 형태의 ‘특별판’으로도 독자에게 선보인 바 있는 책이지만, 이번에 다시금 ‘쏜살 문고’로 펴내는 데에는 그만한 이유가 있다. 이 글은 수많은 에세이와 소설을 남긴 버지니아 울프의 문학을 대표하는 작품이긴 하지만 어떤 의미에서는 한 작가의 대표작이라고 말해 버리고 말기에는 부족한, 이를테면 ‘여성 문학’을 총체적으로 다루면서 그 미래를 밝힌 글이기도 하다. 실제로 이 책은 두 차례에 걸쳐 두 곳의 여자 대학에서 이뤄진 ‘여성과 픽션’이라는 강연을 토대로 쓰인 글인데, 이때 울프는 ‘여성 문학가’라는 당사자로서 한평생 경험해 온 문학계의 상황, 즉 ‘여성이 글을 쓴다는 것’에 대해 놀라울 정도로 명확하고 재치 있는 언변으로 자신의 생각을 펼친다.', poster_url = 'https://image.yes24.com/goods/33631480/L', source = 'YES24', external_id = '33631480' WHERE work_id = 77 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9788937429040', pages = 168 WHERE work_id = 77;
+-- 78 미움받을 용기 → 미움받을 용기 (인플루엔셜)
+UPDATE work SET release_date = '2018-03-02', summary = '이미 이 시대의 고전이 된 책!
+2015년, 2016년, 2017년 압도적 인기의 인문 교양서 시리즈를
+한 권으로 만난다!
+역대 최장기간 연속 베스트셀러 1위의 『미움받을 용기』와
+출간 한 달 만에 15만 부 판매의 『미움받을 용기 2』를
+동시에 만나는 단 한 번의 기회!
+인간은 누구나 변할 수 있고 행복해질 수 있다. 그러기 위해서 필요한 건 오직 용기뿐이다. 자유로워질 용기, 행복해질 용기, 그리고 사랑할 용기. 자유와 행복, 사랑과 진정한 자립을 꿈꾸는 사람들에게 이러한 용기를 불어넣어줄 특별판이 출간되었다. 바로 『미움받을 용기 특별 합본호』다. 『미움받을 용기 특별 합본호』는 역대 최장기간 연속 베스트셀러 1위를 차지한 『미움받을 용기』와 출간 한 달 만에 15만 부라는 판매고를 올린 『미움받을 용기 2』를 한 권으로 묶어서 만든 특별 한정판이다.', poster_url = 'https://image.yes24.com/goods/58998644/L', source = 'YES24', external_id = '58998644' WHERE work_id = 78 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791186560655', pages = 420 WHERE work_id = 78;
+-- 79 아주 작은 습관의 힘 → 아주 작은 습관의 힘 (50만 부 기념 스페셜 에디션) (비즈니스북스)
+UPDATE work SET release_date = '2019-02-26', summary = '고교 시절 촉망받는 야구선수였던 제임스 클리어는 연습 중 동료의 야구 배트에 얼굴을 정통으로 강타당하는 큰 사고를 당했다. 이 사고로 얼굴 뼈가 30조각이 났고, 왼쪽 눈이 튀어나와 실명 위기까지 왔으며, 심정지가 세 번이나 일어났다. 걸을 수조차 없었던 그는 절망에 빠지는 대신 지금 당장 할 수 있는 아주 작은 일이라도 찾아 그것을 반복하자고 마음먹는다. 그 후 매일 걷기 연습을 해서 6개월 만에 운동을 할 수 있게 되었고, 6년 후에는 대학 최고 남자 선수가 되었다. 이 경험을 바탕으로 그는 자신을 인생의 나락에서 구해준 ‘아주 작은 습관의 힘’을 전 세계에 알리는 최고의 자기계발 전문가가 되었다.', poster_url = 'https://image.yes24.com/goods/69655504/L', source = 'YES24', external_id = '69655504' WHERE work_id = 79 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791162540640', pages = 360 WHERE work_id = 79;
+-- 80 언어의 온도 → 언어의 온도 (말글터)
+UPDATE work SET release_date = '2016-08-19', summary = '언어에는 나름의 온도가 있다고 생각하는 저자가 일상에서 발견한 의미 있는 말과 글을 한 권의 책에 담았다. 저자는 단어의 어원과 유래, 그런 언어가 지닌 차가움과 따뜻함을 글감 삼아, 하찮아 보이는 것들의 소중함을 예찬한다. 페이지를 넘길 때마다 문장과 문장에 호흡을 불어넣으며 뜨거운 음식을 먹듯 찬찬히 곱씹어 읽다 보면, 독자 스스로 각자의 ‘언어 온도’를 되짚어볼 수 있을지 모른다.', poster_url = 'https://image.yes24.com/goods/30387696/L', source = 'YES24', external_id = '30387696' WHERE work_id = 80 AND type = 'BOOK' AND (source IS NULL OR source = 'YES24');
+UPDATE book SET isbn = '9791195522125', pages = 308 WHERE work_id = 80;

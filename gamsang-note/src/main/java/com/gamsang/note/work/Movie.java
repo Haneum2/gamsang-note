@@ -20,6 +20,11 @@ public class Movie {
     protected Movie() {
     }
 
+    public Movie(Long workId, Integer runtime) {
+        this.workId = workId;
+        this.runtime = runtime;
+    }
+
     public Long getWorkId() { return workId; }
     public Integer getRuntime() { return runtime; }
 }

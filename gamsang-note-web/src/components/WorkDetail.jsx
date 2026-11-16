@@ -121,6 +121,17 @@ export default function WorkDetail({ workId, onClose }) {
             {work.source === 'KOPIS' && (
               <p className="note small-text">공연 정보 출처: (재)예술경영지원센터 공연예술통합전산망(www.kopis.or.kr)</p>
             )}
+            {work.source === 'YES24' && (
+              <p className="note small-text">
+                도서 정보 출처: YES24.{' '}
+                <a href={`https://www.yes24.com/product/goods/${work.externalId}`} target="_blank" rel="noreferrer">
+                  YES24에서 이 책 보기
+                </a>
+              </p>
+            )}
+            {work.source === 'TMDB' && (
+              <p className="note small-text">영화 정보 출처: TMDB (This product uses the TMDB API but is not endorsed or certified by TMDB.)</p>
+            )}
 
             <form className="form" onSubmit={save}>
               <h3>기록 추가</h3>

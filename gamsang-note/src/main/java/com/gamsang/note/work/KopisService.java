@@ -9,7 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -22,8 +23,6 @@ import org.springframework.web.server.ResponseStatusException;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-import com.gamsang.note.genre.Genre;
-import com.gamsang.note.genre.GenreRepository;
 
 /**
  * KOPIS(공연예술통합전산망) 오픈API 연동. 응답은 XML 이라 JDK 기본 DOM 파서로 읽는다(의존성 추가 없음).
@@ -45,43 +44,38 @@ public class KopisService {
 
     private final String key;
     private final RestClient http = RestClient.create();
+    private final ExternalWorks externalWorks;
     private final WorkRepository workRepository;
     private final PerformanceRepository performanceRepository;
-    private final GenreRepository genreRepository;
-    private final PersonRepository personRepository;
-    private final WorkPersonRepository workPersonRepository;
 
-    public KopisService(@Value("${KOPIS_KEY:}") String key, WorkRepository workRepository,
-                        PerformanceRepository performanceRepository, GenreRepository genreRepository,
-                        PersonRepository personRepository, WorkPersonRepository workPersonRepository) {
+    public KopisService(@Value("${KOPIS_KEY:}") String key, ExternalWorks externalWorks,
+                        WorkRepository workRepository, PerformanceRepository performanceRepository) {
         this.key = key;
+        this.externalWorks = externalWorks;
         this.workRepository = workRepository;
         this.performanceRepository = performanceRepository;
-        this.genreRepository = genreRepository;
-        this.personRepository = personRepository;
-        this.workPersonRepository = workPersonRepository;
     }
 
-    public List<WorkDtos.KopisItem> search(String q, int page) {
+    public List<WorkDtos.ExternalItem> search(String q, int page) {
         LocalDate today = LocalDate.now(SEOUL);
         List<Element> rows = fetch(BASE + "?service={key}&stdate={from}&eddate={to}&cpage={page}&rows=20&shprfnm={q}",
                 key, today.minusDays(15).format(PARAM_DATE), today.plusDays(15).format(PARAM_DATE), page + 1, q);
 
         // 이미 가져온 공연은 우리 작품 번호를 같이 돌려준다(화면에서 '가져오기' 대신 '열기').
         List<String> ids = rows.stream().map(e -> text(e, "mt20id")).toList();
-        Map<String, Long> imported = workRepository.findBySourceAndExternalIdIn(SOURCE, ids).stream()
-                .collect(Collectors.toMap(Work::getExternalId, Work::getId));
+        Map<String, Long> imported = externalWorks.importedIds(SOURCE, ids);
 
-        return rows.stream().map(e -> new WorkDtos.KopisItem(
-                text(e, "mt20id"), text(e, "prfnm"), period(e), text(e, "fcltynm"),
-                text(e, "genrenm"), https(text(e, "poster")), imported.get(text(e, "mt20id")))).toList();
+        return rows.stream().map(e -> new WorkDtos.ExternalItem(
+                text(e, "mt20id"), text(e, "prfnm"),
+                Stream.of(text(e, "genrenm"), period(e), text(e, "fcltynm")).filter(Objects::nonNull).toList(),
+                https(text(e, "poster")), imported.get(text(e, "mt20id")))).toList();
     }
 
     /** 공연을 우리 DB에 저장하고 작품 번호를 돌려준다. 이미 있으면 기존 번호. */
     @Transactional
     public Long importPerformance(String externalId) {
-        Optional<Work> existing = workRepository.findBySourceAndExternalId(SOURCE, externalId);
-        if (existing.isPresent()) return existing.get().getId();
+        Optional<Long> existing = externalWorks.existing(SOURCE, externalId);
+        if (existing.isPresent()) return existing.get();
 
         List<Element> rows = fetch(BASE + "/{id}?service={key}", externalId, key);
         // 없는 ID 면 KOPIS 는 빈 <db/> 를 돌려준다. 제목이 없으면 없는 공연으로 본다.
@@ -90,37 +84,28 @@ public class KopisService {
         }
         Element e = rows.get(0);
 
-        Work work = new Work(WorkType.PERFORMANCE, cut(text(e, "prfnm"), 200), date(text(e, "prfpdfrom")),
+        Work work = new Work(WorkType.PERFORMANCE, ExternalWorks.cut(text(e, "prfnm"), 200), date(text(e, "prfpdfrom")),
                 blankToNull(text(e, "sty")), https(text(e, "poster")), SOURCE, externalId);
-        genre(text(e, "genrenm")).ifPresent(work.getGenres()::add);
+        externalWorks.addGenre(work, genreName(text(e, "genrenm")));
         workRepository.save(work); // IDENTITY 라서 save 시점에 INSERT 되고 번호가 정해진다
-        performanceRepository.save(new Performance(work.getId(), cut(text(e, "fcltynm"), 100), period(e)));
-        savePeople(work.getId(), text(e, "prfcast"), "출연", 8);
-        savePeople(work.getId(), text(e, "prfcrew"), "제작진", 4);
+        performanceRepository.save(new Performance(work.getId(), ExternalWorks.cut(text(e, "fcltynm"), 100), period(e)));
+        externalWorks.savePeople(work.getId(), names(text(e, "prfcast"), 8), "출연");
+        externalWorks.savePeople(work.getId(), names(text(e, "prfcrew"), 4), "제작진");
         return work.getId();
     }
 
-    // KOPIS 는 "이용우, 유현주, 홍성민 등" 처럼 이름을 쉼표로 이어 준다. 앞에서부터 max 명만 person + work_person 으로 저장한다.
-    // ponytail: 같은 이름이어도 작품마다 새 person 행을 만든다(동명이인을 잘못 합치지 않으려고). 인물별 작품 모아 보기가 필요해지면 다시 본다.
-    private void savePeople(Long workId, String names, String role, int max) {
-        if (names == null) return;
-        Arrays.stream(names.split(","))
-                .map(n -> n.trim().replaceFirst("\\s*등$", "").trim())
-                .filter(n -> !n.isEmpty())
-                .distinct()
-                .limit(max)
-                .forEach(n -> {
-                    Person p = personRepository.save(new Person(cut(n, 100)));
-                    workPersonRepository.save(new WorkPerson(workId, p.getId(), role));
-                });
+    // KOPIS 는 "이용우, 유현주, 홍성민 등" 처럼 이름을 쉼표로 이어 준다. 끝의 "등"을 떼고 앞에서부터 max 명만.
+    private static List<String> names(String joined, int max) {
+        if (joined == null) return List.of();
+        return Arrays.stream(joined.split(",")).map(n -> n.trim().replaceFirst("\\s*등$", "").trim())
+                .filter(n -> !n.isEmpty()).distinct().limit(max).toList();
     }
 
-    // KOPIS 장르 이름 → 우리 genre 테이블. "서양음악(클래식)", "무용(서양/한국무용)"처럼 괄호가 붙어 오는 것만 바꿔 준다.
-    // 대중음악·복합처럼 우리 장르에 없는 것은 장르 없이 저장한다.
-    private Optional<Genre> genre(String kopisGenre) {
-        if (kopisGenre == null) return Optional.empty();
-        String name = kopisGenre.contains("클래식") ? "클래식" : kopisGenre.contains("무용") ? "무용" : kopisGenre;
-        return genreRepository.findByName(name);
+    // KOPIS 장르 이름 → 우리 genre 이름. "서양음악(클래식)", "무용(서양/한국무용)"처럼 괄호가 붙어 오는 것만 바꿔 준다.
+    // 대중음악·복합처럼 우리 장르에 없는 것은 장르 없이 저장된다.
+    private static String genreName(String kopisGenre) {
+        if (kopisGenre == null) return null;
+        return kopisGenre.contains("클래식") ? "클래식" : kopisGenre.contains("무용") ? "무용" : kopisGenre;
     }
 
     private List<Element> fetch(String uri, Object... vars) {
@@ -174,7 +159,4 @@ public class KopisService {
         return s == null || s.isBlank() ? null : s.trim();
     }
 
-    private static String cut(String s, int max) {
-        return s == null || s.length() <= max ? s : s.substring(0, max);
-    }
 }

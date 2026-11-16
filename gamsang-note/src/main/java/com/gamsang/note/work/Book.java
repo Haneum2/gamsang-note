@@ -22,6 +22,12 @@ public class Book {
     protected Book() {
     }
 
+    public Book(Long workId, String isbn, Integer pages) {
+        this.workId = workId;
+        this.isbn = isbn;
+        this.pages = pages;
+    }
+
     public Long getWorkId() { return workId; }
     public String getIsbn() { return isbn; }
     public Integer getPages() { return pages; }

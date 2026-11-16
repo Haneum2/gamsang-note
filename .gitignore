@@ -1,2 +1,4 @@
 .idea/
 .claude/
+db/turso/*.db-shm
+db/turso/*.db-wal

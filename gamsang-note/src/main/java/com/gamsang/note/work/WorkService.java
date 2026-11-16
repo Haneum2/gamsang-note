@@ -76,7 +76,8 @@ public class WorkService {
 
         return new WorkDetail(w.getId(), w.getType(), w.getTitle(), w.getReleaseDate(),
                 w.getSummary(), w.getPosterUrl(), genreNames(w),
-                runtime, isbn, pages, venue, period, w.getSource(), workPersonRepository.findPeople(id));
+                runtime, isbn, pages, venue, period, w.getSource(), w.getExternalId(),
+                workPersonRepository.findPeople(id));
     }
 
     private WorkSummary toSummary(Work w) {

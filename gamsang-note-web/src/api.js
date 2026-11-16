@@ -60,8 +60,9 @@ export const api = {
   users: () => request('/api/users'),
   works: ({ type, q, page = 0, size = 12 }) => request(`/api/works${qs({ type, q, page, size })}`),
   work: (id) => request(`/api/works/${id}`),
-  kopis: ({ q, page = 0 }) => request(`/api/works/kopis${qs({ q, page })}`),
-  importKopis: (externalId) => request(`/api/works/kopis/${externalId}`, { method: 'POST' }),
+  // 외부 작품 검색·가져오기. source: 'kopis'(공연) | 'tmdb'(영화)
+  externalSearch: (source, { q, page = 0 }) => request(`/api/works/${source}${qs({ q, page })}`),
+  importExternal: (source, externalId) => request(`/api/works/${source}/${externalId}`, { method: 'POST' }),
   createRecord: (body) => request('/api/records', { method: 'POST', body }),
   records: ({ status, page = 0, size = 20 }) => request(`/api/records${qs({ status, page, size })}`),
   updateRecord: (id, body) => request(`/api/records/${id}`, { method: 'PATCH', body }),

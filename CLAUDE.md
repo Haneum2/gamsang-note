@@ -36,7 +36,7 @@
 1. Oracle XE(서비스 `OracleServiceXE`, 리스너)가 실행 중이어야 한다. 접속: `localhost:1521`, 서비스명 **XEPDB1**, 계정 **SYSTEM**.
 2. 터미널에 `set DB_PASSWORD=...` (PowerShell은 `$env:DB_PASSWORD="..."`) 후 백엔드 실행: `cd gamsang-note` → `mvn spring-boot:run` (또는 IntelliJ에서 `NoteApplication` 실행, 환경 변수 `DB_PASSWORD` 설정). 포트 8080.
 3. 프론트: `cd gamsang-note-web` → `npm install`(처음 한 번) → `npm run dev`. 포트 5173. `/api`는 vite 프록시로 8080에 전달되므로 CORS 설정이 필요 없다.
-4. DB를 처음부터 만들 때: SQL Developer로 `db/01_schema.sql` → `02_seed.sql` → `03_views_triggers.sql` 순서로 실행. 재실행은 `00_drop.sql` 먼저. 검증 건수: 회원 12, 작품 105, 감상 기록 244, 후기 107, 좋아요 154, 댓글 85, 친구 19, 컬렉션 9.
+4. DB를 처음부터 만들 때: SQL Developer로 `db/01_schema.sql` → `02_seed.sql` → `03_views_triggers.sql` 순서로 실행. 재실행은 `00_drop.sql` 먼저. 검증 건수(2026-11-16 공연 교체 후): 회원 12, 작품 105(영화 40·책 40·공연 25), 감상 기록 178, 후기 83, 좋아요 140, 댓글 67, 친구 19, 컬렉션 9(담긴 작품 39), 인물 307.
 5. prod 프로필(Turso) 로컬 시험·배포: `docs/DEPLOY.md` 참고. 환경 변수 `SPRING_PROFILES_ACTIVE=prod`, `TURSO_JDBC_URL`, `TURSO_AUTH_TOKEN`(`application-prod.yml`). 접속 주소·토큰은 파일·채팅·커밋에 쓰지 않는다.
 
 ## 5. DB 요약 (Oracle, 16개 테이블)
@@ -50,6 +50,9 @@
 - 트리거: `trg_review_mark_done` — 후기를 저장하면 해당 record.status를 `DONE`으로 바꾼다(앱 코드는 상태를 바꾸지 않는다).
 - 테이블 이름 `users`, `comments`는 Oracle 예약어(USER, COMMENT) 때문이다. 현재 테이블이 **SYSTEM 스키마**에 있다(시연용으론 가능, 나중에 전용 계정으로 옮기는 것이 안전).
 - `work.type`과 서브타입 행이 맞는지는 DB가 막지 않는다(앱에서 지킨다).
+- 샘플 공연 25편(work_id 81~105)은 2026-11-16에 지우고 KOPIS 실제 공연 25편(예매 순위 상위, 뮤지컬 12·연극 10·무용 3, source='KOPIS')으로 바꿨다(`db/09_kopis_performances.sql`, 02_seed에도 반영). 옛 공연에 달린 기록 66·후기 24·좋아요 14·댓글 18·컬렉션 항목 11·인물 16도 지웠다. 새 공연에는 기록이 없다. 인물 번호는 1001부터.
+- 샘플 영화 40편(work_id 1~40)은 TMDB 실제 데이터(개봉일·줄거리·포스터·상영 시간, source='TMDB'+external_id)로 채웠다(2026-11-16, `db/08_movies_tmdb.sql`, 02_seed에도 포함). 제목·장르·감독·배우·기록은 그대로라 통계 확인값(7번)은 변함없다.
+- 샘플 책 40권(work_id 41~80)도 같은 방식으로 YES24 실제 데이터(출간일·책 소개(HTML 태그 제거)·표지·YES24 상품 번호·ISBN·쪽수)로 채웠다(2026-11-16, `db/10_books_yes24.sql`, 02_seed에도 포함). 제목·장르·저자·기록은 그대로. 여러 권짜리(반지의 제왕, 토지, 죄와 벌, 달러구트)는 1권. 이제 작품 105편 모두 외부 출처가 있다(영화 TMDB·책 YES24·공연 KOPIS).
 
 ## 6. 백엔드 구조와 규칙
 - 패키지 기준 구조: `controller → service → repository(Spring Data JPA) → entity`. 요청·응답은 `record` 타입 DTO(`*Dtos.java`), 엔티티를 그대로 내보내지 않는다.
@@ -64,9 +67,13 @@
 | --- | --- | --- |
 | GET | /api/genres | 장르 21건 |
 | GET | /api/works?type=&q=&page=&size= | 작품 검색(제목순, 페이징) |
-| GET | /api/works/{id} | 작품 상세(종류별 필드 + source + people[이름·역할] 포함) |
+| GET | /api/works/{id} | 작품 상세(종류별 필드 + source + externalId + people[이름·역할] 포함) |
 | GET | /api/works/kopis?q=&page= | KOPIS 공연 검색(오늘 ±15일, 20건, 가져온 공연은 workId 포함) |
 | POST | /api/works/kopis/{mt20id} | KOPIS 공연을 work+performance+work_genre로 저장(이미 있으면 기존 것), 작품 상세 반환 |
+| GET | /api/works/tmdb?q=&page= | TMDB 영화 검색(ko-KR, 20건) |
+| POST | /api/works/tmdb/{id} | TMDB 영화를 work+movie+work_genre+person(감독, 배우 5)으로 저장, 작품 상세 반환 |
+| GET | /api/works/yes24?q=&page= | YES24 도서 검색(category=BOOK, 20건, 세트 상품 제외, 같은 ISBN이 DB에 있으면 workId) |
+| POST | /api/works/yes24/{itemId} | YES24 상품 번호로 work+book(ISBN·쪽수)+work_genre+person(저자·옮긴이 등) 저장(같은 ISBN이면 기존 작품), 작품 상세 반환 |
 | POST | /api/auth/signup · login · logout | 가입(바로 로그인)·로그인·로그아웃 |
 | GET | /api/auth/me | 로그인한 회원(아니면 401) |
 | GET | /api/users | 회원 목록(친구 요청 상대 고르기, 로그인 필요) |
@@ -89,13 +96,16 @@
 | GET | /api/stats/genres | 장르별 수·비율·평균 별점 |
 | GET | /api/stats/year-end?year= | 연말 결산 |
 
-작품 목록·상세·장르·KOPIS 검색 외에는 모두 로그인이 필요하다(회원 번호는 세션에서). 친구 요청 본문은 `{receiverId}`, 수락은 `{requesterId}`.
+외부 검색 응답은 `ExternalItem(externalId, title, meta[], posterUrl, workId)`(KOPIS·TMDB 공통). 공통 DB 작업은 `ExternalWorks`.
 
-사용자가 직접 확인한 결과(샘플 데이터, 1번 회원): 친구 2·3·5·11번, 보이는 후기 66건(원본 샘플 기준. 테스트 후기 108 포함 시 67, 148까지 68), 2026년 월별 3월 3/6월 2/8월 1/9월 1, 연말 결산 총 7건(영화 4·책 2·공연 1), 선호 장르 SF 3·판타지 2.
+작품 목록·상세·장르·KOPIS·TMDB·YES24 검색 외에는 모두 로그인이 필요하다(회원 번호는 세션에서). 친구 요청 본문은 `{receiverId}`, 수락은 `{requesterId}`.
+
+확인값(샘플 데이터, 1번 회원, 2026-11-16 공연 교체 후 Oracle·Turso 확인): 친구 2·3·5·11번, 보이는 후기 53건, 2026년 월별 3월 3/6월 1/8월 1/9월 1, 연말 결산 총 6건(영화 4·책 2), 선호 장르 SF 3·판타지 2. (교체 전: 후기 66, 6월 2, 연말 7건(공연 1 '레미제라블'))
 
 ## 8. 프론트엔드 구조
 - `api.js`: 서버 호출을 한곳에 모은 모듈(`ApiError` 포함). 화면은 `fetch`를 직접 쓰지 않는다.
 - `UserContext.jsx`: 로그인 상태(`me`: undefined 확인 중/null 로그아웃/객체). 시작할 때 `/api/auth/me`, 다른 요청이 401이면 `api.js`가 `gamsang:unauthorized` 이벤트를 보내 로그인 화면으로. `AuthPage`(로그인·가입 탭).
+- 작품 화면 검색(2026-11-16): 영화 탭=TMDB, 책 탭=YES24, 공연 탭=KOPIS(오늘 ±15일) 결과(첫 20건)를 목록에 바로 보여 주고, 누르면 저장(POST, 이미 있으면 기존 작품)한 뒤 상세를 연다. 전체 탭=우리 DB(100건까지)+TMDB+YES24+KOPIS 합침(이미 DB에 있는 작품은 한 번만). 검색어가 없으면 우리 DB 목록. 목록 아래 출처 문구, 작품 상세에 출처(YES24는 상품 링크).
 - 페이지: `WorksPage`, `RecordsPage`, `ReviewsPage`(후기·친구 피드), `FriendsPage`(받은 요청 수락·거절, 친구 목록, 요청 보내기), `StatsPage`(연도 탭, 연말 결산, 월별 막대, 장르 표). 컴포넌트: `WorkDetail`(작품 상세+기록 등록), `ReviewForm`, `ReviewCard`(좋아요·댓글), `Pager`, `Cover`(표지), `Stars`(숫자+5칸 막대), `Tabs`(글자 탭). `RecordRow`는 `RecordsPage.jsx` 안에 있다.
 - 다른 계정으로 로그인하면 화면 상태를 초기화하려고 `<Route element={<... key={userId} />}>`를 쓴다.
 - **디자인 규칙(2026-11-09, 새 화면도 따른다)**: 토큰과 공용 클래스는 `styles.css` 맨 위에 있다.
@@ -113,7 +123,7 @@
 - 프론트: 작품 목록 화면 확인 완료. RecordsPage·ReviewsPage·ReviewForm·ReviewCard·Pager는 2026-11-09에 다시 작성했다(이전 파일이 폴더에 없었음). 같은 날 API와 브라우저로 확인 완료(기록 수정, 후기 작성→트리거로 DONE, 스포일러 가리기, 볼 수 있는 후기/친구 피드, 좋아요·취소, 댓글). FriendsPage·StatsPage도 같은 날 확인(요청 보내기·중복 409·거절, 통계 수치가 7번 확인값과 일치). 친구 '수락'은 화면에서 누르지 않았다(친구 끊기 API가 없어 데이터가 남음).
 - 친구 화면: 받은 요청(수락·거절), 보낸 요청(취소), 친구 목록, 요청 보내기(이미 친구·요청 중인 회원은 후보에서 뺀다). 2026-11-16.
 - 종류 색 중 책(#17695A)과 공연(#A3234F)은 적록색약에서 거의 구분되지 않는다(dataviz 검사 ΔE 4.0). 그래서 종류는 항상 글자('영화/책/공연')와 함께 표시한다.
-- DB에 이전 테스트 데이터가 남아 있다(사용자가 그대로 두기로 함): 기록 245('지젤')·후기 108·좋아요 2건, 친구 요청 1→12 PENDING. 그래서 검증 건수와 다르다.
+- 로컬 Oracle에는 테스트 데이터가 남아 있다(사용자가 그대로 두기로 함): 친구 요청 1→12 PENDING, 시험으로 가져온 외부 작품(106번 이후)과 그 기록. 그래서 검증 건수와 다르다. (기록 245 '지젤'·후기 108은 2026-11-16 공연 교체 때 함께 삭제됨)
 - Git Bash에서 curl로 한글 JSON을 보내면 인코딩이 깨져 400이 난다. 본문은 UTF-8 파일로 만들어 `--data-binary @파일`로 보낸다.
 - Maven은 PATH에 없다. IntelliJ에 포함된 것을 쓴다: `"C:\Program Files\JetBrains\IntelliJ IDEA 2026.3\plugins\maven-plugin\lib\maven3\bin\mvn.cmd"`.
 
@@ -124,7 +134,7 @@
 2. ~~Turso 접속 시험~~ (완료 2026-11-16, 로컬 prod. 드라이버 결함 4가지를 `TursoConfig`·`TursoDialect`·gson 버전으로 우회, prod는 트랜잭션 없이 자동 커밋. `docs/DEPLOY.md` 5-1). Turso 접속 정보는 사용자 환경 변수 `TURSO_JDBC_URL`·`TURSO_AUTH_TOKEN`.
 3. Render 배포(`render.yaml`), 무료 플랜 절전 대비 절차를 README에.
 4. ~~자체 가입/로그인~~ (완료 2026-11-16, Oracle·Turso(prod) 모두 API 24개 항목 통과, 브라우저 확인. Oracle·Turso에 07 적용 완료. prod 쿠키는 Secure라 로컬 http 시험 때는 SERVER_SERVLET_SESSION_COOKIE_SECURE=false).
-5. 외부 작품 API 연동: 영화 TMDB, 도서 YES24(공개 API 존재·키 확인 필요), 공연 KOPIS(**완료 2026-11-16**: `KopisService`, 작품 화면 공연 탭의 'KOPIS에서 찾기', 상세에 출처 표시. 키 `KOPIS_KEY`는 사용자 환경 변수·Render 환경 변수. 출연진→person은 6번에서).
+5. 외부 작품 API 연동: 영화 TMDB(**완료 2026-11-16**: `TmdbService`, 영화 탭 'TMDB에서 찾기', 키 `TMDB_API_KEY` v3), 도서 YES24(**완료 2026-11-16**: `Yes24Service`, `https://apis.yes24.com/v1`, 헤더 `X-Api-Key`, 키 `YES24_API_KEY`. publishDate 는 실제로 `20140519` 형식. 약관: 출처 표시+상품 상세 링크 필수, 대량·체계적 수집으로 DB 구축 금지 → 사용자가 고른 책만 저장. 샘플 책 40권은 10번 스크립트로 YES24와 연결됨), 공연 KOPIS(**완료 2026-11-16**: `KopisService`, 작품 화면 공연 탭 검색, 상세에 출처 표시. 샘플 공연 25편은 KOPIS 검색 기간 제한(31일) 때문에 과거 공연을 찾을 수 없어 원래 값 유지. 키 `KOPIS_KEY`는 사용자 환경 변수·Render 환경 변수. 출연진→person은 6번에서).
    - KOPIS: 응답 XML. 목록 `/openApi/restful/pblprfr?service=&stdate=&eddate=(31일 이내 필수)&cpage=&rows=&shprfnm=`, 상세 `/pblprfr/{mt20id}`. 기간 `2026.11.28` 형식, 출연 `prfcast`는 "A, B 등" 문자열, 러닝타임 "1시간 30분" 글자, 줄거리 `sty`는 비는 경우가 많음(소개 이미지 `styurls`), 포스터는 http로 오지만 https로 바꿔도 열림, 장르는 `genrenm` 이름으로 매칭. 출처 문구 표시 필요.
    출처 표시, 키는 환경 변수로만. (2026-11-11 확정: KOBIS·국립중앙도서관은 포스터·줄거리·표지가 약하고 TMDB와 중복되어 제외)
 6. ~~보낸 친구 요청 목록·취소, 작품 상세의 인물~~ (완료 2026-11-16: `Person`·`WorkPerson`(record 복합키) 엔티티, `findPeople` JPQL join on + DTO 생성자 식. KOPIS 가져오기 때 출연(최대 8)·제작진(최대 4)을 person/work_person 에 저장, 동명이인 합치지 않음).
@@ -137,6 +147,6 @@
 - 샘플 데이터(작품·회원·후기)는 시연용 임의 값이다. 작품 정보는 TMDB·도서 API와 대조가 필요하다.
 - Oracle은 내림차순 정렬에서 `NULL`을 앞에 둔다(위 10-3).
 - 후기를 쓰면 DB 트리거가 기록 상태를 바꾸므로, 같은 트랜잭션 안에서 이미 읽어 둔 `record` 엔티티는 오래된 값일 수 있다(별도 요청으로 다시 읽으면 최신).
-- 후기 건수: "1번 회원 후기"는 1번이 볼 수 있는 후기(본인+친구 공개) 수다. 원본 샘플 66건이 맞다(Oracle에서 테스트 후기 108·148을 빼고 세어 확인, Turso도 66). 1번이 직접 쓴 후기는 11건.
+- 후기 건수: "1번 회원 후기"는 1번이 볼 수 있는 후기(본인+친구 공개) 수다. 공연 교체 후 53건(Oracle·Turso 동일). 1번이 직접 쓴 후기는 11건.
 - Turso는 원본 샘플 데이터라 Oracle(테스트 데이터 남음)과 건수가 다르다. 비교는 원본 기준값(7번)으로 한다.
 - Turso/SQLite: 날짜는 문자열로 저장되어 `@CreationTimestamp` 형식과 시드 형식이 섞이면 정렬이 틀어질 수 있다(2단계에서 확인). 외래 키는 연결마다 켜야 한다.

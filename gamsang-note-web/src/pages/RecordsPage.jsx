@@ -92,9 +92,7 @@ function RecordRow({ record, onChanged }) {
           </p>
         </div>
         <div className="ticket-edit">
-          {/* 상태는 도장 모양 select: 봤어요=채움, 보는 중=실선, 보고 싶어요=점선 */}
           <select
-            className={`stamp ${record.status.toLowerCase()}`}
             value={record.status}
             onChange={(e) => patch({ status: e.target.value })}
             aria-label="상태"
