@@ -1,4 +1,7 @@
-// 표지: 2:3 단색 사각형 + 제목. 색은 작품 종류, 농도는 제목 해시로 3단계 변주한다.
+import { useState } from 'react'
+
+// 표지: 포스터 주소(src)가 있으면 이미지, 없거나 불러오지 못하면 2:3 단색 사각형 + 제목.
+// 글자 표지: 색은 작품 종류, 농도는 제목 해시로 3단계 변주한다.
 // 제목 글자 크기는 표지 너비 기준(cqi)이라 표지 크기가 달라도 비율이 유지된다.
 function shade(title) {
   let h = 0
@@ -16,7 +19,16 @@ function sizeClass(title) {
   return 'sm'
 }
 
-export default function Cover({ type, title }) {
+export default function Cover({ type, title, src }) {
+  const [broken, setBroken] = useState(false)
+  if (src && !broken) {
+    return (
+      <div className={`cover poster ${type.toLowerCase()}`} aria-hidden="true">
+        {/* no-referrer: 외부 서버가 다른 사이트에서 온 요청을 막는 경우를 피한다. lazy: 화면에 보일 때 불러온다 */}
+        <img src={src} alt="" loading="lazy" referrerPolicy="no-referrer" onError={() => setBroken(true)} />
+      </div>
+    )
+  }
   return (
     <div className={`cover ${type.toLowerCase()} shade-${shade(title)} t-${sizeClass(title)}`} aria-hidden="true">
       <span>{title}</span>

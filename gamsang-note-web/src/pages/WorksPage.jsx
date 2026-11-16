@@ -75,7 +75,7 @@ export default function WorksPage() {
         {works.map((w) => (
           <li key={w.id}>
             <button className={`shelf-item ${w.type.toLowerCase()}`} onClick={() => setSelectedId(w.id)}>
-              <Cover type={w.type} title={w.title} />
+              <Cover type={w.type} title={w.title} src={w.posterUrl} />
               <span className="shelf-title">{w.title}</span>
               <span className="shelf-meta">
                 <span className="type-name">{TYPE_LABEL[w.type]}</span>

@@ -68,7 +68,7 @@ export default function WorkDetail({ workId, onClose }) {
         {work && (
           <div className={work.type.toLowerCase()}>
             <div className="panel-head">
-              <Cover type={work.type} title={work.title} />
+              <Cover type={work.type} title={work.title} src={work.posterUrl} />
               <div>
                 <h2>{work.title}</h2>
                 <p className="panel-meta">
